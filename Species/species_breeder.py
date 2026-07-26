@@ -43,7 +43,7 @@ class SpeciesBreeder:
             raise ValueError("Cannot breed an empty species.")
 
         # 1. Sort current members by fitness (Descending: Highest is best)
-        sorted_members = sorted(current_species_members, key=lambda x: x.accuracy, reverse=True)
+        sorted_members = sorted(current_species_members, key=lambda x: x.fitness, reverse=True)
         
         next_generation: List[AgentGenome] = []
 

@@ -218,8 +218,8 @@ class Plotter:
         plt.ylabel("Accuracy Score (0 - 30)", fontsize=12, fontweight='medium', color='#333333', labelpad=10)
 
         # 7. Axis limits & ticks — 0 to 30, step 5
-        plt.ylim(0, 30)
-        plt.yticks(np.arange(0, 31, 5))
+        plt.ylim(0, 50)
+        plt.yticks(np.arange(0, 51, 5))
         
         plt.xlim(90, 1010)
         plt.xticks(np.arange(100, 1550, 100))
@@ -349,8 +349,8 @@ class Plotter:
         plt.ylabel("Fitness Score (0 - 30)", fontsize=12, fontweight='medium', color='#333333', labelpad=10)
 
         # 7. Axis limits & ticks — 0 to 30, step 5
-        plt.ylim(0, 30)
-        plt.yticks(np.arange(0, 31, 5))
+        plt.ylim(0, 50)
+        plt.yticks(np.arange(0, 51, 5))
         
         plt.xlim(0.5, 8)
         plt.xticks(np.arange(1, 9, 1))
@@ -526,8 +526,8 @@ class Plotter:
                 label.set_alpha(0.35)
 
         # --- 6. Y-axis (accuracy 0-30, step 5) -----------------------------------
-        plt.ylim(0, 30)
-        plt.yticks(np.arange(0, 31, 5))
+        plt.ylim(0, 50)
+        plt.yticks(np.arange(0, 51, 5))
         plt.ylabel("Accuracy Score (0 - 30)", fontsize=12,
                 fontweight='medium', color='#333333', labelpad=10)
         plt.xlabel("Species Index", fontsize=12,

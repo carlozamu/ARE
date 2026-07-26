@@ -1,0 +1,1262 @@
+[
+    {
+        "question": "Story:\n[Harold] is frustrated teaching his son how to drive. His son is [Antonio]. [Harold] made a pizza for his daughter. Her name is [Marie]. [Marie] bought a new puppy for her son [Ronald]. This made [Ronald]'s sister [Angelica] extremely jealous.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Angelica, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Angelica's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harold] is frustrated teaching his son how to drive. His son is [Antonio]. [Harold] made a pizza for his daughter. Her name is [Marie]. [Marie] bought a new puppy for her son [Ronald]. This made [Ronald]'s sister [Angelica] extremely jealous.",
+            "query": "('Angelica', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "20684cb4-7d29-4fd6-bd20-acb8d9cf101f"
+    },
+    {
+        "question": "Story:\n[Beverly] went shopping with her son. His name is [Samuel]. [Wayne]'s mother, [Beverly], has no time for him anymore. She's too busy with her new son, [Samuel]. [Beverly] loved her mother [Shantel]. She was heartbroken when she heard [Shantel] had suddenly passed away.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Wayne, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Wayne's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly] went shopping with her son. His name is [Samuel]. [Wayne]'s mother, [Beverly], has no time for him anymore. She's too busy with her new son, [Samuel]. [Beverly] loved her mother [Shantel]. She was heartbroken when she heard [Shantel] had suddenly passed away.",
+            "query": "('Wayne', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "a691b41d-8194-47fd-a421-602b9eb2ceb5"
+    },
+    {
+        "question": "Story:\n[Marie] treasures her son, [Allan]. She recently attended his high school graduation and it was the proudest day of her life. [Tracy] was eager to see her niece, [Elsie]. They had n't seen each other in ages [Robert] bought a dress for his daughter [Elsie]. [Allan] went to the park with his father, [Robert].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Tracy and Marie, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Tracy is Marie's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie] treasures her son, [Allan]. She recently attended his high school graduation and it was the proudest day of her life. [Tracy] was eager to see her niece, [Elsie]. They had n't seen each other in ages [Robert] bought a dress for his daughter [Elsie]. [Allan] went to the park with his father, [Robert].",
+            "query": "('Marie', 'Tracy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "c6f9094a-46c2-4544-8c55-34bedcbab987"
+    },
+    {
+        "question": "Story:\n[Beverly]'s son [Michael] and brother [Pedro] came to her birthday party last weekend. [Pedro] and his sister [Tracy] went to brunch today at the new diner. [Michael] and his sister [Jennifer] took their father out to eat for his birthday. They had a great time.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jennifer and Tracy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jennifer is Tracy's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly]'s son [Michael] and brother [Pedro] came to her birthday party last weekend. [Pedro] and his sister [Tracy] went to brunch today at the new diner. [Michael] and his sister [Jennifer] took their father out to eat for his birthday. They had a great time.",
+            "query": "('Tracy', 'Jennifer')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "406ef068-f9e0-4a33-b465-24d0a88828c8"
+    },
+    {
+        "question": "Story:\n[Marie] and her son [Allan] were waiting on his sister [Elsie] to come out of band practice. [Robert] has a great father relationship with the beautiful [Elsie]. [Marie] took her daughter [Michelle] to see her very first ballet performance.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Robert and Michelle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Robert is Michelle's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie] and her son [Allan] were waiting on his sister [Elsie] to come out of band practice. [Robert] has a great father relationship with the beautiful [Elsie]. [Marie] took her daughter [Michelle] to see her very first ballet performance.",
+            "query": "('Michelle', 'Robert')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "a873993b-9965-47a3-9988-f75462c84fa5"
+    },
+    {
+        "question": "Story:\n[Tracy] took her brother [Pedro] and her daughter [Emma] to the exhibition [Pedro] loves to play baseball with his dad, [Harold]. [Harold] is the proud father of the lovely [Louis]\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Emma and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Emma is Louis's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Tracy] took her brother [Pedro] and her daughter [Emma] to the exhibition [Pedro] loves to play baseball with his dad, [Harold]. [Harold] is the proud father of the lovely [Louis]",
+            "query": "('Louis', 'Emma')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "d946ed2e-7f86-4371-8da7-a5e6315b9560"
+    },
+    {
+        "question": "Story:\n[Pedro] and his wife [Dorothy] took their daughter [Rebecca] to the zoo. [Rebecca]'s sister [Annie] does n't like animals and did n't go. [Annie] and her husband [Jeffrey] watched the fireworks by the lake last night.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jeffrey and Dorothy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jeffrey is Dorothy's?",
+        "answer": "son-in-law",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Pedro] and his wife [Dorothy] took their daughter [Rebecca] to the zoo. [Rebecca]'s sister [Annie] does n't like animals and did n't go. [Annie] and her husband [Jeffrey] watched the fireworks by the lake last night.",
+            "query": "('Dorothy', 'Jeffrey')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "ebc75376-9774-4860-b78c-517527aae19c"
+    },
+    {
+        "question": "Story:\n[Beverly] took her son [Wayne] to the football game. [Wayne] and his wife [Karen] went to a baseball game today. [Nicole]'s father [Louis] is taking her to a movie because she got good grades. [Beverly] took her daughter [Nicole] to see a movie on Friday. She let her pick the movie and she enjoyed it very much.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Karen and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Karen is Louis's?",
+        "answer": "daughter-in-law",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly] took her son [Wayne] to the football game. [Wayne] and his wife [Karen] went to a baseball game today. [Nicole]'s father [Louis] is taking her to a movie because she got good grades. [Beverly] took her daughter [Nicole] to see a movie on Friday. She let her pick the movie and she enjoyed it very much.",
+            "query": "('Louis', 'Karen')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "1f0e0ab8-4b6e-43b9-a30b-d1e2e582c717"
+    },
+    {
+        "question": "Story:\n[Louis] who is [Michael]'s father grounded [Michael] after finding out what [Michael] had done at school. [Jennifer] and [Michael] had a picnic at the park. They had sandwiches and salad. [Louis] loves dancing with his wife. Her name is [Beverly]. [Beverly] took her daughter [Nicole] to school during the cold winter morning.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jennifer and Nicole, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jennifer is Nicole's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Louis] who is [Michael]'s father grounded [Michael] after finding out what [Michael] had done at school. [Jennifer] and [Michael] had a picnic at the park. They had sandwiches and salad. [Louis] loves dancing with his wife. Her name is [Beverly]. [Beverly] took her daughter [Nicole] to school during the cold winter morning.",
+            "query": "('Nicole', 'Jennifer')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "7e5e7045-23ce-43ca-b57c-2ba52e034009"
+    },
+    {
+        "question": "Story:\n[Robert] 'wife [Marie] went with him to a cruise. [Marie]'s daughter [Elsie] stayed home and studied. [Lizzie]'s uncle [Antonio] was looking forward to visiting for the summer. [Lizzie] and her sister [Elsie] were fighting. They never fight long though, and they made up the next day.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Robert, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Robert's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] 'wife [Marie] went with him to a cruise. [Marie]'s daughter [Elsie] stayed home and studied. [Lizzie]'s uncle [Antonio] was looking forward to visiting for the summer. [Lizzie] and her sister [Elsie] were fighting. They never fight long though, and they made up the next day.",
+            "query": "('Robert', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "a13257fa-2309-4bcc-a47c-b83a39c2ce9d"
+    },
+    {
+        "question": "Story:\n[Marie]'s son, [John], was busy with school activities and forgot to meet his sister. [Louis] asked his sister [Tracy] to help him with his math homework. [Tracy] was n't sure what to do, so she asked her sister [Dorothy] for some help. [Dorothy] went with her nephew [John] to pick out a pet puppy for his birthday.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Louis and Marie, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Louis is Marie's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie]'s son, [John], was busy with school activities and forgot to meet his sister. [Louis] asked his sister [Tracy] to help him with his math homework. [Tracy] was n't sure what to do, so she asked her sister [Dorothy] for some help. [Dorothy] went with her nephew [John] to pick out a pet puppy for his birthday.",
+            "query": "('Marie', 'Louis')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "0a86ab40-875a-4ad1-bf95-4ebeda3a9a62"
+    },
+    {
+        "question": "Story:\n[Robert] needed someone to help him move out of his dorm last May. He asked his brother [Antonio] and he said he would help him. [Louis] is proud of his son. His name is [Samuel]. [Louis] went to pick up his son [Samuel] from the baseball practice. [Samuel] has always wanted to go to Disneyland. His uncle [Antonio] has promised to take him this summer.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Robert and Samuel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Robert is Samuel's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] needed someone to help him move out of his dorm last May. He asked his brother [Antonio] and he said he would help him. [Louis] is proud of his son. His name is [Samuel]. [Louis] went to pick up his son [Samuel] from the baseball practice. [Samuel] has always wanted to go to Disneyland. His uncle [Antonio] has promised to take him this summer.",
+            "query": "('Samuel', 'Robert')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "4e810700-75ab-40e4-962e-1ee0f5337a2b"
+    },
+    {
+        "question": "Story:\nOnce [Harold] arrived, he waived at his daughter Beth from the deck. Beth's daughter [Rebecca] saw him and smiled, happy to see him. [Dorothy] and her daughter [Rebecca] went out for ice cream. [Dorothy] got a cone and [Rebecca] got a sundae. [Shantel] married [Harold], and she gave birth to a beautiful daughter named [Tracy].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Tracy and Dorothy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Tracy is Dorothy's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "Once [Harold] arrived, he waived at his daughter Beth from the deck. Beth's daughter [Rebecca] saw him and smiled, happy to see him. [Dorothy] and her daughter [Rebecca] went out for ice cream. [Dorothy] got a cone and [Rebecca] got a sundae. [Shantel] married [Harold], and she gave birth to a beautiful daughter named [Tracy].",
+            "query": "('Dorothy', 'Tracy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "430cdb8b-86dc-44e4-9375-33363d6f8c3f"
+    },
+    {
+        "question": "Story:\n[Harold] and his wife [Shantel] are going to be at the play. [Harold] is very happy to have such a great daughter like [Beverly]. [Beverly] was trying to reach her daughter [Nicole]. [Nicole] had her phone turned off because she was shopping with her sister [Jennifer], though.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jennifer and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jennifer is Shantel's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harold] and his wife [Shantel] are going to be at the play. [Harold] is very happy to have such a great daughter like [Beverly]. [Beverly] was trying to reach her daughter [Nicole]. [Nicole] had her phone turned off because she was shopping with her sister [Jennifer], though.",
+            "query": "('Shantel', 'Jennifer')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "716a2576-58bb-47e0-b824-4fd32d320014"
+    },
+    {
+        "question": "Story:\n[Antonio] was wondering where his son [Aaron] was. After some investigation he found out [Aaron] was playing soccer with his sister [Bettie]. [Bernardo] was n't sure if he actually wanted to visit his sister [Bettie]. After he thought about it, he decided to visit his brother [Bobby] instead.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Bobby, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Bobby's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Antonio] was wondering where his son [Aaron] was. After some investigation he found out [Aaron] was playing soccer with his sister [Bettie]. [Bernardo] was n't sure if he actually wanted to visit his sister [Bettie]. After he thought about it, he decided to visit his brother [Bobby] instead.",
+            "query": "('Bobby', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "0f377fd3-6d9d-4d13-8243-dfe01e24e018"
+    },
+    {
+        "question": "Story:\n[Beverly] drove her son [Paul] to his soccer game. [Pedro] went out for pizza with his daughter [Annie] and his brother [Louis]. [Louis] is a man with a son named [Paul].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Annie and Beverly, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Annie is Beverly's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly] drove her son [Paul] to his soccer game. [Pedro] went out for pizza with his daughter [Annie] and his brother [Louis]. [Louis] is a man with a son named [Paul].",
+            "query": "('Beverly', 'Annie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "38fb79e7-c5a8-46d1-9ecc-641924708e6a"
+    },
+    {
+        "question": "Story:\n[Jennifer] was playing in the sandbox with her brother [Wayne]. [Louis] took her daughter [Jennifer] for ice cream. [Harold] watched his daughter [Marie] playing basketball. [Marie] threw the ball to her brother [Louis] who made the basket.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Wayne and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Wayne is Harold's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] was playing in the sandbox with her brother [Wayne]. [Louis] took her daughter [Jennifer] for ice cream. [Harold] watched his daughter [Marie] playing basketball. [Marie] threw the ball to her brother [Louis] who made the basket.",
+            "query": "('Harold', 'Wayne')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "dc9f071a-798c-4855-9b17-ff0b2c90b82a"
+    },
+    {
+        "question": "Story:\n[Elsie] went on a vacation with her brother [Allan]. [Allan] is son of [Marie]. [Marie] asked her son [Allan] to help her fix her television. [Allan] and his aunt, [Tracy], went to Disney World. They had a great time!\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Tracy and Elsie, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Tracy is Elsie's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Elsie] went on a vacation with her brother [Allan]. [Allan] is son of [Marie]. [Marie] asked her son [Allan] to help her fix her television. [Allan] and his aunt, [Tracy], went to Disney World. They had a great time!",
+            "query": "('Elsie', 'Tracy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "8a2c5cce-fa4c-462b-bc45-f467f333c498"
+    },
+    {
+        "question": "Story:\n[Shantel]'s granddaughter [Elsie] had a math test to study for and [Shantel] helped her. [Marie] made sure to pack lunch for her son [Allan] and daughter [Elsie]. She felt strange not packing for her daughter [Angelica], who had just recently gone off to college.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Angelica and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Angelica is Shantel's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel]'s granddaughter [Elsie] had a math test to study for and [Shantel] helped her. [Marie] made sure to pack lunch for her son [Allan] and daughter [Elsie]. She felt strange not packing for her daughter [Angelica], who had just recently gone off to college.",
+            "query": "('Shantel', 'Angelica')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "2935d001-ae0a-4054-858e-11bf48a71b03"
+    },
+    {
+        "question": "Story:\n[Bernardo] has always felt ignored in his big family. His brother [Bobby] always got all the attention of their parents, who recounted his every accomplishment to all the household. [Bobby] and his brother [Aaron] were rough-housing. [Tracy], [Aaron]'s mother, called from the other room and told them to play nice. [Bernardo] and his wife [Erika] are going to be at the play.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Tracy and Erika, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Tracy is Erika's?",
+        "answer": "mother-in-law",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bernardo] has always felt ignored in his big family. His brother [Bobby] always got all the attention of their parents, who recounted his every accomplishment to all the household. [Bobby] and his brother [Aaron] were rough-housing. [Tracy], [Aaron]'s mother, called from the other room and told them to play nice. [Bernardo] and his wife [Erika] are going to be at the play.",
+            "query": "('Erika', 'Tracy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "9765d21d-50cd-49d5-8963-e01aa8e80b09"
+    },
+    {
+        "question": "Story:\n[Karen] was really close with her grandmother [Shantel]. When [Shantel] passed, [Karen] leaned on her brother [Michael] for support. [Shantel] loves cooking for her son. His name is [Antonio]. [Beverly] talks to her son [Michael] every day.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Beverly, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Beverly's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Karen] was really close with her grandmother [Shantel]. When [Shantel] passed, [Karen] leaned on her brother [Michael] for support. [Shantel] loves cooking for her son. His name is [Antonio]. [Beverly] talks to her son [Michael] every day.",
+            "query": "('Beverly', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "ad258151-a57f-4b7a-91a7-32911b886774"
+    },
+    {
+        "question": "Story:\n[Aaron] invited his uncle [Pedro] to dinner [Louis] is the great brother of [Pedro]. [Harold]'s daughter, [Tracy], is having some trouble. Her son, [Aaron], is n't doing well in school.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Louis and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Louis is Harold's?",
+        "answer": "son",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Aaron] invited his uncle [Pedro] to dinner [Louis] is the great brother of [Pedro]. [Harold]'s daughter, [Tracy], is having some trouble. Her son, [Aaron], is n't doing well in school.",
+            "query": "('Harold', 'Louis')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "f9e6ee8a-e73c-4b25-ac15-4fc2960b6840"
+    },
+    {
+        "question": "Story:\n[Bettie] took her sister [Erika] out for dinner to celebrate her birthday. [Antonio] loves his daughter [Erika]. [Harold]'s son is [Antonio]. [Antonio] and his father always go fishing together on Sundays and have a great time together. [Harold] was sitting in the stands as he watched his daughter [Beverly] walk across the aisle and get her college diploma.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Bettie and Beverly, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Bettie is Beverly's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bettie] took her sister [Erika] out for dinner to celebrate her birthday. [Antonio] loves his daughter [Erika]. [Harold]'s son is [Antonio]. [Antonio] and his father always go fishing together on Sundays and have a great time together. [Harold] was sitting in the stands as he watched his daughter [Beverly] walk across the aisle and get her college diploma.",
+            "query": "('Beverly', 'Bettie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "087dfea9-c6d2-4291-b6ef-d372343b7bfd"
+    },
+    {
+        "question": "Story:\n[Bernardo] hated [Antonio], so [Bernardo] ran away from home. [Bernardo] figured [Antonio] did n't like being hid dad anyhow. [Tracy]'s son [Bobby] and son [Bernardo] went to the park together to play. [Bobby] and his wife [Laura] went to a lovely anniversary dinner.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Laura, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Laura's?",
+        "answer": "father-in-law",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bernardo] hated [Antonio], so [Bernardo] ran away from home. [Bernardo] figured [Antonio] did n't like being hid dad anyhow. [Tracy]'s son [Bobby] and son [Bernardo] went to the park together to play. [Bobby] and his wife [Laura] went to a lovely anniversary dinner.",
+            "query": "('Laura', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "bfff4c0e-1712-448c-87f3-496686394abe"
+    },
+    {
+        "question": "Story:\n[Beverly] and her son [Wayne] went to the zoo and then out to dinner yesterday. [Shantel] is so happy for her son. Her son [Pedro] just joined the Army. [Beverly] and her mother [Shantel] went dress shopping on Saturday. [Wayne]'s grandfather [Harold] is going to [Wayne]'s birthday party.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Pedro, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Pedro's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly] and her son [Wayne] went to the zoo and then out to dinner yesterday. [Shantel] is so happy for her son. Her son [Pedro] just joined the Army. [Beverly] and her mother [Shantel] went dress shopping on Saturday. [Wayne]'s grandfather [Harold] is going to [Wayne]'s birthday party.",
+            "query": "('Pedro', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "7349b70c-8136-480c-81ec-06c54018c74b"
+    },
+    {
+        "question": "Story:\n[Dorothy] was so proud of her daughter [Heather] for getting straight A's this semester. [Harold] asked his granddaughter [Heather] to help him plan a surprise party for his wife [Shantel]. [Dorothy]'s daughter, [Annie], asked her mom to read her a story.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Annie and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Annie is Shantel's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Dorothy] was so proud of her daughter [Heather] for getting straight A's this semester. [Harold] asked his granddaughter [Heather] to help him plan a surprise party for his wife [Shantel]. [Dorothy]'s daughter, [Annie], asked her mom to read her a story.",
+            "query": "('Shantel', 'Annie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "e46ec071-aff3-4468-97b8-102cb391d1cc"
+    },
+    {
+        "question": "Story:\n[Louis] enjoys the company of his sibling [Tracy]. [Jennifer] and her father [Louis] went to the park. They had a wonderful time there, feeding the ducks. [Jennifer]'s mother [Beverly] made a bake while [Beverly]'s father, [Harold], moved the lawn.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Tracy and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Tracy is Harold's?",
+        "answer": "daughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Louis] enjoys the company of his sibling [Tracy]. [Jennifer] and her father [Louis] went to the park. They had a wonderful time there, feeding the ducks. [Jennifer]'s mother [Beverly] made a bake while [Beverly]'s father, [Harold], moved the lawn.",
+            "query": "('Harold', 'Tracy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "04476071-66ab-4c5d-96a3-908367430860"
+    },
+    {
+        "question": "Story:\n[Shantel]'s son, [Louis], was busy with school activities and forgot to meet his sister. [Harold]'s wife, [Shantel] was hungry, so [Harold] cooked her her favorite meal. [Michael] asked his son, [Louis], to help paint his house. [Jennifer] and [Michael] had a picnic at the park. They had sandwiches and salad.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jennifer and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jennifer is Harold's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel]'s son, [Louis], was busy with school activities and forgot to meet his sister. [Harold]'s wife, [Shantel] was hungry, so [Harold] cooked her her favorite meal. [Michael] asked his son, [Louis], to help paint his house. [Jennifer] and [Michael] had a picnic at the park. They had sandwiches and salad.",
+            "query": "('Harold', 'Jennifer')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "6e05e317-d73b-450b-8180-04fbe55fceec"
+    },
+    {
+        "question": "Story:\n[Pedro] is a very hot guy, but his sister [Beverly] is even more attractive. [Antonio] taught his daughter, [Bettie], how to ride a bike. [Bettie] was excited for today, its her daughter's, [Tracy], spring break. She will finally get to see her. [Antonio] is a factory worker. He has a wonderful sister by the name of [Beverly].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Pedro and Tracy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Pedro is Tracy's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Pedro] is a very hot guy, but his sister [Beverly] is even more attractive. [Antonio] taught his daughter, [Bettie], how to ride a bike. [Bettie] was excited for today, its her daughter's, [Tracy], spring break. She will finally get to see her. [Antonio] is a factory worker. He has a wonderful sister by the name of [Beverly].",
+            "query": "('Tracy', 'Pedro')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "d80c2f5d-56fe-4c75-ba12-0d3065f633b0"
+    },
+    {
+        "question": "Story:\n[Ronald] played catch with his dad, [Robert] [Tracy] and her brother [Louis] were having a wonderful time at Disneyland. [Louis]'s son [Samuel] entered rehab for the ninth time at the age of thirty. [Robert] and [Samuel] get along pretty well but it has nothing to do with [Robert] being the uncle of [Samuel].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Ronald and Tracy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Ronald is Tracy's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Ronald] played catch with his dad, [Robert] [Tracy] and her brother [Louis] were having a wonderful time at Disneyland. [Louis]'s son [Samuel] entered rehab for the ninth time at the age of thirty. [Robert] and [Samuel] get along pretty well but it has nothing to do with [Robert] being the uncle of [Samuel].",
+            "query": "('Tracy', 'Ronald')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "7369eb51-321e-4df2-91b3-f9f8f670fdb9"
+    },
+    {
+        "question": "Story:\n[Michelle] went shopping at the mall with her mother [Marie] [Marie] wants to make a special meal for her daughter [Michelle]'s birthday. [Shantel] is a girl with a grandmother named [Michelle]. [Michelle] and her sister [John] went to the ice cream shop.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and John, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is John's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Michelle] went shopping at the mall with her mother [Marie] [Marie] wants to make a special meal for her daughter [Michelle]'s birthday. [Shantel] is a girl with a grandmother named [Michelle]. [Michelle] and her sister [John] went to the ice cream shop.",
+            "query": "('John', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "8bda7be1-d72e-44d2-8624-e768f5ed04f6"
+    },
+    {
+        "question": "Story:\n[Jennifer] and her brother [Michael] went to the basketball game and had a great time. [Nicole] and her mother [Beverly] attended a play at the theater. [Louis] took his son [Michael] to school this morning because he missed the bus. [Beverly] took her daughter [Jennifer] to school during the cold winter morning.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Nicole and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Nicole is Louis's?",
+        "answer": "daughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] and her brother [Michael] went to the basketball game and had a great time. [Nicole] and her mother [Beverly] attended a play at the theater. [Louis] took his son [Michael] to school this morning because he missed the bus. [Beverly] took her daughter [Jennifer] to school during the cold winter morning.",
+            "query": "('Louis', 'Nicole')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "7b775245-bf0f-499c-8d47-dfef90733ea5"
+    },
+    {
+        "question": "Story:\n[Robert] bought his daughter [Elsie] and son [John] a gift. [Elsie]'s sister [Michelle] did n't get anything. [Michelle] loves visiting with her aunt [Tracy].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Tracy and John, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Tracy is John's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] bought his daughter [Elsie] and son [John] a gift. [Elsie]'s sister [Michelle] did n't get anything. [Michelle] loves visiting with her aunt [Tracy].",
+            "query": "('John', 'Tracy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "138fc315-76e4-49bb-9866-bba72d3b4755"
+    },
+    {
+        "question": "Story:\n[Kevin] and his son [Antonio] are playing a father-son game of basketball. [Aaron] is waiting to go to dinner with his dad [Antonio]. [Kevin] is going to be spending the weekend with his grandfather [Harold]. [Aaron] asked his father [Antonio] if he could have a video game and he said okay.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Antonio, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Antonio's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Kevin] and his son [Antonio] are playing a father-son game of basketball. [Aaron] is waiting to go to dinner with his dad [Antonio]. [Kevin] is going to be spending the weekend with his grandfather [Harold]. [Aaron] asked his father [Antonio] if he could have a video game and he said okay.",
+            "query": "('Antonio', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "5752a88c-d424-4546-894d-6c9bf90d13ce"
+    },
+    {
+        "question": "Story:\n[Heather] told her dad [Pedro] about how much fun she had with her sister [Cheryl] at the park. [Antonio] and his brother [Robert] went to the arcade. They had a wonderful time. [Pedro] hit his brother [Antonio] in the head.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Cheryl and Robert, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Cheryl is Robert's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Heather] told her dad [Pedro] about how much fun she had with her sister [Cheryl] at the park. [Antonio] and his brother [Robert] went to the arcade. They had a wonderful time. [Pedro] hit his brother [Antonio] in the head.",
+            "query": "('Robert', 'Cheryl')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "4a0589fd-f600-4d23-9c93-0c576402d276"
+    },
+    {
+        "question": "Story:\n[Shantel] and her daughter [Beverly] went out to dinner. [Dorothy] took her sister [Beverly] out for dinner to celebrate her birthday. [Robert] invited his daughter [Elsie] to go shopping. [Elsie]'s grandmother [Shantel] stayed at home sick.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Dorothy and Robert, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Dorothy is Robert's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] and her daughter [Beverly] went out to dinner. [Dorothy] took her sister [Beverly] out for dinner to celebrate her birthday. [Robert] invited his daughter [Elsie] to go shopping. [Elsie]'s grandmother [Shantel] stayed at home sick.",
+            "query": "('Robert', 'Dorothy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "78400966-06a3-415a-9e5e-e0b3dc824dfd"
+    },
+    {
+        "question": "Story:\n[Dorothy] and her daughter [Rebecca] went to church. They were both very religious. [Shantel]'s daughter, [Beverly], and her husband [Harold] helped her weed the garden. [Dorothy] and her sister [Beverly] are the only children in their family.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Rebecca and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Rebecca is Harold's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Dorothy] and her daughter [Rebecca] went to church. They were both very religious. [Shantel]'s daughter, [Beverly], and her husband [Harold] helped her weed the garden. [Dorothy] and her sister [Beverly] are the only children in their family.",
+            "query": "('Harold', 'Rebecca')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "f11749ce-6aae-4fbb-bf64-c16bfa0c486e"
+    },
+    {
+        "question": "Story:\n[Harold] bought some jewelry for his granddaughter [Erika]. [Bobby] and his brother [Aaron] like to go to the movies every weekend. [Bettie] has started to accompany her brother [Aaron] to the movies whenever he goes. [Bettie] and her sister [Erika] were getting together this weekend so that they could go hiking together they had n't spent time together alone in a while.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Bobby and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Bobby is Harold's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harold] bought some jewelry for his granddaughter [Erika]. [Bobby] and his brother [Aaron] like to go to the movies every weekend. [Bettie] has started to accompany her brother [Aaron] to the movies whenever he goes. [Bettie] and her sister [Erika] were getting together this weekend so that they could go hiking together they had n't spent time together alone in a while.",
+            "query": "('Harold', 'Bobby')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "a56ab53a-b5bc-4b4a-a72b-ae8471190593"
+    },
+    {
+        "question": "Story:\n[Tracy] called her brother, [Louis], up to see how he was doing after surgery. [Tracy] is the mother of a son named [Aaron]. [Shantel] was trying to calm down her daughter [Marie]. [Marie] was upset because her brother [Louis] kept making fun of her.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Aaron, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Aaron's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Tracy] called her brother, [Louis], up to see how he was doing after surgery. [Tracy] is the mother of a son named [Aaron]. [Shantel] was trying to calm down her daughter [Marie]. [Marie] was upset because her brother [Louis] kept making fun of her.",
+            "query": "('Aaron', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "3c4ba4fd-a733-4677-9908-b34e8c1c419c"
+    },
+    {
+        "question": "Story:\n[Beverly] took her son [Michael] to the park. [Louis] loved teaching his son, [Michael], baseball. [Tracy] asked her two sisters [Marie] and [Beverly] if they were free for coffee this coming weekend.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marie and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marie is Louis's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly] took her son [Michael] to the park. [Louis] loved teaching his son, [Michael], baseball. [Tracy] asked her two sisters [Marie] and [Beverly] if they were free for coffee this coming weekend.",
+            "query": "('Louis', 'Marie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "456406b2-673b-4462-a0a2-6799536639e8"
+    },
+    {
+        "question": "Story:\n[Robert] is an engineer who loves to take his son [Allan] to the science museum to help him learn about the world [Roberto] liked to visit his uncle [Robert]. They played ball together a lot. [Pedro] was delighted to watch his son [Roberto] steal third base in the Championship baseball game. [Allan]'s sister, [Michelle], bought movie tickets at a discount rate.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michelle and Pedro, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michelle is Pedro's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] is an engineer who loves to take his son [Allan] to the science museum to help him learn about the world [Roberto] liked to visit his uncle [Robert]. They played ball together a lot. [Pedro] was delighted to watch his son [Roberto] steal third base in the Championship baseball game. [Allan]'s sister, [Michelle], bought movie tickets at a discount rate.",
+            "query": "('Pedro', 'Michelle')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "e523eeb3-6ba8-408f-a091-034e384684ea"
+    },
+    {
+        "question": "Story:\n[Samuel]'s uncle, [Pedro], was being very loud at the dinner table. [Louis] who is [Samuel]'s father grounded [Samuel] after finding out what [Samuel] had done at school. [James] and his father [Pedro] went to the golf course in town on Saturday and had a great time. [James] has always wanted to go to Disneyland. His uncle [Robert] has promised to take him this summer.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Robert and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Robert is Louis's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Samuel]'s uncle, [Pedro], was being very loud at the dinner table. [Louis] who is [Samuel]'s father grounded [Samuel] after finding out what [Samuel] had done at school. [James] and his father [Pedro] went to the golf course in town on Saturday and had a great time. [James] has always wanted to go to Disneyland. His uncle [Robert] has promised to take him this summer.",
+            "query": "('Louis', 'Robert')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "d065628c-bd3a-496d-ae91-2c2a3829cc49"
+    },
+    {
+        "question": "Story:\n[Marie] wanted to go shopping and she asked her mother [Shantel] to go with her. She then decided to ask her sister [Dorothy] to go too. [Aaron] was so excited to introduce his new girlfriend to his mother, [Tracy]. [Aaron] was happy to see his aunt [Dorothy].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Tracy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Tracy's?",
+        "answer": "mother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie] wanted to go shopping and she asked her mother [Shantel] to go with her. She then decided to ask her sister [Dorothy] to go too. [Aaron] was so excited to introduce his new girlfriend to his mother, [Tracy]. [Aaron] was happy to see his aunt [Dorothy].",
+            "query": "('Tracy', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "d6f00792-93fc-4fd5-8526-5c464a8bab3d"
+    },
+    {
+        "question": "Story:\n[Bernardo] and his brother [Aaron] went to the movies. [Bernardo] wanted to see an action movie, but [Aaron] convinced him to go to a horror film instead. [Bobby] bought a book for his father [Antonio]. [Shantel] returned home from work to find her daughter Jesse asleep on the couch. Jesse's older brother [Antonio] was doing his homework in his room. [Bobby] has always felt ignored in his big family. His brother [Aaron] always got all the attention of their parents, who recounted his every accomplishment to all the household.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Bernardo and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Bernardo is Shantel's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bernardo] and his brother [Aaron] went to the movies. [Bernardo] wanted to see an action movie, but [Aaron] convinced him to go to a horror film instead. [Bobby] bought a book for his father [Antonio]. [Shantel] returned home from work to find her daughter Jesse asleep on the couch. Jesse's older brother [Antonio] was doing his homework in his room. [Bobby] has always felt ignored in his big family. His brother [Aaron] always got all the attention of their parents, who recounted his every accomplishment to all the household.",
+            "query": "('Shantel', 'Bernardo')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "98f75ec0-a8fc-4873-8f9a-c2fc9236bc90"
+    },
+    {
+        "question": "Story:\n[Robert] watched his son [Ronald] play catch. [Ronald] tossed the ball back and fourth with his brother [Mario]. [Marie] took her son [Mario] shopping for new school clothes. They had a good time. [Marie] is always around her brother [Pedro].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Pedro and Robert, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Pedro is Robert's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] watched his son [Ronald] play catch. [Ronald] tossed the ball back and fourth with his brother [Mario]. [Marie] took her son [Mario] shopping for new school clothes. They had a good time. [Marie] is always around her brother [Pedro].",
+            "query": "('Robert', 'Pedro')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "3b63ee57-0190-4bfb-8750-4118309ea286"
+    },
+    {
+        "question": "Story:\n[Harold] took his daughter [Marie] out for nachos. [Harold]'s son [Antonio] played with his friend instead. [Allan] looks to his loving mother [Marie] for guidance in with his math homework. [Allan] went to the park with his father, [Robert].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Robert, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Robert's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harold] took his daughter [Marie] out for nachos. [Harold]'s son [Antonio] played with his friend instead. [Allan] looks to his loving mother [Marie] for guidance in with his math homework. [Allan] went to the park with his father, [Robert].",
+            "query": "('Robert', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "d594a7ea-75af-408f-8145-e78497494c10"
+    },
+    {
+        "question": "Story:\n[Marie] visited her son [Ronald] at college. [Marie] and her brother [Pedro] went to the diner to eat yummy food together. [Robert] and his father, [Harold], were having a disagreement, so they asked [Ronald], [Robert]'s son, to settle it for them.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Pedro, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Pedro's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie] visited her son [Ronald] at college. [Marie] and her brother [Pedro] went to the diner to eat yummy food together. [Robert] and his father, [Harold], were having a disagreement, so they asked [Ronald], [Robert]'s son, to settle it for them.",
+            "query": "('Pedro', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "c888502b-963d-4a05-ab59-d29be937217f"
+    },
+    {
+        "question": "Story:\n[Shantel] learned that her daughter [Tracy] just got a new job. [Shantel]'s son [Louis] also works for the same company. [Louis] and his son [Samuel] went to the park to look for different kinds of birds. [Tracy] loves her brother [Robert].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Robert and Samuel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Robert is Samuel's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] learned that her daughter [Tracy] just got a new job. [Shantel]'s son [Louis] also works for the same company. [Louis] and his son [Samuel] went to the park to look for different kinds of birds. [Tracy] loves her brother [Robert].",
+            "query": "('Samuel', 'Robert')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "ccca2b03-7c3d-4764-9015-af827d83f86f"
+    },
+    {
+        "question": "Story:\n[Erika] went to visit her grandfather [Harold] for his birthday. Her sister [Laura] could n't come as she was busy. [Robert] and his sister [Tracy] are decorating for a party. [Tracy]'s daughter [Laura] thinks the party will be fun.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Robert, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Robert's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Erika] went to visit her grandfather [Harold] for his birthday. Her sister [Laura] could n't come as she was busy. [Robert] and his sister [Tracy] are decorating for a party. [Tracy]'s daughter [Laura] thinks the party will be fun.",
+            "query": "('Robert', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "3e57aab6-a9f1-4c40-b7d2-d846db73cf3f"
+    },
+    {
+        "question": "Story:\n[Robert] was so proud that his daughter, [Michelle], made straight A's. He called his father, [Harold], right away to tell him the good news. [Michelle] and [Angelica] are sisters who have one brother named [Allan].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Angelica, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Angelica's?",
+        "answer": "grandfather",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] was so proud that his daughter, [Michelle], made straight A's. He called his father, [Harold], right away to tell him the good news. [Michelle] and [Angelica] are sisters who have one brother named [Allan].",
+            "query": "('Angelica', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "f8fd2ef8-8185-4f42-8c2a-2b57e8b4a946"
+    },
+    {
+        "question": "Story:\n[Tracy] gave her brother [Robert] a new sweater for Christmas. [Louis] was having a great dinner with his brother [Antonio]. [Dorothy], [Louis]'s sister, recommended the new Italian restaurant. [Tracy], [Dorothy]'s sister, declined the dinner invitation because she dislikes Italian food.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Robert and Antonio, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Robert is Antonio's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Tracy] gave her brother [Robert] a new sweater for Christmas. [Louis] was having a great dinner with his brother [Antonio]. [Dorothy], [Louis]'s sister, recommended the new Italian restaurant. [Tracy], [Dorothy]'s sister, declined the dinner invitation because she dislikes Italian food.",
+            "query": "('Antonio', 'Robert')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "05e7dd7c-d5db-4cf6-8d3e-a2a25646d04c"
+    },
+    {
+        "question": "Story:\n[Beverly] loves playing chess her son. His name is [Samuel]. [Antonio] took his niece [Heather] fishing Saturday. They caught a couple small fish. [Pedro] spent the day with his sister, [Beverly], and his daughter [Heather].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Samuel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Samuel's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly] loves playing chess her son. His name is [Samuel]. [Antonio] took his niece [Heather] fishing Saturday. They caught a couple small fish. [Pedro] spent the day with his sister, [Beverly], and his daughter [Heather].",
+            "query": "('Samuel', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "2ed3fa39-1ae8-46fb-8c03-0299312a752c"
+    },
+    {
+        "question": "Story:\n[Dorothy] is looking for a good gift for her sister [Marie]. [Antonio] and his daughter [Emma] spent Father's Day together. [Emma] took her dad out to a sports bar, and they had a great time watching football and drinking beer there. [Emma] took her mother [Tracy] to the doctor. Later, [Tracy] told her sister [Dorothy] what the doctor said.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marie and Antonio, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marie is Antonio's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Dorothy] is looking for a good gift for her sister [Marie]. [Antonio] and his daughter [Emma] spent Father's Day together. [Emma] took her dad out to a sports bar, and they had a great time watching football and drinking beer there. [Emma] took her mother [Tracy] to the doctor. Later, [Tracy] told her sister [Dorothy] what the doctor said.",
+            "query": "('Antonio', 'Marie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "f16b3dc5-0c22-46ee-b65f-d484ddf37058"
+    },
+    {
+        "question": "Story:\n[Shantel] and her daughter [Dorothy] went to church. They were both very religious. [Louis] 'son [Samuel] could not believe that his father bought him a coffee machine for his birthday. [Tracy] took her mother, [Shantel], out for lunch. [Samuel] asked his aunt, [Tracy], what time it was. [Tracy] told him it was time for him to get a watch.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Dorothy and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Dorothy is Louis's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] and her daughter [Dorothy] went to church. They were both very religious. [Louis] 'son [Samuel] could not believe that his father bought him a coffee machine for his birthday. [Tracy] took her mother, [Shantel], out for lunch. [Samuel] asked his aunt, [Tracy], what time it was. [Tracy] told him it was time for him to get a watch.",
+            "query": "('Louis', 'Dorothy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "c14689e0-da32-4da4-aca3-a50074d2e19b"
+    },
+    {
+        "question": "Story:\n[Pedro] took his daughter [Heather] out for ice cream. His other daughter, [Rebecca], was still in school and could not go. [Pedro] was present in the delivery room when his daughter [Cheryl] was born, but when his daughter [Rebecca] was born he was too sick.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Cheryl and Heather, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Cheryl is Heather's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Pedro] took his daughter [Heather] out for ice cream. His other daughter, [Rebecca], was still in school and could not go. [Pedro] was present in the delivery room when his daughter [Cheryl] was born, but when his daughter [Rebecca] was born he was too sick.",
+            "query": "('Heather', 'Cheryl')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "6c51ef40-d672-492d-bf94-e6026babca55"
+    },
+    {
+        "question": "Story:\n[Shantel] was baking cookies for her grandson, [Paul]. [Paul]'s brother [Samuel] came home from school, so she baked some extra for him, too. [Wayne] wanted to get his brother [Michael] a Christmas gift so he asked his mother what she thought he would like. She said he liked video games. [Wayne] and his brother [Samuel] went to see a baseball game on Friday and had a great time.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michael and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michael is Shantel's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] was baking cookies for her grandson, [Paul]. [Paul]'s brother [Samuel] came home from school, so she baked some extra for him, too. [Wayne] wanted to get his brother [Michael] a Christmas gift so he asked his mother what she thought he would like. She said he liked video games. [Wayne] and his brother [Samuel] went to see a baseball game on Friday and had a great time.",
+            "query": "('Shantel', 'Michael')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "153973bb-60ff-4a30-8b60-4ef2beb4e0e1"
+    },
+    {
+        "question": "Story:\n[Antonio] and his brother [Pedro] were playing tag in the park. [Pedro] asked his mother [Shantel] where babies came from. [Shantel] told him they came from the stork. [Beverly] was talking to her brothers [Antonio] and [Robert] when her mother yelled for her to come inside.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Robert, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Robert's?",
+        "answer": "mother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Antonio] and his brother [Pedro] were playing tag in the park. [Pedro] asked his mother [Shantel] where babies came from. [Shantel] told him they came from the stork. [Beverly] was talking to her brothers [Antonio] and [Robert] when her mother yelled for her to come inside.",
+            "query": "('Robert', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "7031dbac-5fc6-4131-a19a-c938b11b997d"
+    },
+    {
+        "question": "Story:\n[Marie] and her sister [Tracy] played golf together. [Marie] won easily. [Lizzie] really enjoys visiting her grandfather [Harold]. [Tracy] is a sister of [Louis]. [Marie]'s daughter, [Lizzie], just graduated high school.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Louis's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie] and her sister [Tracy] played golf together. [Marie] won easily. [Lizzie] really enjoys visiting her grandfather [Harold]. [Tracy] is a sister of [Louis]. [Marie]'s daughter, [Lizzie], just graduated high school.",
+            "query": "('Louis', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "098e4965-91be-437e-8e82-195e92973d4e"
+    },
+    {
+        "question": "Story:\n[Dorothy] likes to make mini pies for her niece, [Nicole]. [Tracy] is very proud of her son. His name is [Aaron]. [Beverly] and her sister [Tracy] went shopping at the mall. [Beverly]'s daughter [Nicole] stayed home to study.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Dorothy and Aaron, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Dorothy is Aaron's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Dorothy] likes to make mini pies for her niece, [Nicole]. [Tracy] is very proud of her son. His name is [Aaron]. [Beverly] and her sister [Tracy] went shopping at the mall. [Beverly]'s daughter [Nicole] stayed home to study.",
+            "query": "('Aaron', 'Dorothy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "f88e5c01-1df1-4c9f-9c35-6f80a2b4859a"
+    },
+    {
+        "question": "Story:\n[Louis] took his daughter, [Nettie], to the Cavaliers game on Saturday. [Beverly] took her daughter [Nettie] to see her very first ballet performance. [Pedro] has a sister named [Beverly]. [Beverly]'s brother has a daughter named [Cheryl].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Cheryl and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Cheryl is Louis's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Louis] took his daughter, [Nettie], to the Cavaliers game on Saturday. [Beverly] took her daughter [Nettie] to see her very first ballet performance. [Pedro] has a sister named [Beverly]. [Beverly]'s brother has a daughter named [Cheryl].",
+            "query": "('Louis', 'Cheryl')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "ef71edf4-5425-457a-89f4-6c83ef775b67"
+    },
+    {
+        "question": "Story:\n[Shantel]'s biggest accomplishment is raising her son [Robert]. [Shantel] played catch with her grandson [Aaron]. [Aaron]'s father [Antonio] was busy at work and could n't join them. [Michelle] got accepted into her dream college. Her father [Robert] could not be any prouder.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michelle and Antonio, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michelle is Antonio's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel]'s biggest accomplishment is raising her son [Robert]. [Shantel] played catch with her grandson [Aaron]. [Aaron]'s father [Antonio] was busy at work and could n't join them. [Michelle] got accepted into her dream college. Her father [Robert] could not be any prouder.",
+            "query": "('Antonio', 'Michelle')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "2d5af82a-aa14-47cb-b704-3384a1888cec"
+    },
+    {
+        "question": "Story:\n[Shantel] and her husband [Harold], fight often. Despite this, they still love each other very much. [Mario] and his father [Robert] went to the golf course in town on Saturday and had a great time. [Harold] took his grandson [Ronald] to the lake so they could feed the ducks. [Robert] wanted his son, [Ronald], to go fishing with him.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Mario and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Mario is Shantel's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] and her husband [Harold], fight often. Despite this, they still love each other very much. [Mario] and his father [Robert] went to the golf course in town on Saturday and had a great time. [Harold] took his grandson [Ronald] to the lake so they could feed the ducks. [Robert] wanted his son, [Ronald], to go fishing with him.",
+            "query": "('Shantel', 'Mario')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "b5d320e3-0571-41df-8f0a-9b6dae0745f0"
+    },
+    {
+        "question": "Story:\n[Robert] loves his daughter [Lizzie]. They often spend time with Tim's mother [Shantel]. [Samuel] loves to play baseball with his dad, [Louis]. [Lizzie] went over to her uncle [Louis]'s house for dinner. [Louis] was a gourmet cook, and tonight he made a delicious crown of lamb.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Samuel and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Samuel is Shantel's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] loves his daughter [Lizzie]. They often spend time with Tim's mother [Shantel]. [Samuel] loves to play baseball with his dad, [Louis]. [Lizzie] went over to her uncle [Louis]'s house for dinner. [Louis] was a gourmet cook, and tonight he made a delicious crown of lamb.",
+            "query": "('Shantel', 'Samuel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "18eb7f20-cfe2-4e3d-9853-42707fd8ec31"
+    },
+    {
+        "question": "Story:\n[Cheryl] picked her sister, [Heather], up from the mall. [Heather] called her dad, [Pedro], when she got home to let him know where she was. [Beverly] borrowed some money from her brother [Robert]. [Cheryl] gave her Aunt [Beverly] a kiss.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Robert and Pedro, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Robert is Pedro's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Cheryl] picked her sister, [Heather], up from the mall. [Heather] called her dad, [Pedro], when she got home to let him know where she was. [Beverly] borrowed some money from her brother [Robert]. [Cheryl] gave her Aunt [Beverly] a kiss.",
+            "query": "('Pedro', 'Robert')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "9b6b29b0-270d-46c0-9b44-9534f5d7f6df"
+    },
+    {
+        "question": "Story:\n[Beverly] was helping her son [Wayne] complete math homework when it reminded her how her father [Harold] used to help her finish homework, too. [Beverly] just dropped off her son, [Michael], at soccer practice. Now she was on her to way to pick up her other son, [Wayne], from basketball practice.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Michael, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Michael's?",
+        "answer": "grandfather",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly] was helping her son [Wayne] complete math homework when it reminded her how her father [Harold] used to help her finish homework, too. [Beverly] just dropped off her son, [Michael], at soccer practice. Now she was on her to way to pick up her other son, [Wayne], from basketball practice.",
+            "query": "('Michael', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "03e59ba6-5e85-423f-82a0-08b2333ef10d"
+    },
+    {
+        "question": "Story:\n[Tracy]'s son, [Kevin], went with her to the store to buy candy for Halloween. [Dorothy] was talking about food with her sister [Tracy]. [Antonio]'s son, [Kevin], loves trains. [Antonio]'s sister, [Beverly], got him a nice model trail set for his birthday.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Beverly and Dorothy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Beverly is Dorothy's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Tracy]'s son, [Kevin], went with her to the store to buy candy for Halloween. [Dorothy] was talking about food with her sister [Tracy]. [Antonio]'s son, [Kevin], loves trains. [Antonio]'s sister, [Beverly], got him a nice model trail set for his birthday.",
+            "query": "('Dorothy', 'Beverly')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "cedbdf42-227a-4e57-bbe6-d86b19585f44"
+    },
+    {
+        "question": "Story:\n[Bettie] was playing in the sandbox with her brother [Bernardo]. [Laura] is taking her brother [Bernardo] out for a late dinner. [Tracy], [Bernardo]'s mother, is home with a cold. [Tracy] bought a new video game for her son [Bernardo].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Laura and Bettie, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Laura is Bettie's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bettie] was playing in the sandbox with her brother [Bernardo]. [Laura] is taking her brother [Bernardo] out for a late dinner. [Tracy], [Bernardo]'s mother, is home with a cold. [Tracy] bought a new video game for her son [Bernardo].",
+            "query": "('Bettie', 'Laura')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "19292f62-246c-4a70-b68a-0dd4b08a6651"
+    },
+    {
+        "question": "Story:\n[Louis] was teacher his daughter [Karen] how to drive. She made him a nervous wreck! [Robert] took a vacation from his job to visit his mother [Shantel] across the country for Mother's Day. [Beverly] does n't like her brother [Robert]. [Beverly] took her daughter [Karen] to see her very first ballet performance.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Louis's?",
+        "answer": "mother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Louis] was teacher his daughter [Karen] how to drive. She made him a nervous wreck! [Robert] took a vacation from his job to visit his mother [Shantel] across the country for Mother's Day. [Beverly] does n't like her brother [Robert]. [Beverly] took her daughter [Karen] to see her very first ballet performance.",
+            "query": "('Louis', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "67768b87-9c10-4ed2-a777-b85a009c949f"
+    },
+    {
+        "question": "Story:\n[Antonio] has a daughter named [Bettie] who visits him every Sunday for dinner. [Louis] was angry with his brother [Pedro] for forgetting to pick him up from school. [James] and his father [Pedro] went jogging by the lake. [Bettie] loves to visit her Uncle [Louis] on his farm.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between James and Antonio, and to describe it through only one kinship word from the posible answers, to correctly answer the question: James is Antonio's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Antonio] has a daughter named [Bettie] who visits him every Sunday for dinner. [Louis] was angry with his brother [Pedro] for forgetting to pick him up from school. [James] and his father [Pedro] went jogging by the lake. [Bettie] loves to visit her Uncle [Louis] on his farm.",
+            "query": "('Antonio', 'James')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "bb8a9c94-3150-4a66-994c-ef7396e324bb"
+    },
+    {
+        "question": "Story:\n[Robert] and his son [Ronald] went to the skating rink. [Robert] and his daughter, [Angelica] go to concerts every week. [Ronald] and [Allan] are brothers who look nothing alike. [Antonio] is a great uncle of [Angelica].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Allan, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Allan's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Robert] and his son [Ronald] went to the skating rink. [Robert] and his daughter, [Angelica] go to concerts every week. [Ronald] and [Allan] are brothers who look nothing alike. [Antonio] is a great uncle of [Angelica].",
+            "query": "('Allan', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "ef455d3a-8336-46c2-af94-a9676767a472"
+    },
+    {
+        "question": "Story:\n[Dorothy] has a son called [Jeffrey]. Each day they go to the park after school. [Antonio] had a nephew called [John] who had n't seen for a number of years. [John] asked his father [Robert] if he could have a video game and he said okay. [Jeffrey] does not like being around his uncle, [Robert]'s, company.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Dorothy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Dorothy's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Dorothy] has a son called [Jeffrey]. Each day they go to the park after school. [Antonio] had a nephew called [John] who had n't seen for a number of years. [John] asked his father [Robert] if he could have a video game and he said okay. [Jeffrey] does not like being around his uncle, [Robert]'s, company.",
+            "query": "('Dorothy', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "91b71f6a-07bc-4be8-ad9a-0f526ddec264"
+    },
+    {
+        "question": "Story:\n[Cheryl] was playing tag with her father [Pedro]. [Marie] wants her nephew, [James] to come visit her at the beach. [Antonio] and her sister [Marie] decided to take a trip to Mexico together. [Pedro] decided to take his son, [James], on a ski vacation.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Antonio and Cheryl, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Antonio is Cheryl's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Cheryl] was playing tag with her father [Pedro]. [Marie] wants her nephew, [James] to come visit her at the beach. [Antonio] and her sister [Marie] decided to take a trip to Mexico together. [Pedro] decided to take his son, [James], on a ski vacation.",
+            "query": "('Cheryl', 'Antonio')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "44e57fe5-2869-42e9-93c4-f2c785287eef"
+    },
+    {
+        "question": "Story:\n[Antonio] wants to invite his mother [Shantel] to his brother [Louis]'s birthday party with [Louis]'s son [Samuel]. [Michael] went to the store with his brother, [Samuel].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Michael, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Michael's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Antonio] wants to invite his mother [Shantel] to his brother [Louis]'s birthday party with [Louis]'s son [Samuel]. [Michael] went to the store with his brother, [Samuel].",
+            "query": "('Michael', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "a1edeeb9-d429-4325-acc5-f3ed49b55435"
+    },
+    {
+        "question": "Story:\n[Marie] is married to Thomas and when she was 24, the couple welcomed [Lizzie] into the world. [Antonio] and his sister [Marie] went to the movies to watch the newest superhero flick. [Tracy] is coming to New York to visit her niece, [Lizzie]. [Harold] is an engineer who loves to take his son [Antonio] to the science museum to help him learn about the world\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Tracy and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Tracy is Harold's?",
+        "answer": "daughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie] is married to Thomas and when she was 24, the couple welcomed [Lizzie] into the world. [Antonio] and his sister [Marie] went to the movies to watch the newest superhero flick. [Tracy] is coming to New York to visit her niece, [Lizzie]. [Harold] is an engineer who loves to take his son [Antonio] to the science museum to help him learn about the world",
+            "query": "('Harold', 'Tracy')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "155e821a-4a63-4109-8430-6eb5654e8a0d"
+    },
+    {
+        "question": "Story:\n[Marie] asked her sister, [Beverly], to loan her some money. [Beverly] then had to ask [Antonio], her brother, for a loan. [Tracy] and her daughter [Erika] went out to dinner. [Erika] misses her father [Antonio] when she is at school.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marie and Tracy, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marie is Tracy's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marie] asked her sister, [Beverly], to loan her some money. [Beverly] then had to ask [Antonio], her brother, for a loan. [Tracy] and her daughter [Erika] went out to dinner. [Erika] misses her father [Antonio] when she is at school.",
+            "query": "('Tracy', 'Marie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "b17b5da6-c34c-4853-b1fa-97e2ff246ffd"
+    },
+    {
+        "question": "Story:\n[Shantel] picked up her son [Robert] from the mall [Tracy] and her mother [Shantel] were trying to decide what to buy her son [Aaron] for Christmas. [Robert] and his father [Harold] went to the golf course in town on Saturday and had a great time.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Aaron and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Aaron is Harold's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] picked up her son [Robert] from the mall [Tracy] and her mother [Shantel] were trying to decide what to buy her son [Aaron] for Christmas. [Robert] and his father [Harold] went to the golf course in town on Saturday and had a great time.",
+            "query": "('Harold', 'Aaron')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "73a74c3b-9c24-4fcb-9145-70f5fbfe055a"
+    },
+    {
+        "question": "Story:\n[Harold] went to watch a movie with his daughter [Tracy] and his son [Robert]. [Robert]'s mother [Shantel] could not join them because she had work [Tracy] and her daughter [Emma] are entering the competition together.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Emma and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Emma is Shantel's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harold] went to watch a movie with his daughter [Tracy] and his son [Robert]. [Robert]'s mother [Shantel] could not join them because she had work [Tracy] and her daughter [Emma] are entering the competition together.",
+            "query": "('Shantel', 'Emma')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "76c973b9-9ca6-4632-bea0-9cb9e9e13a55"
+    },
+    {
+        "question": "Story:\n[Antonio] watched his daughter [Erika] playing basketball. [Erika] threw the ball to her brother [Kevin] who made the basket. [Harold] and his wife, [Shantel], needed a new refrigerator. [Shantel]'s son, [Antonio], suggested a model, and offered to help them move it in and install it.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Kevin and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Kevin is Harold's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Antonio] watched his daughter [Erika] playing basketball. [Erika] threw the ball to her brother [Kevin] who made the basket. [Harold] and his wife, [Shantel], needed a new refrigerator. [Shantel]'s son, [Antonio], suggested a model, and offered to help them move it in and install it.",
+            "query": "('Harold', 'Kevin')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "validation"
+        },
+        "id": "bef0f3b9-d595-40a8-a307-7f23b0a2e492"
+    },
+    {
+        "question": "Story:\n[Beverly]'s daughter, [Nicole], asked her mom to read her a story. [Nicole] stayed with his grandmother [Shantel] last summer on her farm. He had a great time. [Beverly] was talking to her sister [Dorothy]. They were talking about how well [Dorothy]'s daughter [Rebecca] was doing in school.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Rebecca, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Rebecca's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Beverly]'s daughter, [Nicole], asked her mom to read her a story. [Nicole] stayed with his grandmother [Shantel] last summer on her farm. He had a great time. [Beverly] was talking to her sister [Dorothy]. They were talking about how well [Dorothy]'s daughter [Rebecca] was doing in school.",
+            "query": "('Rebecca', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "4454cb7c-e0bf-4e97-97f3-28cae3fb35fd"
+    },
+    {
+        "question": "Story:\n[Shantel] took her son, [Antonio], to the circus. [Shantel]'s daughter [Dorothy] was upset that she did not get to go with them. [Pedro] went to the parade with his wife [Dorothy] and his son [Jeffrey].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jeffrey and Antonio, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jeffrey is Antonio's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] took her son, [Antonio], to the circus. [Shantel]'s daughter [Dorothy] was upset that she did not get to go with them. [Pedro] went to the parade with his wife [Dorothy] and his son [Jeffrey].",
+            "query": "('Antonio', 'Jeffrey')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "e2f0643c-a0fa-43fd-94b0-b9352925c5e6"
+    },
+    {
+        "question": "Story:\n[Cheryl] gave her brother [James] a new sweater for Christmas. [Rebecca] and her sister [Cheryl] visited [Dorothy] and her mother [Shantel]. [Rebecca] told her mom, [Dorothy], that she loved her.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between James and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: James is Shantel's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Cheryl] gave her brother [James] a new sweater for Christmas. [Rebecca] and her sister [Cheryl] visited [Dorothy] and her mother [Shantel]. [Rebecca] told her mom, [Dorothy], that she loved her.",
+            "query": "('Shantel', 'James')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "43019227-c2cd-4ff4-90d1-b3abf7a24f91"
+    },
+    {
+        "question": "Story:\n[Shantel] picked her granddaughter [Jennifer] up from school Monday. [Jennifer] 'brother [Samuel] rode the bus home after school. [Wayne] went jogging with his brother [Michael]. [Michael]'s brother [Samuel] prefers running instead.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Wayne and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Wayne is Shantel's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Shantel] picked her granddaughter [Jennifer] up from school Monday. [Jennifer] 'brother [Samuel] rode the bus home after school. [Wayne] went jogging with his brother [Michael]. [Michael]'s brother [Samuel] prefers running instead.",
+            "query": "('Shantel', 'Wayne')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "064d8797-3fa8-4bd8-847c-5ac6bcd15a27"
+    },
+    {
+        "question": "Story:\n[Allan]'s grandfather, [Harold], took the boy to the store to buy some new shoes. [Harold]'s daughter, [Dorothy], was busy caring for her son, [Jeffrey], and could n't take his call. [Marie] took her son [Allan] to the football game.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jeffrey and Marie, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jeffrey is Marie's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Allan]'s grandfather, [Harold], took the boy to the store to buy some new shoes. [Harold]'s daughter, [Dorothy], was busy caring for her son, [Jeffrey], and could n't take his call. [Marie] took her son [Allan] to the football game.",
+            "query": "('Marie', 'Jeffrey')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "51827ab9-4d42-4e84-99d3-ec9d82f1122d"
+    },
+    {
+        "question": "Story:\n[Laura] invited her father [Antonio] to dinner. [Laura] asked [Harold], her grandfather, for some candy. [Antonio] 'son [Bernardo] could not believe that his father bought him a coffee machine for his birthday. [Bernardo]'s dad [Antonio] is the CEO of the company.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Antonio, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Antonio's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Laura] invited her father [Antonio] to dinner. [Laura] asked [Harold], her grandfather, for some candy. [Antonio] 'son [Bernardo] could not believe that his father bought him a coffee machine for his birthday. [Bernardo]'s dad [Antonio] is the CEO of the company.",
+            "query": "('Antonio', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "126de665-83b5-411d-89e7-ea113dc6b49a"
+    },
+    {
+        "question": "Story:\n[Harold] bought an expensive ring for his wife [Shantel]. [Robert] loved his mother, [Shantel]. [Dorothy], [Robert]'s sister, enjoys taking her daughter, [Rebecca], to the park.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Rebecca and Harold, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Rebecca is Harold's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harold] bought an expensive ring for his wife [Shantel]. [Robert] loved his mother, [Shantel]. [Dorothy], [Robert]'s sister, enjoys taking her daughter, [Rebecca], to the park.",
+            "query": "('Harold', 'Rebecca')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "34fa72ea-de87-4c67-8d98-7fcc97a0bf81"
+    },
+    {
+        "question": "Story:\n[Louis]'s daughter, [Nicole], went to the city this weekend. She spent her time there visiting her grandfather, [Harold], and had a wonderful time with him. [Pedro] always go on Saturday to his brother 's house [Louis]. This Saturday [Pedro] took his son [Jerome] with him.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harold and Jerome, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harold is Jerome's?",
+        "answer": "grandfather",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Louis]'s daughter, [Nicole], went to the city this weekend. She spent her time there visiting her grandfather, [Harold], and had a wonderful time with him. [Pedro] always go on Saturday to his brother 's house [Louis]. This Saturday [Pedro] took his son [Jerome] with him.",
+            "query": "('Jerome', 'Harold')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "315639e6-affd-4b20-94fe-7007e9ef0822"
+    },
+    {
+        "question": "Story:\n[Antonio] and his daughter [Bettie] went looking at apartments. [Bettie] was moving out soon, and wanted her dad's advice. [Antonio] hit his brother [Louis] in the head. [Robert] went to the ball game with his brothers [Pedro] and [Louis].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Bettie and Pedro, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Bettie is Pedro's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Antonio] and his daughter [Bettie] went looking at apartments. [Bettie] was moving out soon, and wanted her dad's advice. [Antonio] hit his brother [Louis] in the head. [Robert] went to the ball game with his brothers [Pedro] and [Louis].",
+            "query": "('Pedro', 'Bettie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "f93ca8cd-fb9d-40d2-af3e-6cde20cfb73c"
+    },
+    {
+        "question": "Story:\n[Louis] went on a roadtrip with his youngest child, [Samuel]. [Marie] and her brother [Pedro] went to the movies together. [Samuel] was happy to see his aunt [Tracy]. [Tracy]'s brother [Pedro] was going to be the star in the new show.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marie and Louis, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marie is Louis's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Louis] went on a roadtrip with his youngest child, [Samuel]. [Marie] and her brother [Pedro] went to the movies together. [Samuel] was happy to see his aunt [Tracy]. [Tracy]'s brother [Pedro] was going to be the star in the new show.",
+            "query": "('Louis', 'Marie')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "0f70c34e-daad-462e-8b21-f2527a660985"
+    },
+    {
+        "question": "Story:\n[Dorothy] was excited to visit her son, [Roberto], at college. [Harold] and his wife [Shantel], took their daughter [Dorothy] and her brother [Louis] to see an opera.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Roberto and Shantel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Roberto is Shantel's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Dorothy] was excited to visit her son, [Roberto], at college. [Harold] and his wife [Shantel], took their daughter [Dorothy] and her brother [Louis] to see an opera.",
+            "query": "('Shantel', 'Roberto')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "26e0d5d0-c9f6-4ccc-911a-3f4d13d3a62e"
+    },
+    {
+        "question": "Story:\n[Angelica] called her mother [Marie] to let her know she will be back home soon. [Ronald]'s sister [Lizzie] asked him for some help planting her garden. [Shantel] and her grandson [Ronald] went to the library to check out some books. [Ronald]'s limit was 6, but [Shantel] checked some more out for him using her card. [Marie] and her daughter [Lizzie] went out to dinner.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Shantel and Angelica, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Shantel is Angelica's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Angelica] called her mother [Marie] to let her know she will be back home soon. [Ronald]'s sister [Lizzie] asked him for some help planting her garden. [Shantel] and her grandson [Ronald] went to the library to check out some books. [Ronald]'s limit was 6, but [Shantel] checked some more out for him using her card. [Marie] and her daughter [Lizzie] went out to dinner.",
+            "query": "('Angelica', 'Shantel')",
+            "task_name": "task_1.4",
+            "reasoning_length": 4,
+            "injected_noise": 1,
+            "split_origin": "train"
+        },
+        "id": "8996817d-22af-41cc-b11f-eaca867d8d75"
+    }
+]

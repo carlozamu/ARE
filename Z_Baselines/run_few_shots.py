@@ -941,6 +941,99 @@ sister<end_of_turn>
 """,
 }
 
+PROMPT_TEMPLATES_5 = {
+    'uniform_median0': f"""<start_of_turn>system
+Possible relationships: [aunt, son-in-law, grandfather, brother, sister, father, mother, grandmother, uncle, daughter-in-law, grandson, granddaughter, father-in-law, mother-in-law, nephew, son, daughter, niece]<end_of_turn>
+<start_of_turn>user
+Story: [Dorothy] and her sisters [Katherine] went to the spa. [Erica], another sister of [Dorothy], had to babysit and could n't join them. [Mary]'s daughter [Erica] went to grab dinner. [Mary]'s husband, [Daniel], was not happy about it. [Erica]'s son, [Michael], went to have lunch with her sister, [Katherine].
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Michael is Daniel's?<end_of_turn>
+<start_of_turn>model
+grandson<end_of_turn>
+<start_of_turn>user
+Story: [Dorothy] went to lunch with her son [Arthur] and her sister [Bonnie]. [Mary] spent a great day shopping with her daughter, [Bonnie]. [Lilly] went to her brother [Warren]'s birthday party [Arthur] went to the game with his sister [Lilly]. [Seth] played chess with his brother [Warren].
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Seth is Mary's?<end_of_turn>
+<start_of_turn>model
+grandson<end_of_turn>
+<start_of_turn>user
+Story: [Mary] had to work a double shift and needed someone to watch her son [Robert]. Luckily his sister [Erica] was free. [Erica]'s husband, [Joseph], went skiing with his son, [Ross]. [Ross] and his brother [Michael] went to the park to play basketball. [Mary] and her daughter [Bonnie] went to see a movie yesterday and then got ice cream afterwards.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Michael is Bonnie's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+""",
+    'uniform_median1': f"""<start_of_turn>system
+Possible relationships: [aunt, son-in-law, grandfather, brother, sister, father, mother, grandmother, uncle, daughter-in-law, grandson, granddaughter, father-in-law, mother-in-law, nephew, son, daughter, niece]<end_of_turn>
+<start_of_turn>user
+Story: [Dorothy] went to her father [Daniel] Birthday party [Alvin] took his son's [Warren] and [Seth] to school. [Dorothy] baked some cookies for her son [Seth] because it was his birthday. [Daniel] walked his daughter [Erica] down the aisle on her wedding day. [Warren] and his sister, [Lilly] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Erica is Lilly's?<end_of_turn>
+<start_of_turn>model
+aunt<end_of_turn>
+<start_of_turn>user
+Story: [Joseph] rushed to the hospital to find out that his wife and already given birth to a boy and had named him [Alfredo]. [Katherine] called her son, [Ronald], from upstairs so that he could eat lunch. [Ronald] got his sister, [Jon], so she could eat lunch as well. [Bonnie] wanted to buy her mother [Mary] flowers for Mothers Day, so she called her sister [Katherine] to go shopping with her. [Alfredo]'s grandmother, [Mary], was prepping for a marathon at age 70!
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Jon is Joseph's?<end_of_turn>
+<start_of_turn>model
+niece<end_of_turn>
+<start_of_turn>user
+Story: [Mary] had to work a double shift and needed someone to watch her son [Robert]. Luckily his sister [Erica] was free. [Erica]'s husband, [Joseph], went skiing with his son, [Ross]. [Ross] and his brother [Michael] went to the park to play basketball. [Mary] and her daughter [Bonnie] went to see a movie yesterday and then got ice cream afterwards.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Michael is Bonnie's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+""",
+    'uniform_median2': f"""<start_of_turn>system
+Possible relationships: [aunt, son-in-law, grandfather, brother, sister, father, mother, grandmother, uncle, daughter-in-law, grandson, granddaughter, father-in-law, mother-in-law, nephew, son, daughter, niece]<end_of_turn>
+<start_of_turn>user
+Story: [Ross] likes to watch baseball with his brother. His name is [Michael]. [Joseph] is taking his wife [Erica] out to dinner for their date tonight. [Bonnie]'s husband, [Clifton], went skiing with his son, [Kenneth]. [Erica] and her son [Ross] went out to lunch together yesterday. [Michael]'s aunt [Bonnie] took him to the store to do some last minute party shopping.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Kenneth is Joseph's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+<start_of_turn>user
+Story: [Alfredo] got his son, [Joseph], a car for his birthday. [Patrick] and his brother [Alfredo] always played pranks on each other [Dorothy], who is the sister of [Katherine], is a lovely girl. [Mary] and her daughter [Dorothy] went to see a movie yesterday and then got ice cream afterwards. [Erica]'s mother [Mary] was teaching her how to teach when [Erica]'s husband [Joseph] arrived home.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Patrick is Katherine's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+<start_of_turn>user
+Story: [Katherine]'s son, [Ronald], went to have lunch with her sister, [Dorothy]. [Dorothy] took her sister, [Bonnie], out to dinner for her birthday. [Ronald] took his sister, [Charlsie], to a baseball game. [Jon], who is the sister of [Charlsie], is a lovely girl. [Jon] went to her brother [James]'s birthday party
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. James is Bonnie's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+""",
+    'uniform_median3': f"""<start_of_turn>system
+Possible relationships: [aunt, son-in-law, grandfather, brother, sister, father, mother, grandmother, uncle, daughter-in-law, grandson, granddaughter, father-in-law, mother-in-law, nephew, son, daughter, niece]<end_of_turn>
+<start_of_turn>user
+Story: [Seth] and his grandmother [Mary] went to the science museum. They both had fun, and learned some things, too. [Arthur] enjoys going fishing with his brother. His name is [Warren]. [Seth] and his brother [Warren] always played pranks on each other [Warren] was disappointed that his father, [Alvin], would n't be at the play to see him perform. [Warren] took his son [Alvin] out to play gold later that night. [Warren] played chess with his brother [Arthur].
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Mary is Warren's?<end_of_turn>
+<start_of_turn>model
+grandmother<end_of_turn>
+<start_of_turn>user
+Story: [Ross] went to his brother [Michael]'s Birthday party [Ronald]'s aunt [Erica] likes to drink a little bit too much wine at family gatherings. [Patrick] asked his brother [Ross] if he would come help him fix his car next weekend. [Erica] was mad at her son, [Michael]. She found he'd been stealing from her purse. [Robert] would n't let his son [James] go to the park by himself. [James]'s brother [Ronald] offered to go with him.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Patrick is Robert's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+<start_of_turn>user
+Story: [Patrick]'s father, [Joseph], went bowling with his sister, [Katherine]. [Katherine] and her son [Ronald] went out to lunch together yesterday. [Alfredo] went to the Farmer's market with his mother [Erica] and his brother [Patrick]. [Ronald] went to the game with his sister [Charlsie].
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Charlsie is Erica's?<end_of_turn>
+<start_of_turn>model
+niece<end_of_turn>
+""",
+    'uniform_median4': f"""<start_of_turn>system
+Possible relationships: [aunt, son-in-law, grandfather, brother, sister, father, mother, grandmother, uncle, daughter-in-law, grandson, granddaughter, father-in-law, mother-in-law, nephew, son, daughter, niece]<end_of_turn>
+<start_of_turn>user
+Story: [Katherine] attended the graduation of her sister's son [Michael]. [David]'s grandmother, [Mary], was prepping for a marathon at age 70! [Mary] asked her son [Joseph] if his son [Michael] wanted anything in particular for his birthday. [Bonnie] took her sister, [Dorothy], out to dinner for her birthday. [Bonnie] was excited to visit her son, [David], at college.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Katherine is Dorothy's?<end_of_turn>
+<start_of_turn>model
+sister<end_of_turn>
+<start_of_turn>user
+Story: [Warren] and his brother [Arthur] went to the park to play basketball. [Bonnie] went to the store with her sister [Dorothy] [Seth] and [Arthur] went to help their mother [Dorothy] pick up her husband [Alvin]'s new golf clubs. [Seth]'s mother, [Dorothy], waited impatiently for him at the diner.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Bonnie is Warren's?<end_of_turn>
+<start_of_turn>model
+aunt<end_of_turn>
+<start_of_turn>user
+Story: [Erica] and her brother [Clifton] enlisted in the army [Ross] was thrilled his brother, [Michael], was able to make it to the party. [Ross] adored his brother, [Michael]. [Michael]'s brother, [Patrick], also adored him. [Erica] and her son [Alfredo] made hot dogs. [Alfredo]'s brother [Michael] ate one.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Patrick is Clifton's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+""",
+}
+
 
 # --- Configuration ---
 MODEL_NAME = "google/gemma-3-1b-it" 
@@ -1001,12 +1094,12 @@ async def run_few_shots():
     fitness = Fitness(llm=llm_client)
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    log_file = os.path.join(script_dir, "few_shots_results_2.txt")
+    log_file = os.path.join(script_dir, "few_shots_results_5.txt")
     os.makedirs(os.path.dirname(log_file), exist_ok=True)
     with open(log_file, "w", encoding="utf-8") as f:
         pass
     
-    for name, examples in PROMPT_TEMPLATES_2.items():
+    for name, examples in PROMPT_TEMPLATES_5.items():
         start_time = time.time()
         # 2. Fetch the ENTIRE dataset
         log_and_print(f"Fetching the COMPLETE dataset for stratified few-shot with examples {name}", log_file)

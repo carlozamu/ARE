@@ -105,7 +105,7 @@ async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness
     
     async def sem_task(semaphore, fitness, individual, problem, execution_order):
         async with semaphore:
-            return await fitness._evaluate_single_problem(
+            return await fitness._evaluate_single_problem_final(
                 individual=individual, 
                 problem=problem, 
                 execution_order=execution_order

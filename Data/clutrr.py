@@ -260,7 +260,7 @@ CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the l
         return few_shots_prompt
     
     @staticmethod
-    def build_prompt_clutrr_few_shots(story: str, query: str) -> str:
+    def build_prompt_clutrr_few_shots(story: str, query: str, examples:str = "") -> str:
         clean_query = query.replace("(", "").replace(")", "").replace("'", "")
         try:
             name1, name2 = [name.strip() for name in clean_query.split(',')]
@@ -294,10 +294,32 @@ CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the l
 <start_of_turn>model
 """
         
-        return few_shots_prompt
+        few_shots_prompt_low_hops = f"""<start_of_turn>system
+Possible relationships: [{options}]<end_of_turn>
+<start_of_turn>user
+Story: [Theresa] is very proud of her son. His name is [Tony]. [Wayne] took his sister [Theresa] out to dinner for her birthday.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Wayne is Tony's?<end_of_turn>
+<start_of_turn>model
+uncle<end_of_turn>
+<start_of_turn>user
+Story: [Katherine] had a daughter named [Charlsie]. [Bonnie]'s son, [William], went to have lunch with her sister, [Katherine]. [Robert] and his wife [Katherine] went to see a movie. [Katherine]'s daughter, [Jon], came with them. [Charlsie] went to the store with her sister [Jon]
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. William is Robert's?<end_of_turn>
+<start_of_turn>model
+nephew<end_of_turn>
+<start_of_turn>user
+Story: [Stanley] and his sister [Rita] bought a painting for [Stanley]'s father [Steve]. [Steve]'s brother [James] said it was an ugly painting. [Rita] went to her aunt [Patrice]'s house for dinner. [Patrice] made meatloaf, and it was delicious. [Kathleen] bought her mother, [Ellen], a puppy for her birthday. [Sharon] was glad to see her father, [James], at her dance recital. [Kathleen], who is the sister of [Mabel], is a lovely girl. [Ellen] had picked her daughter [Sharon] out the cutest new dress to wear on her birthday. [Mabel] went to the store with her sister [Kathleen] [Ellen] had picked her daughter [Kathleen] out the cutest new dress to wear on her birthday.
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Patrice is Ellen's?<end_of_turn>
+<start_of_turn>model
+sister<end_of_turn>
+<start_of_turn>user
+Story: {story}
+CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. {name2} is {name1}'s?<end_of_turn>
+<start_of_turn>model"""
+        
+        return few_shots_prompt_low_hops
     
     @staticmethod
-    def build_prompt_clutrr(story: str, query: str, examples: str) -> str:
+    def build_prompt_clutrr(story: str, query: str, examples: str = None) -> str:
         clean_query = query.replace("(", "").replace(")", "").replace("'", "")
         try:
             name1, name2 = [name.strip() for name in clean_query.split(',')]
@@ -471,9 +493,29 @@ Understand the family relationship between {name2} and {name1}, and to describe 
                 if level not in [2, 3, 4]:
                     curated_dataset.extend(random.sample(by_complexity[level], 1))
             return curated_dataset
-
+        
         # --- n=2: Specific Level Sampling ---
         elif n == 2:
+            # Take 90 from level 2
+            return random.sample(by_complexity[2], 90)
+
+        # --- n=3: Specific Level Sampling ---
+        elif n == 3:
+            # Take 90 from level 3
+            return random.sample(by_complexity[3], 90)
+        
+        # --- n=4: Specific Level Sampling ---
+        elif n == 4:
+            # Take 90 from level 4
+            return random.sample(by_complexity[4], 90)
+        
+        # --- n=5: Specific Level Sampling ---
+        elif n == 5:
+            # Take 90 from level 5
+            return random.sample(by_complexity[5], 90)
+        
+        # --- n=6: Specific Level Sampling ---
+        elif n == 6:
             # Take 90 from level 6
             return random.sample(by_complexity[6], 90)
         

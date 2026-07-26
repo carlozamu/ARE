@@ -42,27 +42,64 @@ class SpeciationEngine:
         and returns the completely new, unevaluated next generation.
         """
         # --- 1. THE THERMOSTAT (Dynamic Thresholding) ---
-        # Assuming you updated this to pass generation or removed the arg as discussed
         self._adjust_compatibility_threshold(generation=generation)
 
-        # --- 2. STAGNATION CULLING WITH EXTINCTION FAILSAFE ---
+        # --- 2. GLOBAL ELITISM ---
+        # Elites must be extracted BEFORE stagnation culling to ensure the absolute 
+        # best individuals are preserved, even if their parent species has stagnated.
+        pool = []
+        for sp_idx, species in enumerate(self.species_list):
+            if species.alive:
+                current_species_size = len(species.members)
+                for member in species.members:
+                    pool.append({
+                        "member": member, 
+                        "species_id": sp_idx, 
+                        "species_size": current_species_size 
+                    })
+
+        random.shuffle(pool)
+
+        tiers = defaultdict(list)
+        for item in pool:
+            tiers[(item["member"].accuracy, item["species_id"])].append(item)
+
+        for group in tiers.values():
+            group.sort(key=lambda x: x["member"].fitness, reverse=True)
+            for rank, item in enumerate(group):
+                item["diversity_rank"] = rank
+
+        pool.sort(
+            key=lambda x: (
+                x["member"].accuracy,      
+                -x["diversity_rank"],      
+                -x["species_size"],         
+                x["member"].fitness        
+            ),
+            reverse=True
+        )
+
+        global_elites = [item["member"] for item in pool[:3]]
+        num_elites = len(global_elites)
+
+
+        # --- 3. STAGNATION CULLING WITH EXTINCTION FAILSAFE ---
+        # Now we can safely cull species knowing our top performers are safeguarded.
         mature_active = []
         stagnant_this_turn = []
         
         for s in self.species_list:
             if not s.alive:
-                continue # Skip species that are already dead
+                continue 
                 
             s.update_stagnation()
-            if s.generations_without_improvement >= self.dropoff_age and s.id != 0: # Never kill the Primordial Soup
-                s.alive = False # Kill instead of removing
+            if s.generations_without_improvement >= self.dropoff_age and s.id != 0: 
+                s.alive = False 
                 s.generations_without_improvement = 0
                 stagnant_this_turn.append(s)
             else:
                 mature_active.append(s)
 
-        # THE NEAT FAILSAFE 
-        # Ensure we don't try to mandate 2 species if the engine hasn't even created 2 yet
         total_mature_ever_created = len([s for s in self.species_list if s.id != 0])
         if len(mature_active) < min(2, total_mature_ever_created):
             stagnant_this_turn.sort(key=lambda x: x.max_fitness_ever, reverse=True)
@@ -70,82 +107,42 @@ class SpeciationEngine:
             spared_species = stagnant_this_turn[:needed]
             
             for s in spared_species:
-                s.alive = True # Resurrect the spared species
+                s.alive = True 
                 s.generations_without_improvement = 0  
                 print(f"⚠️ Failsafe Triggered: Spared Species {s.id} from mass extinction.")
 
-        # --- 3. GLOBAL ELITISM ---
-        # Extraction and Context Preservation
-        pool = []
-        for sp_idx, species in enumerate(self.species_list):
-            if species.alive:
-                # Calculate the size of the current species
-                current_species_size = len(species.members)
-                for member in species.members:
-                    pool.append({
-                        "member": member, 
-                        "species_id": sp_idx, 
-                        "species_size": current_species_size # Inject size metadata
-                    })
-
-        # Quaternary Constraint: Randomization
-        random.shuffle(pool)
-
-        # Grouping by Accuracy and Species
-        tiers = defaultdict(list)
-        for item in pool:
-            tiers[(item["member"].accuracy, item["species_id"])].append(item)
-
-        # Intra-Species Fitness Ranking (Diversity Rank)
-        for group in tiers.values():
-            group.sort(key=lambda x: x["member"].fitness, reverse=True)
-            for rank, item in enumerate(group):
-                item["diversity_rank"] = rank
-
-        # The Updated Multi-Key Sort
-        pool.sort(
-            key=lambda x: (
-                x["member"].accuracy,      # 1st: Maximize accuracy
-                -x["diversity_rank"],      # 2nd: Maximize diversity (Rank 0 beats Rank 1)
-                -x["species_size"],        # 3rd: NEW - Prioritize smaller species 
-                x["member"].fitness        # 4th: Maximize fitness
-            ),
-            reverse=True
-        )
-
-        # Elite Extraction
-        global_elites = [item["member"] for item in pool[:3]]
-        num_elites = len(global_elites)
 
         # --- 4. EXPLICIT FITNESS SHARING ---
         species_target_sizes = self._calculate_offspring_allocation(num_elites)
 
+
         # --- 5. BREEDING ---
         next_generation_global: List[AgentGenome] = []
 
+        # Safely copy the elites into the next generation. 
         for elite in global_elites:
             next_generation_global.append(elite.copy())
         
         for species in self.species_list:
             if not species.alive:
-                continue # Do not breed dead species
+                continue 
                 
             target_size = species_target_sizes.get(species.id, 0)
             if target_size > 0:
                 offspring = await self.breeder.breed_next_generation(species.members, target_size, generation=generation)
                 next_generation_global.extend(offspring)
 
+
         # --- 6. PREPARE FOR NEXT GENERATION ---
-        # Instead of deleting species that got 0 slots, we kill them
         for s in self.species_list:
             if s.alive:
                 target_size = species_target_sizes.get(s.id, 0)
                 if target_size == 0 and s.id != 0:
-                    s.alive = False # Died out due to lack of resources
+                    s.alive = False 
             s.update_representative()
 
         return next_generation_global
-
+    
     def _speciate_population(self, population: List[AgentGenome]):
         # 1. We look at ALL species (even dead ones) to find the best similarity
         # We categorize the soup separately

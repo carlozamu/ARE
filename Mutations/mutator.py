@@ -78,8 +78,8 @@ mutator = Mutator(breeder_llm, config=tuning_config)
         # ARCHITECTURE: High floor (0.35) ensures we continuously explore the vast DAG connection space.
         p_arch = max(0.35, 0.70 * (0.90 ** decay_steps))
         
-        # GENE EXPECTED VALUE: Target ~1.5 nodes mutated early on, cooling to ~0.5 nodes.
-        target_mutated_nodes = max(0.5, 1.5 * (0.95 ** decay_steps))
+        # GENE EXPECTED VALUE: Target ~1.5 nodes mutated early on, cooling to ~0.8 nodes.
+        target_mutated_nodes = max(0.9, 1.5 * (0.95 ** decay_steps))
         
         # N-SCALING: We divide the target by the actual node count.
         # If target is 0.8, and we have 4 nodes, each node gets a 20% chance.
@@ -87,7 +87,7 @@ mutator = Mutator(breeder_llm, config=tuning_config)
         if generation < 2:
             p_gene = 0.8 # Warm-up bypass
         else:
-            p_gene = min(1.0, target_mutated_nodes / max(1, node_count))
+            p_gene = max(0.25, min(1.0, target_mutated_nodes / max(1, node_count)))
 
         # --- 2. Architectural Probabilities (Discrete State Control) ---
         if node_count <= 2:
@@ -95,7 +95,7 @@ mutator = Mutator(breeder_llm, config=tuning_config)
         elif node_count == 3:
             p_add_node = 0.60 
         elif node_count == 4:
-            p_add_node = 0.15 
+            p_add_node = 0.25 
         else: 
             p_add_node = 0.0 
             
@@ -345,13 +345,13 @@ mutator = Mutator(breeder_llm, config=tuning_config)
                 # --- Micro-Layer Distribution Calculation ---
                 instruction_length_tokens = len(node.instruction) // 4
                 
-                # Normalize length to a [0, 1] scale (assuming 150 tokens is "highly bloated")
+                # Normalize length to a [0, 1] scale (assuming 100 tokens is "highly bloated")
                 remaining = 1.0
                 bloat_factor = min(1.0, instruction_length_tokens / 100.0)
                 
                 # 1. Split Logic: Requires both high bloat AND graph space
-                # Do not attempt to split tiny instructions (< 40 chars)
-                if total_nodes >= 5 or instruction_length_tokens <= 25:
+                # Do not attempt to split tiny instructions (< 25 tokens)
+                if len(genome.nodes) >= 4 or instruction_length_tokens <= 25:
                     split_prob = 0.0
                 else:
                     # Approaches 65% chance as the node gets extremely bloated
@@ -410,7 +410,7 @@ mutator = Mutator(breeder_llm, config=tuning_config)
         Hybrid Mutation: Splits one node into two sequential nodes (A -> B).
         Executes as an atomic database transaction with full graph rollback capabilities.
         """
-        if len(genome.nodes) >= 5: return
+        if len(genome.nodes) >= 4: return
         
         # 1. Ask LLM to generate the split instructions
         name1, prompt1, name2, prompt2 = await self._split_instructions(

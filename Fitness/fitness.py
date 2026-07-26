@@ -44,6 +44,34 @@ class Fitness:
             answer_length=len(generated_ans.split()),
         )
         return score, token_used
+    
+    async def _evaluate_single_problem_final(self, individual: Phenotype, problem: Dict, execution_order: list[tuple[PromptNode, list[int]]]) -> Tuple[float, int]:
+        """Evaluates a single problem and returns (Score, Tokens_Used)."""        
+        try:
+            response = await individual.run(problem=problem['question'], execution_order=execution_order)
+            generated_ans = response['answer']
+            stats = response['stats']
+            token_used = stats.get('total_tokens', 0)
+        except Exception as e:
+            print(f"Error executing phenotype: {e}")
+            generated_ans = ""
+            token_used = 0
+
+        expected = problem['answer']
+        is_correct = False
+        
+        if problem.get('task_type') == 'cluttr':
+            mapped_response = CLUTTRManager.map_to_relation(generated_ans.strip().lower())
+            is_correct = (mapped_response == expected)
+        else:
+            is_correct = (generated_ans.strip().lower() == expected.strip().lower())
+            
+        score = self.calculator.compute_score(
+            is_correct=is_correct,
+            token_count=token_used,
+            answer_length=len(generated_ans.split()),
+        )
+        return is_correct, score, len(generated_ans.split())
 
     async def _evaluate_individual_full(self, individual: Phenotype, problem_pool: List[Dict]) -> List[tuple[int, float]]:
         """

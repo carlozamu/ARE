@@ -70,8 +70,9 @@ class UnifiedFitnessCalculator:
         else:
             # Scale proportionally between 0.0 and max_penalty
             token_penalty = self.max_penalty * ((token_count - lower_bound) / (upper_bound - lower_bound))
-        
-        answer_length_penalty = min(0.2, 0.05 * answer_length)  # Penalize excessively long answers
+
+        if answer_length > 2:
+            token_penalty += 0.3
 
         # Total final score for this problem (ensuring it never goes negative here)
-        return max(0.0, (ans_points - token_penalty - answer_length_penalty))
+        return max(0.0, (ans_points - token_penalty))

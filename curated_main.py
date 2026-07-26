@@ -38,7 +38,7 @@ async def run_evolution():
     fitness_evaluator = Fitness(llm=llm_client, use_reasoning=False)
     mutator = Mutator(breeder_llm_client=llm_client)
     dataset_manager = CLUTTRManager(split_config="gen_train234_test2to10")
-    dataset = dataset_manager.get_or_create_curated_dataset() 
+    dataset = dataset_manager.get_or_create_curated_dataset(6) 
     
     # 2. Setup the Micro Layer (Instantiates fresh LLM sockets)
     selector = RankBasedSelection()
@@ -61,6 +61,10 @@ async def run_evolution():
         speciation_engine = checkpoint_state["speciation_engine"]
         zero_shot_stats = checkpoint_state["zero_shot_stats"]
         few_shots_stats = checkpoint_state["few_shots_stats"]
+        if generation_idx == MAX_GENERATIONS + 1:
+            evaluated_population = []
+            for species in speciation_engine.species_list:
+                evaluated_population.extend(species.members)
         
         # CRITICAL: Re-inject the newly instanced breeder (with active LLM client) into the restored engine
         speciation_engine.breeder = breeder
@@ -209,16 +213,16 @@ async def run_evolution():
     force_cleanup()
 
     # find individual with the highest accuracy
-    best_accuracy_individual = max(evaluated_population, key=lambda x: x.genome.accuracy)
+    best_accuracy_individual = max(evaluated_population, key=lambda x: x.accuracy)
     best_acc_phenotype = Phenotype(genome=best_accuracy_individual, llm_client=llm_client)
-    print(f"🏆 Final Best Accuracy: {best_accuracy_individual.genome.accuracy:.4f}")
+    print(f"🏆 Final Best Accuracy: {best_accuracy_individual.accuracy:.4f}")
     await run_ERA_best_individual(dataset_manager, fitness_evaluator, best_acc_phenotype)
 
     # find individual with the highest fitness
-    best_fitness_individual = max(evaluated_population, key=lambda x: x.genome.fitness)
+    best_fitness_individual = max(evaluated_population, key=lambda x: x.fitness)
     if best_fitness_individual.id != best_accuracy_individual.id:
         best_fit_phenotype = Phenotype(genome=best_fitness_individual, llm_client=llm_client)
-        print(f"🏆 Final Best Fitness: {best_fitness_individual.genome.fitness:.4f}")
+        print(f"🏆 Final Best Fitness: {best_fitness_individual.fitness:.4f}")
         await run_ERA_best_individual(dataset_manager, fitness_evaluator, best_fit_phenotype)
 
 if __name__ == "__main__":
