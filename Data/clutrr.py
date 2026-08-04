@@ -271,7 +271,7 @@ CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the l
         options = "aunt, son-in-law, grandfather, brother, sister, father, mother, grandmother, uncle, daughter-in-law, grandson, granddaughter, father-in-law, mother-in-law, nephew, son, daughter, niece"
 
         # 2. Construct true multi-turn few-shot history        
-        few_shots_prompt = f"""<start_of_turn>system
+        few_shots_prompt_6_hops = f"""<start_of_turn>system
 Possible relationships: [{options}]<end_of_turn>
 <start_of_turn>user
 Story: [Seth] and his grandmother [Mary] went to the science museum. They both had fun, and learned some things, too. [Arthur] enjoys going fishing with his brother. His name is [Warren]. [Seth] and his brother [Warren] always played pranks on each other [Warren] was disappointed that his father, [Alvin], would n't be at the play to see him perform. [Warren] took his son [Alvin] out to play gold later that night. [Warren] played chess with his brother [Arthur].
@@ -316,7 +316,7 @@ Story: {story}
 CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. {name2} is {name1}'s?<end_of_turn>
 <start_of_turn>model"""
         
-        return few_shots_prompt_low_hops
+        return few_shots_prompt_6_hops
     
     @staticmethod
     def build_prompt_clutrr(story: str, query: str, examples: str = None) -> str:
@@ -518,6 +518,22 @@ Understand the family relationship between {name2} and {name1}, and to describe 
         elif n == 6:
             # Take 90 from level 6
             return random.sample(by_complexity[6], 90)
+
+        elif n == 7:
+                    # Take 90 from level 7
+                    return random.sample(by_complexity[7], 90)
+
+        elif n == 8:
+                    # Take 90 from level 8
+                    return random.sample(by_complexity[8], 90)
+
+        elif n == 9:
+                    # Take 90 from level 9
+                    return random.sample(by_complexity[9], 90)
+
+        elif n == 10:
+                    # Take 90 from level 10
+                    return random.sample(by_complexity[10], 90)
         
         return []
     
