@@ -1,29 +1,102 @@
-import uuid
+import random
+from Genome.agent_genome import Genome
+from Gene.gene import Gene
 
-class PromptNode:
+class TwoTierMutation:
     """
-    Represents a node in the reasoning chain.
+    Handles Macro (hop changes), Micro (example ID changes), Order Swaps, and Length adjustments
+    for multi-attribute Gene objects.
     """
-    def __init__(self, name: str, instruction: str, embedding=None, node_id=None, innovation_number:int=-1):
-        # 1. Identity
-        self.id = node_id if node_id is not None else str(uuid.uuid4())
-        self.innovation_number = innovation_number
-        
-        # 2. Structure & DNA
-        self.name = name 
-        self.instruction = instruction
-        
-        # 3. Speciation Data
-        self.embedding = embedding if embedding is not None else []
+    def __init__(
+        self,
+        pool: DatasetPoolProtocol,
+        p_micro: float = 0.4,    # Fine-tune example within the same hop
+        p_macro: float = 0.15,   # Shift hop category entirely
+        p_swap: float = 0.2,     # Swap position of two shots
+        p_length: float = 0.2,   # Expand or contract prompt length
+        max_k: int = 6,
+        min_k: int = 1
+    ):
+        self.pool = pool
+        self.p_micro = p_micro
+        self.p_macro = p_macro
+        self.p_swap = p_swap
+        self.p_length = p_length
+        self.max_k = max_k
+        self.min_k = min_k
 
-    def copy(self):
-        """
-        Creates a deep clone with a NEW ID (default behavior for mutation).
-        """
-        return PromptNode(
-            name=self.name, 
-            instruction=self.instruction, 
-            embedding=self.embedding.copy() if isinstance(self.embedding, list) else [],
-            node_id=str(uuid.uuid4()), 
-            innovation_number=self.innovation_number
-        )
+    def mutate(self, genome: Genome) -> Genome:
+        mutated = genome.copy()
+        has_changed = False
+
+        # 1. Micro-Mutation (Sampling a new example under the existing hop level)
+        for i in range(mutated.k):
+            if random.random() < self.p_micro:
+                current_hop = mutated.genes[i].hop_level
+                # Sample full record from pool to ensure problem/answer/names match the new ID
+                example_data = self.pool.get_random_example_data(current_hop)
+                
+                mutated.genes[i] = Gene(
+                    hop_level=current_hop,
+                    example_id=example_data['example_id'],
+                    problem=example_data['problem'],
+                    answer=example_data['answer'],
+                    names=example_data['names']
+                )
+                has_changed = True
+
+        # 2. Macro-Mutation (Changing structural hop category entirely)
+        for i in range(mutated.k):
+            if random.random() < self.p_macro:
+                new_hop = self.pool.get_random_hop()
+                example_data = self.pool.get_random_example_data(new_hop)
+                
+                mutated.genes[i] = Gene(
+                    hop_level=new_hop,
+                    example_id=example_data['example_id'],
+                    problem=example_data['problem'],
+                    answer=example_data['answer'],
+                    names=example_data['names']
+                )
+                has_changed = True
+
+        # 3. Order Swap Mutation (Exploring positional sequence effects)
+        if mutated.k > 1 and random.random() < self.p_swap:
+            idx1, idx2 = random.sample(range(mutated.k), 2)
+            mutated.genes[idx1], mutated.genes[idx2] = mutated.genes[idx2], mutated.genes[idx1]
+            has_changed = True
+
+        # 4. Length Shift Mutation (Adding/removing a shot)
+        if random.random() < self.p_length:
+            length_changed = self._mutate_length(mutated)
+            if length_changed:
+                has_changed = True
+
+        # Invalidate fitness cache if any mutation operation occurred
+        if has_changed:
+            mutated.fitness = None
+
+        return mutated
+
+    def _mutate_length(self, genome: Genome) -> bool:
+        can_expand = genome.k < self.max_k
+        can_contract = genome.k > self.min_k
+
+        if not can_expand and not can_contract:
+            return False
+
+        expand = random.random() < 0.5 if (can_expand and can_contract) else can_expand
+
+        if expand and can_expand:
+            # Create a fully populated Gene via the pool
+            new_gene = self.pool.create_random_gene()
+            insert_pos = random.randint(0, genome.k)
+            genome.genes.insert(insert_pos, new_gene)
+            return True
+            
+        elif not expand and can_contract:
+            drop_pos = random.randint(0, genome.k - 1)
+            genome.genes.pop(drop_pos)
+            return True
+
+        return False

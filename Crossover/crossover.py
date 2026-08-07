@@ -1,64 +1,40 @@
-import numpy as np
-from Genome.agent_genome import AgentGenome
+from typing import List, Tuple
+import random
+from Genome.agent_genome import Genome
+from Gene.gene import Gene
 
 class Crossover:
-    @staticmethod
-    def create_offspring(parent1: AgentGenome, parent2: AgentGenome) -> AgentGenome:
-        offspring = AgentGenome()
-        # 1. Determine Fitness First
-        if parent1.fitness > parent2.fitness:
-            better_parent, worse_parent = parent1, parent2
-        elif parent2.fitness > parent1.fitness:
-            better_parent, worse_parent = parent2, parent1
-        else: #choose the smallest as better partent if fitness is equal, otherwise choose randomly
-            size_p1 = len(parent1.nodes) + sum(1 for conn in parent1.connections.values() if conn.enabled)
-            size_p2 = len(parent2.nodes) + sum(1 for conn in parent2.connections.values() if conn.enabled)
-            if size_p1 < size_p2:
-                better_parent, worse_parent = parent1, parent2
-            elif size_p2 < size_p1:
-                better_parent, worse_parent = parent2, parent1
+    """
+    Variable-length position-aware crossover.
+    Inherits prompt length dynamically from parents and transfers whole slots.
+    """
+    def __init__(self, max_k: int = 6, min_k: int = 1):
+        self.max_k = max_k
+        self.min_k = min_k
+
+    def mate(self, parent1: Genome, parent2: Genome) -> Tuple[Genome, Genome]:
+        child1_genes = self._mix_genes(parent1, parent2)
+        child2_genes = self._mix_genes(parent2, parent1)
+
+        return Genome(child1_genes), Genome(child2_genes)
+
+    def _mix_genes(self, primary: Genome, secondary: Genome) -> List[Gene]:
+        # Choose child length bounded between parents or within limits
+        child_k = random.randint(
+            max(self.min_k, min(primary.k, secondary.k)),
+            min(self.max_k, max(primary.k, secondary.k))
+        )
+
+        child_genes = []
+        for i in range(child_k):
+            # If position exists in both, pick 50/50
+            if i < primary.k and i < secondary.k:
+                chosen_parent = primary if random.random() < 0.5 else secondary
+                child_genes.append(chosen_parent.genes[i].copy())
+            # Otherwise inherit from whichever parent has a gene at position i
+            elif i < primary.k:
+                child_genes.append(primary.genes[i].copy())
             else:
-                if np.random.rand() < 0.5:
-                    better_parent, worse_parent = parent1, parent2
-                else:
-                    better_parent, worse_parent = parent2, parent1
+                child_genes.append(secondary.genes[i].copy())
 
-        # 2. Inherit Pointers from the Fitter Parent
-        offspring.start_node_innovation_number = better_parent.start_node_innovation_number
-        offspring.end_node_innovation_number = better_parent.end_node_innovation_number
-
-        # 2. Inherit Nodes (FIXED: 50/50 Semantic Inheritance)
-        worst_parent_node_ids = set(worse_parent.nodes.keys())
-        for node_id, better_node in better_parent.nodes.items():
-            if node_id in worst_parent_node_ids:
-                # Node exists in both: 50/50 chance to get exact prompt semantics from either
-                random_number = np.random.rand()
-                if random_number < 0.5:
-                    offspring.nodes[node_id] = better_node.copy()
-                else:
-                    offspring.nodes[node_id] = worse_parent.nodes[node_id].copy()
-            else:
-                # Disjoint/Excess in better parent
-                offspring.nodes[node_id] = better_node.copy()
-                
-        # if equal_fitness:
-        #     # Union the remaining disjoint/excess nodes from worse parent
-        #     for _id in worst_parent_node_ids:
-        #         if _id not in list(offspring.nodes.keys()):
-        #             offspring.nodes[_id] = worse_parent.nodes[_id].copy()
-
-        # 3. Inherit Connections
-        for conn_id, better_conn in better_parent.connections.items():
-            offspring.connections[conn_id] = better_conn.copy()
-
-        # if equal_fitness:
-        #     for conn_id, worse_conn in worse_parent.connections.items():
-        #         if conn_id not in list(offspring.connections.keys()):
-        #             offspring_nodes_list = list(offspring.nodes.keys())
-        #             if worse_conn.in_node in offspring_nodes_list and worse_conn.out_node in offspring_nodes_list:
-        #                 offspring.connections[conn_id] = worse_conn.copy()
-
-        # 4. Fix Graph Integrity
-        #offspring.remove_cycles()
-        
-        return offspring
+        return child_genes

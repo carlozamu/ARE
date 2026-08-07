@@ -1,172 +1,148 @@
 import asyncio
 from typing import List, Dict, Tuple
-from Gene.gene import PromptNode
+from Genome.agent_genome import Genome
 from Utils.LLM import LLM
 from Data.clutrr import CLUTTRManager
-from Phenotype.phenotype import Phenotype
-from Fitness.fitness_function import UnifiedFitnessCalculator
 
-PERCENTAGE_FAILURE_THRESHOLD = 0.7 # If more than thi % of the batch is failed, trigger circuit breaker
+PERCENTAGE_FAILURE_THRESHOLD = 0.7 
 
 class Fitness:
     def __init__(self, llm: LLM, use_reasoning: bool = False) -> None:
         self.use_reasoning = use_reasoning
-        self.calculator = UnifiedFitnessCalculator(
-            llm=llm
-        )
+        self.llm = llm
         self.best_accuracy = 0.0
         self.avg_accuracy = 0.0
     
-    async def _evaluate_single_problem(self, individual: Phenotype, problem: Dict, execution_order: list[tuple[PromptNode, list[int]]]) -> Tuple[float, int]:
-        """Evaluates a single problem and returns (Score, Tokens_Used)."""        
-        try:
-            response = await individual.run(problem=problem['question'], execution_order=execution_order)
-            generated_ans = response['answer']
-            stats = response['stats']
-            token_used = stats.get('total_tokens', 0)
-        except Exception as e:
-            print(f"Error executing phenotype: {e}")
-            generated_ans = ""
-            token_used = 0
-
-        expected = problem['answer']
-        is_correct = False
+    async def _evaluate_single_problem(self, examples_str: str, problem: Dict) -> Tuple[float, int, bool]:
+        """Evaluates a single problem using a pre-computed examples string to save CPU."""
+        story = problem['metadata']['story']
+        query = problem['metadata']['query']
         
+        # 1. Build prompt natively using the CLUTTRManager
+        prompt = CLUTTRManager.build_prompt_clutrr_few_shots(story, query, examples_str)
+        
+        # 2. High-speed token approximation (1 token ≈ 4 characters) 
+        # Avoids loading a slow CPU tokenizer in the async hot-path
+        prompt_tokens = len(prompt) // 4 
+        
+        try:
+            # Low temperature for classification, minimal max_tokens for a single-word output
+            generated_ans = await self.llm.generate_text(
+                user_prompt=prompt, 
+                temperature=0.0,
+                max_tokens=5 
+            )
+            response_tokens = max(1, len(generated_ans) // 4)
+        except Exception as e:
+            print(f"Error executing LLM: {e}")
+            generated_ans = ""
+            response_tokens = 0
+
+        token_used = prompt_tokens + response_tokens
+        expected = problem['answer']
+        
+        # 3. Grade Answer
         if problem.get('task_type') == 'cluttr':
             mapped_response = CLUTTRManager.map_to_relation(generated_ans.strip().lower())
             is_correct = (mapped_response == expected)
         else:
             is_correct = (generated_ans.strip().lower() == expected.strip().lower())
             
-        score = self.calculator.compute_score(
-            is_correct=is_correct,
-            token_count=token_used,
-            answer_length=len(generated_ans.split()),
-        )
-        return score, token_used
+        # 4. Compute Score
+        score = 1.0 if is_correct else 0.0
+
+        return score, token_used, is_correct
     
-    async def _evaluate_single_problem_final(self, individual: Phenotype, problem: Dict, execution_order: list[tuple[PromptNode, list[int]]]) -> Tuple[float, int]:
-        """Evaluates a single problem and returns (Score, Tokens_Used)."""        
+    async def _evaluate_individual_full(self, individual: Genome, problem_pool: List[Dict]) -> Tuple[List[int], float]:
+        """
+        Evaluates an individual using Chunked Concurrency.
+        Maximizes GPU throughput while preserving the Circuit Breaker logic.
+        """
+        # --- OPTIMIZATION 1: Compute few-shot string exactly once per genome ---
         try:
-            response = await individual.run(problem=problem['question'], execution_order=execution_order)
-            generated_ans = response['answer']
-            stats = response['stats']
-            token_used = stats.get('total_tokens', 0)
+            examples_str = individual.get_samples()
         except Exception as e:
-            print(f"Error executing phenotype: {e}")
-            generated_ans = ""
-            token_used = 0
+            print(f"Failed to generate samples for genome: {e}")
+            individual.fitness = 0.01
+            return [], 0.0
 
-        expected = problem['answer']
-        is_correct = False
+        total_score = 0.0
+        total_correct = 0
+        problems_evaluated = 0
+        token_usages = []
+        failed_count = 0
         
-        if problem.get('task_type') == 'cluttr':
-            mapped_response = CLUTTRManager.map_to_relation(generated_ans.strip().lower())
-            is_correct = (mapped_response == expected)
-        else:
-            is_correct = (generated_ans.strip().lower() == expected.strip().lower())
+        # --- OPTIMIZATION 2: Chunked Evaluation ---
+        chunk_size = 10 
+        
+        for i in range(0, len(problem_pool), chunk_size):
+            chunk = problem_pool[i : i + chunk_size]
             
-        score = self.calculator.compute_score(
-            is_correct=is_correct,
-            token_count=token_used,
-            answer_length=len(generated_ans.split()),
-        )
-        return is_correct, score, len(generated_ans.split())
-
-    async def _evaluate_individual_full(self, individual: Phenotype, problem_pool: List[Dict]) -> List[tuple[int, float]]:
-        """
-        Helper method to evaluate a single individual across all problems sequentially,
-        preserving the Circuit Breaker logic.
-        """
-        if not individual.genome.evaluated:
-            total_score = 0.0
-            failed_count = 0
-            accuracy = 0
-            problems_evaluated = 0
-            token_usages = []
-
-            execution_order = individual.genome.get_execution_order()
+            # Fire the chunk concurrently to the LLM class
+            tasks = [self._evaluate_single_problem(examples_str, p) for p in chunk]
+            results = await asyncio.gather(*tasks)
             
-            for i, problem in enumerate(problem_pool):
-                # This remains sequential per-individual to support the DAG and circuit breaker
-                score, tokens = await self._evaluate_single_problem(individual, problem, execution_order)
+            for score, tokens, is_correct in results:
                 total_score += score
                 problems_evaluated += 1
-                
                 if tokens > 0:
                     token_usages.append(tokens)
                 
+                if is_correct:
+                    total_correct += 1
+                
                 if score < 0.1:
                     failed_count += 1
-                else:
-                    failed_count = 0 
-                    accuracy += 1
-                    
-                # --- CIRCUIT BREAKER ---
-                if failed_count > len(problem_pool) * PERCENTAGE_FAILURE_THRESHOLD:
-                    break 
             
-            # Calculate final fitness
-            avg_score = ((total_score) / (problems_evaluated))*100 if problems_evaluated > 0 else 0.0
-            accuracy = ((accuracy) / (problems_evaluated))*100 if problems_evaluated > 0 else 0.0
-            avg_tokens = sum(token_usages)/len(token_usages) if token_usages else 0.0
-            individual.genome.fitness = float(max(0.01, avg_score))
-            individual.genome.accuracy = accuracy
-            individual.genome.avg_tokens = avg_tokens
-            individual.genome.evaluated = True
+            # --- CIRCUIT BREAKER ---
+            if failed_count > len(problem_pool) * PERCENTAGE_FAILURE_THRESHOLD:
+                break 
         
-            # Return tokens so the parent gather() can collect them all
-            return token_usages, accuracy
-        else:
-            return [individual.genome.avg_tokens], individual.genome.accuracy
+        # Calculate final metrics
+        avg_score = (total_score / problems_evaluated) * 100 if problems_evaluated > 0 else 0.0
+        accuracy = (total_correct / problems_evaluated) * 100 if problems_evaluated > 0 else 0.0
+        avg_tokens = sum(token_usages) / len(token_usages) if token_usages else 0.0
+        
+        # Map directly to the Genome object attributes
+        individual.fitness = float(max(0.01, avg_score))
+        individual.accuracy = accuracy
+        individual.avg_tokens = avg_tokens
+    
+        return token_usages, accuracy
 
-    async def evaluate_population(self, population: List[Phenotype], problem_pool: List[Dict]):
+    async def evaluate_population(self, population: List[Genome], problem_pool: List[Dict]):
         """
-        Evaluates the population using a Semaphore to strictly control 
-        GPU memory pressure (Continuous Batching limit).
+        Dispatches unevaluated individuals. Relies entirely on the LLM class's internal 
+        semaphore to manage hardware backpressure.
         """
         if not problem_pool:
             raise ValueError("Problem pool cannot be empty.")
         
-        tbe_individuals = []
-        for individual in population:
-            if not individual.genome.evaluated:
-                tbe_individuals.append(individual)
+        # Check fitness to see if evaluation is needed
+        tbe_individuals = [ind for ind in population if ind.fitness is None]
         
-        print(f"Evaluating population of {len(tbe_individuals)} individuals on {len(problem_pool)} problems with circuit breaker threshold at {PERCENTAGE_FAILURE_THRESHOLD*100}% failures.")
+        if not tbe_individuals:
+            return
+            
+        print(f"Evaluating population: {len(tbe_individuals)} new genomes on {len(problem_pool)} problems...")
 
-        # --- THE HARDWARE LIMITER ---
-        MAX_CONCURRENT = 50 
-        semaphore = asyncio.Semaphore(MAX_CONCURRENT)
-
-        async def _bounded_evaluate(individual):
-            """Wrapper to enforce the semaphore limit per individual."""
-            async with semaphore:
-                return await self._evaluate_individual_full(individual, problem_pool)
-
-        # 1. Create the bounded tasks
-        tasks = [
-            _bounded_evaluate(individual)
-            for individual in tbe_individuals 
-        ]
-
-        # 2. Fire gather. It will attempt to run all, but the Semaphore 
-        # will physically block it from sending more than MAX_CONCURRENT at once.
+        # --- OPTIMIZATION 3: Unrestricted Task Dispatch ---
+        # The LLM class handles the 50-concurrent limit safely.
+        tasks = [self._evaluate_individual_full(individual, problem_pool) for individual in tbe_individuals]
         results = await asyncio.gather(*tasks)
 
-        # 3. Aggregate tokens and apply Red Queen shift
-        all_token_usages: list[int] = []
-        all_accuracies: list[float] = []
+        all_token_usages = []
+        all_accuracies = []
         for individual_tokens, accuracy in results:
             all_token_usages.extend(individual_tokens)
-            all_accuracies.append(accuracy)
+            # Only track accuracy if the genome wasn't completely broken
+            if individual_tokens:
+                all_accuracies.append(accuracy)
 
-        if all_token_usages:
-            self.calculator.update_baselines(all_token_usages)
+        # Update global stats
+            
         if all_accuracies:
             max_accuracy = max(all_accuracies)
-            avg_accuracy = sum(all_accuracies) / len(all_accuracies)
             if max_accuracy > self.best_accuracy:
                 self.best_accuracy = max_accuracy
-            self.avg_accuracy = avg_accuracy
-    
+            self.avg_accuracy = sum(all_accuracies) / len(all_accuracies)
