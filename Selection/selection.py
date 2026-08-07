@@ -53,7 +53,7 @@ class RankBasedSelection(SelectionStrategy):
         self._validate_population(population)
         
         # Sort descending: Highest fitness = index 0 (Rank 1)
-        sorted_pop = sorted(population, key=lambda x: x.accuracy, reverse=True)
+        sorted_pop = sorted(population, key=lambda x: x.fitness, reverse=True)
         n = len(sorted_pop)
         
         # Edge case: If population is 1, just return clones of it

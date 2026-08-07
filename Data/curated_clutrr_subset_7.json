@@ -1,0 +1,1262 @@
+[
+    {
+        "question": "Story:\n[Susan] and her Grandfather [James] enjoyed feeding the ducks at the park [Susan] took her sister, [Maria], out to dinner for her birthday. [Daniel] and his son [James] went to look at cars. [Daniel] ended up buying the Mustang. [Gayle] had picked her daughter [Maria] out the cutest new dress to wear on her birthday. [Daniel] bought his son, [Kyle], a new video game for his birthday. [Kyle] wanted his sister, [Ethel], and [Ethel]'s brother, [Michael], to play the game with him.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michael and Gayle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michael is Gayle's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Susan] and her Grandfather [James] enjoyed feeding the ducks at the park [Susan] took her sister, [Maria], out to dinner for her birthday. [Daniel] and his son [James] went to look at cars. [Daniel] ended up buying the Mustang. [Gayle] had picked her daughter [Maria] out the cutest new dress to wear on her birthday. [Daniel] bought his son, [Kyle], a new video game for his birthday. [Kyle] wanted his sister, [Ethel], and [Ethel]'s brother, [Michael], to play the game with him.",
+            "query": "('Gayle', 'Michael')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "0a19eeb4-3b28-4eb4-b7c4-c0a753ee878a"
+    },
+    {
+        "question": "Story:\n[Susan] went to her aunt [Marguerite]'s house for dinner. [Marguerite] made meatloaf, and it was delicious. [Harry] is [Susan]'s older brother. He has never liked any of her boyfriends. [Carlos]'s wife is [Gayle]. They went to pick up [Carlos]'s son, [Harry], from school together. [Gayle] had a daughter named [Maria]. [Susan] and her sister [Maria] were building a sand castle. [Paul], [Susan]'s brother, came by and kicked it, and the girls cried.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marguerite and Paul, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marguerite is Paul's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Susan] went to her aunt [Marguerite]'s house for dinner. [Marguerite] made meatloaf, and it was delicious. [Harry] is [Susan]'s older brother. He has never liked any of her boyfriends. [Carlos]'s wife is [Gayle]. They went to pick up [Carlos]'s son, [Harry], from school together. [Gayle] had a daughter named [Maria]. [Susan] and her sister [Maria] were building a sand castle. [Paul], [Susan]'s brother, came by and kicked it, and the girls cried.",
+            "query": "('Paul', 'Marguerite')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "6e2b6c75-8477-40e1-920a-c5858b0754bd"
+    },
+    {
+        "question": "Story:\n[Diane] planned a trip to the zoo for her brother, [Peter]. They had a great time. [Alfred] and his sister, [Diane] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Bertha]. [Alfred] likes to sing with his brother [Peter]. [Peter]'s sister [Bertha] hates when they sing. [Bertha] takes good care of her grandmother, [Madonna]. [Bertha] asked her mother, [Jennifer], what they were going to have for lunch.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Madonna and Peter, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Madonna is Peter's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Diane] planned a trip to the zoo for her brother, [Peter]. They had a great time. [Alfred] and his sister, [Diane] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Bertha]. [Alfred] likes to sing with his brother [Peter]. [Peter]'s sister [Bertha] hates when they sing. [Bertha] takes good care of her grandmother, [Madonna]. [Bertha] asked her mother, [Jennifer], what they were going to have for lunch.",
+            "query": "('Peter', 'Madonna')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "b82bd187-c75f-4c3e-9636-ee5fb513484b"
+    },
+    {
+        "question": "Story:\n[Jerry] took his mother [Marguerite] to the bakery. [Marguerite] wanted to buy her daughter [Ethel] a cake. [Michael] went to his brother [Jerry]'s Birthday party [Daniel] and his son, [Jerry], went to the supermarket. [Kyle], [Daniel]'s son, had asked them to bring him back some cookies. [Michael]'s mother, [Marguerite], told him he was in trouble. Her son [Kyle] had told her that [Michael] had been stealing from her purse.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jerry and Ethel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jerry is Ethel's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jerry] took his mother [Marguerite] to the bakery. [Marguerite] wanted to buy her daughter [Ethel] a cake. [Michael] went to his brother [Jerry]'s Birthday party [Daniel] and his son, [Jerry], went to the supermarket. [Kyle], [Daniel]'s son, had asked them to bring him back some cookies. [Michael]'s mother, [Marguerite], told him he was in trouble. Her son [Kyle] had told her that [Michael] had been stealing from her purse.",
+            "query": "('Ethel', 'Jerry')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "16a20c71-663f-497a-a738-31b9aca75c9e"
+    },
+    {
+        "question": "Story:\n[Gayle] and her brother [Daniel] walked to the park. [Gayle]'s son [Harry] joined them later on. [Madonna] enjoyed a homemade dinner with her son [Carlos] [Diane] took her father [Stephen] to his doctor's appointment and afterward her brother [Alfred] came over and visited for awhile. [Alfred] wanted to buy his sister a birthday gift but her son [Daniel] said she did n't want any gifts. [Carlos] and his brother [Stephen] went to the park to play basketball.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harry and Madonna, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harry is Madonna's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Gayle] and her brother [Daniel] walked to the park. [Gayle]'s son [Harry] joined them later on. [Madonna] enjoyed a homemade dinner with her son [Carlos] [Diane] took her father [Stephen] to his doctor's appointment and afterward her brother [Alfred] came over and visited for awhile. [Alfred] wanted to buy his sister a birthday gift but her son [Daniel] said she did n't want any gifts. [Carlos] and his brother [Stephen] went to the park to play basketball.",
+            "query": "('Madonna', 'Harry')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "edbddb8f-1b8d-4a55-b5dc-34a04b202561"
+    },
+    {
+        "question": "Story:\n[Daniel] and his son [Kyle] went to the cinema together. [Carlos] bought gifts for his lovely sister, [Mary] [Madonna] had a daughter named [Mary]. [Madonna] always goes to the park with her son [Daniel] on Saturdays. [Kyle] took his son [Daniel] out to play gold later that night. [Daniel] took his daughter [Ethel] to the baseball game. [Ethel]'s brother [Michael] hates baseball and stayed home.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michael and Carlos, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michael is Carlos's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] and his son [Kyle] went to the cinema together. [Carlos] bought gifts for his lovely sister, [Mary] [Madonna] had a daughter named [Mary]. [Madonna] always goes to the park with her son [Daniel] on Saturdays. [Kyle] took his son [Daniel] out to play gold later that night. [Daniel] took his daughter [Ethel] to the baseball game. [Ethel]'s brother [Michael] hates baseball and stayed home.",
+            "query": "('Carlos', 'Michael')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "a770fb8b-f4cb-40c8-8319-9fb1d4ef2e25"
+    },
+    {
+        "question": "Story:\n[Daniel] and his son [Michael] went to the cinema together. [Ethel] watched a golf tournament with her aunt [Gayle]. [Jerry] invited his father [Daniel] and his brother [Michael] to go on a weekend fishing trip. [Gayle] bought her mother, [Madonna], a puppy for her birthday. [Michael] and his brother [Jerry] went to a basketball game. [Jerry]'s sister [Ethel] decided to tag along with them.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Madonna and Michael, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Madonna is Michael's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] and his son [Michael] went to the cinema together. [Ethel] watched a golf tournament with her aunt [Gayle]. [Jerry] invited his father [Daniel] and his brother [Michael] to go on a weekend fishing trip. [Gayle] bought her mother, [Madonna], a puppy for her birthday. [Michael] and his brother [Jerry] went to a basketball game. [Jerry]'s sister [Ethel] decided to tag along with them.",
+            "query": "('Michael', 'Madonna')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "ce2a0ca9-6ab4-40d4-9268-ad845c8c7c7f"
+    },
+    {
+        "question": "Story:\n[William] walked his daughter [Ruth] down the aisle on her wedding day. [Bertha] went to her aunt [Mary]'s house for dinner. [Mary] made meatloaf, and it was delicious. [James] drove his daughter [Gayle] to soccer practice. [James] took his son [Carlos] out for ice cream. [Stephen] called up his sister [Gayle] to chat. [Stephen] liked to talk about his daughter [Bertha] and how she was doing at school. [William] is very much in love with his wife. Her name is [Mary].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Ruth and Carlos, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Ruth is Carlos's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[William] walked his daughter [Ruth] down the aisle on her wedding day. [Bertha] went to her aunt [Mary]'s house for dinner. [Mary] made meatloaf, and it was delicious. [James] drove his daughter [Gayle] to soccer practice. [James] took his son [Carlos] out for ice cream. [Stephen] called up his sister [Gayle] to chat. [Stephen] liked to talk about his daughter [Bertha] and how she was doing at school. [William] is very much in love with his wife. Her name is [Mary].",
+            "query": "('Carlos', 'Ruth')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "f6e255d5-623d-4d0d-a759-6b8b89105b98"
+    },
+    {
+        "question": "Story:\n[William] made peanut brittle for his daughter [Lisa]. [Lisa]'s brother [Ruth] ca n't eat peanut brittle due to his sensitive teeth. Brothers [Jose] and [George] planned a week vacation at the lodge for their families to get together. Their father [William] planned to fly out to meet them. The boys' grandfather [James] could n't make this trip because he surgery scheduled for that week. [Carlos] took his son [James] out for pizza. [Mary] had picked her daughter [Ruth] out the cutest new dress to wear on her birthday.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Carlos and Mary, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Carlos is Mary's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[William] made peanut brittle for his daughter [Lisa]. [Lisa]'s brother [Ruth] ca n't eat peanut brittle due to his sensitive teeth. Brothers [Jose] and [George] planned a week vacation at the lodge for their families to get together. Their father [William] planned to fly out to meet them. The boys' grandfather [James] could n't make this trip because he surgery scheduled for that week. [Carlos] took his son [James] out for pizza. [Mary] had picked her daughter [Ruth] out the cutest new dress to wear on her birthday.",
+            "query": "('Mary', 'Carlos')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "829f4663-bdb3-48a9-8a19-29a8800df344"
+    },
+    {
+        "question": "Story:\n[Peter]'s sister, [Diane], was eager to help her mother, [Jennifer] find a new house. [Jennifer]'s mother, [Madonna], was helping, too. [Madonna] and her son [Daniel] went out to lunch together yesterday. [Mary] bought a plant for her dad, [James]. [Peter] was thrilled his brother, [Alfred], was able to make it to the party. [Daniel] went to the game with his sister [Mary].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between James and Alfred, and to describe it through only one kinship word from the posible answers, to correctly answer the question: James is Alfred's?",
+        "answer": "grandfather",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Peter]'s sister, [Diane], was eager to help her mother, [Jennifer] find a new house. [Jennifer]'s mother, [Madonna], was helping, too. [Madonna] and her son [Daniel] went out to lunch together yesterday. [Mary] bought a plant for her dad, [James]. [Peter] was thrilled his brother, [Alfred], was able to make it to the party. [Daniel] went to the game with his sister [Mary].",
+            "query": "('Alfred', 'James')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "b4ade94d-9e72-44e4-8028-a44e56fd7891"
+    },
+    {
+        "question": "Story:\n[Patricia] and her brother [Paul] went to see a movie. [Patricia] took her sister, [Maria], out to dinner for her birthday. [Carlos] went out for pizza with his sister [Mary] and his daughter [Susan]. [George] got his son, [William], a car for his birthday. [Maria] took her sister, [Susan], out to dinner for her birthday. [George]'s mother [Mary] had to help him with his homework because he was having a test soon.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Paul and William, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Paul is William's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Patricia] and her brother [Paul] went to see a movie. [Patricia] took her sister, [Maria], out to dinner for her birthday. [Carlos] went out for pizza with his sister [Mary] and his daughter [Susan]. [George] got his son, [William], a car for his birthday. [Maria] took her sister, [Susan], out to dinner for her birthday. [George]'s mother [Mary] had to help him with his homework because he was having a test soon.",
+            "query": "('William', 'Paul')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "44553620-1cfe-4458-8957-bf67fe7313f2"
+    },
+    {
+        "question": "Story:\n[William] is [Gayle]'s older brother. He has never liked any of her boyfriends. [Paul] and his uncle [Stephen] went to the movies Sunday after church and got popcorn and candy while they were there. [Gayle] always goes to the park with her son [Paul] on Saturdays. [Diane] and [Peter] left that evening to go bowling. [William] wanted to have a family cookout so he invited his brother [Daniel]. [Daniel] wanted to invite his other brother [Carlos]. [Peter] has a few children, [Stephen], Bradley and Claire\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Diane and Carlos, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Diane is Carlos's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[William] is [Gayle]'s older brother. He has never liked any of her boyfriends. [Paul] and his uncle [Stephen] went to the movies Sunday after church and got popcorn and candy while they were there. [Gayle] always goes to the park with her son [Paul] on Saturdays. [Diane] and [Peter] left that evening to go bowling. [William] wanted to have a family cookout so he invited his brother [Daniel]. [Daniel] wanted to invite his other brother [Carlos]. [Peter] has a few children, [Stephen], Bradley and Claire",
+            "query": "('Carlos', 'Diane')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "8c08ab74-22dd-494d-912a-4dca89567830"
+    },
+    {
+        "question": "Story:\n[Mary] asked her daughter, [Lisa], if she would like to go to a movie with her on Saturday night. [Madonna] asked her son [Daniel] if his son [Jerry] wanted anything in particular for his birthday. [Jerry]'s aunt, [Gayle], took him fishing [Ruth] went to go visit her grandmother [Madonna]. [Ruth]'s brother [George] went with her. [Lisa] went to her brother [George]'s birthday party\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Gayle and Mary, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Gayle is Mary's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Mary] asked her daughter, [Lisa], if she would like to go to a movie with her on Saturday night. [Madonna] asked her son [Daniel] if his son [Jerry] wanted anything in particular for his birthday. [Jerry]'s aunt, [Gayle], took him fishing [Ruth] went to go visit her grandmother [Madonna]. [Ruth]'s brother [George] went with her. [Lisa] went to her brother [George]'s birthday party",
+            "query": "('Mary', 'Gayle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "57e61f60-795c-42f8-8c36-3c2a40cc0f24"
+    },
+    {
+        "question": "Story:\n[Marguerite]'s son [Kyle] was planning a trip for her husband, [Daniel]. [Carlos]'s brother [Daniel] would not let him play the xbox game. [Mary] and [Stephen] left that evening to go bowling. [James] 'son, [Stephen], aced his math class and made his father proud. [Jennifer] invited her brother [Carlos] and her sister [Mary] over for dinner.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Kyle and James, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Kyle is James's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marguerite]'s son [Kyle] was planning a trip for her husband, [Daniel]. [Carlos]'s brother [Daniel] would not let him play the xbox game. [Mary] and [Stephen] left that evening to go bowling. [James] 'son, [Stephen], aced his math class and made his father proud. [Jennifer] invited her brother [Carlos] and her sister [Mary] over for dinner.",
+            "query": "('James', 'Kyle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "f0b472eb-37c0-4f26-ae1c-5e6ac0c5fbdc"
+    },
+    {
+        "question": "Story:\n[Jerry] played scrabble with his mother [Marguerite] and his brother [Michael]. [Ethel] took her father [Daniel] to his doctor's appointment and afterward her brother [Michael] came over and visited for awhile. [Ethel] wanted to visit her grandmother [Madonna], but [Madonna] was asleep. [Marguerite] called her son [Michael] and his sister [Ethel] was at his house visiting so he said he would call her back later.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Madonna and Daniel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Madonna is Daniel's?",
+        "answer": "mother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jerry] played scrabble with his mother [Marguerite] and his brother [Michael]. [Ethel] took her father [Daniel] to his doctor's appointment and afterward her brother [Michael] came over and visited for awhile. [Ethel] wanted to visit her grandmother [Madonna], but [Madonna] was asleep. [Marguerite] called her son [Michael] and his sister [Ethel] was at his house visiting so he said he would call her back later.",
+            "query": "('Daniel', 'Madonna')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "0253b093-ac4a-424a-b081-051ae63f20c0"
+    },
+    {
+        "question": "Story:\n[Stephen] took his daughter [Bertha] out for dinner. [Jennifer]'s husband, [Stephen], surprised her with tickets to a football game for their anniversary. [Stephen] rushed to the hospital to find out that his wife and already given birth to a boy and had named him [Peter]. [Stephen] and his son [Alfred] went to the cinema together. [Alfred] took his son [Stephen] out for pizza. [Peter] invited his sister [Diane] to dinner this Friday because it is her birthday. [Diane] 'father [Stephen] became enraged when she failed to complete her homework. [Diane] was grounded for a month and unable to spend time with friends.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Bertha and Jennifer, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Bertha is Jennifer's?",
+        "answer": "daughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Stephen] took his daughter [Bertha] out for dinner. [Jennifer]'s husband, [Stephen], surprised her with tickets to a football game for their anniversary. [Stephen] rushed to the hospital to find out that his wife and already given birth to a boy and had named him [Peter]. [Stephen] and his son [Alfred] went to the cinema together. [Alfred] took his son [Stephen] out for pizza. [Peter] invited his sister [Diane] to dinner this Friday because it is her birthday. [Diane] 'father [Stephen] became enraged when she failed to complete her homework. [Diane] was grounded for a month and unable to spend time with friends.",
+            "query": "('Jennifer', 'Bertha')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "85af7f3f-165e-40e7-a7fc-f729f6e0f0f7"
+    },
+    {
+        "question": "Story:\n[Ruth] told a secret to her sister, [Lisa]. [Lisa] passed it along to her brother, [Jose]. [Lisa] and her brother [George] enlisted in the army [Mary] ordered a pizza on Friday to share with her daughter [Lisa]. [Mary]'s brother [Daniel] showed up unexpectedly and ate most of the pizza. [William] bought toys for his son [George] and his daughter [Ruth].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Daniel and Jose, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Daniel is Jose's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Ruth] told a secret to her sister, [Lisa]. [Lisa] passed it along to her brother, [Jose]. [Lisa] and her brother [George] enlisted in the army [Mary] ordered a pizza on Friday to share with her daughter [Lisa]. [Mary]'s brother [Daniel] showed up unexpectedly and ate most of the pizza. [William] bought toys for his son [George] and his daughter [Ruth].",
+            "query": "('Jose', 'Daniel')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "645def2c-50d8-4007-a837-2b7dcd052764"
+    },
+    {
+        "question": "Story:\n[Kyle] and his brother, [Jerry], were playing cars. [Michael] came up and asked if they'd seen his sister [Ethel]. [Kyle], [Ethel]'s brother, said she had gone home. [Marguerite] took her daughter [Ethel] to the ice cream parlor after school for a sweet treat. Since [Ethel] gets out of school earlier than her brother [Kyle], he missed out on the trip to get ice cream. [Daniel]'s son, [Kyle], came first in a relay race at his school. [Daniel]'s son, [Jerry], felt jealous of [Kyle].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marguerite and Michael, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marguerite is Michael's?",
+        "answer": "mother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Kyle] and his brother, [Jerry], were playing cars. [Michael] came up and asked if they'd seen his sister [Ethel]. [Kyle], [Ethel]'s brother, said she had gone home. [Marguerite] took her daughter [Ethel] to the ice cream parlor after school for a sweet treat. Since [Ethel] gets out of school earlier than her brother [Kyle], he missed out on the trip to get ice cream. [Daniel]'s son, [Kyle], came first in a relay race at his school. [Daniel]'s son, [Jerry], felt jealous of [Kyle].",
+            "query": "('Michael', 'Marguerite')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "baef1f38-02bc-450e-960d-6c937dab022d"
+    },
+    {
+        "question": "Story:\n[Jennifer] was eager to spend time with her son, [Peter]. [Diane] invited her brothers [Peter] and [Alfred] to her high school graduation. [Alfred] asked his aunt, [Gayle], to read him a story. [Gayle] unfortunately was n't able to, since she did n't have her glasses, and she was almost blind without them. [Stephen] gave his son [Alfred] the keys to his car. [Stephen]'s wife [Jennifer] was nervous about it. [Alfred] and his sister, [Bertha] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Gayle and Bertha, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Gayle is Bertha's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] was eager to spend time with her son, [Peter]. [Diane] invited her brothers [Peter] and [Alfred] to her high school graduation. [Alfred] asked his aunt, [Gayle], to read him a story. [Gayle] unfortunately was n't able to, since she did n't have her glasses, and she was almost blind without them. [Stephen] gave his son [Alfred] the keys to his car. [Stephen]'s wife [Jennifer] was nervous about it. [Alfred] and his sister, [Bertha] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town.",
+            "query": "('Bertha', 'Gayle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "6882a773-1d27-43d1-9983-f8f8e7c08adb"
+    },
+    {
+        "question": "Story:\n[Alfred] went to the game with his sister [Bertha]. [Bertha] went to her brother [Alfred]'s birthday party [Bertha] bought her mother, [Jennifer], a puppy for her birthday. [Jennifer] went to her brother [Carlos]'s birthday party [Jennifer] was chopping carrots with her daughter [Bertha] and son [Peter]. [Peter]'s sister [Diane] did not help at all.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Carlos and Diane, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Carlos is Diane's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Alfred] went to the game with his sister [Bertha]. [Bertha] went to her brother [Alfred]'s birthday party [Bertha] bought her mother, [Jennifer], a puppy for her birthday. [Jennifer] went to her brother [Carlos]'s birthday party [Jennifer] was chopping carrots with her daughter [Bertha] and son [Peter]. [Peter]'s sister [Diane] did not help at all.",
+            "query": "('Diane', 'Carlos')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "a67e4138-5654-447c-9703-e5fc33b669f7"
+    },
+    {
+        "question": "Story:\n[Daniel] took his sister [Mary] out to lunch after learning that she got accepted into her first choice for university. [Lisa] told a secret to her sister, [Ruth]. [Ruth] passed it along to her brother, [George]. [Lisa] went to her brother [George]'s birthday party [Mary]'s son, [George], had to stay home from school with a cold. [Lisa] and her brother [George] went to see a movie. [Jose] took his sister, [Lisa], to a baseball game.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Daniel and Jose, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Daniel is Jose's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] took his sister [Mary] out to lunch after learning that she got accepted into her first choice for university. [Lisa] told a secret to her sister, [Ruth]. [Ruth] passed it along to her brother, [George]. [Lisa] went to her brother [George]'s birthday party [Mary]'s son, [George], had to stay home from school with a cold. [Lisa] and her brother [George] went to see a movie. [Jose] took his sister, [Lisa], to a baseball game.",
+            "query": "('Jose', 'Daniel')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "ca50d606-4c42-4200-935f-e676bd030b9a"
+    },
+    {
+        "question": "Story:\n[Harry] meet his uncle, [William], at the baseball game, excited for their team to win. [Gayle] went to the store with her sister [Mary] [Gayle] enjoyed a homemade dinner with her son [Harry] [William] was filled with pride and joy to see his daughter [Ruth] perform in her first ballet recital. [Mary] wanted to visit an art museum, so she asked her father, [James] to take her. [Marguerite] was happy to babysit her niece, [Ruth]. [Ruth] was a great child. [James] was so proud of his son, [Stephen]. he received a great scholarship to college.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marguerite and Stephen, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marguerite is Stephen's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harry] meet his uncle, [William], at the baseball game, excited for their team to win. [Gayle] went to the store with her sister [Mary] [Gayle] enjoyed a homemade dinner with her son [Harry] [William] was filled with pride and joy to see his daughter [Ruth] perform in her first ballet recital. [Mary] wanted to visit an art museum, so she asked her father, [James] to take her. [Marguerite] was happy to babysit her niece, [Ruth]. [Ruth] was a great child. [James] was so proud of his son, [Stephen]. he received a great scholarship to college.",
+            "query": "('Stephen', 'Marguerite')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "eabb2708-d0eb-43e3-9852-d8b0f4c1895a"
+    },
+    {
+        "question": "Story:\n[Ruth] decided to give her uncle, [Stephen], a call on his birthday. [Marguerite] and her brother [Carlos] walked to the park. [Marguerite]'s son [Michael] joined them later on. [Jennifer] likes to go to the park with her sister [Mary], her brother [Daniel] and [Daniel]'s son, [Michael]. [Mary] asked her daughter, [Ruth], if she would like to go to a movie with her on Saturday night.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Stephen and Carlos, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Stephen is Carlos's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Ruth] decided to give her uncle, [Stephen], a call on his birthday. [Marguerite] and her brother [Carlos] walked to the park. [Marguerite]'s son [Michael] joined them later on. [Jennifer] likes to go to the park with her sister [Mary], her brother [Daniel] and [Daniel]'s son, [Michael]. [Mary] asked her daughter, [Ruth], if she would like to go to a movie with her on Saturday night.",
+            "query": "('Carlos', 'Stephen')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "17b8993c-7409-4200-9500-52f4d329c427"
+    },
+    {
+        "question": "Story:\n[Gayle] went to the mall, because she wanted to look for a present for her daughter, [Susan]. [Gayle], who is the sister of [Mary], is a lovely girl. [Mary] went to the store with her sister [Gayle] [James] picked up his son [Daniel] from baseball practice and his daughter [Gayle] from ballet practice. [Maria] and her siblings [Susan] and [Harry] went on a business trip to Asia\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Maria and Daniel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Maria is Daniel's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Gayle] went to the mall, because she wanted to look for a present for her daughter, [Susan]. [Gayle], who is the sister of [Mary], is a lovely girl. [Mary] went to the store with her sister [Gayle] [James] picked up his son [Daniel] from baseball practice and his daughter [Gayle] from ballet practice. [Maria] and her siblings [Susan] and [Harry] went on a business trip to Asia",
+            "query": "('Daniel', 'Maria')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "797719ab-44cd-47b0-aaf4-501423ba8d13"
+    },
+    {
+        "question": "Story:\n[Alfred]'s brother [Peter] would not let him play the xbox game. [Gayle] had picked her daughter [Maria] out the cutest new dress to wear on her birthday. [Jennifer] and her son, [Alfred], went to the park to fly a kite. They had fun doing it all day. [Alfred] and his brother [Peter] surprised [Alfred]'s grandmother [Madonna] with an 80th birthday party. [Madonna] had to work a double shift and needed someone to watch her son [Daniel]. Luckily his sister [Gayle] was free.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Maria and Jennifer, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Maria is Jennifer's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Alfred]'s brother [Peter] would not let him play the xbox game. [Gayle] had picked her daughter [Maria] out the cutest new dress to wear on her birthday. [Jennifer] and her son, [Alfred], went to the park to fly a kite. They had fun doing it all day. [Alfred] and his brother [Peter] surprised [Alfred]'s grandmother [Madonna] with an 80th birthday party. [Madonna] had to work a double shift and needed someone to watch her son [Daniel]. Luckily his sister [Gayle] was free.",
+            "query": "('Jennifer', 'Maria')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "0dff806f-aea4-4896-b67a-7826c7b03266"
+    },
+    {
+        "question": "Story:\n[Marguerite] was excited to visit her son, [Jerry], at college. [Peter] asked his aunt, [Marguerite], to read him a story. [Marguerite] unfortunately was n't able to, since she did n't have her glasses, and she was almost blind without them. [Bertha] and her brother [Peter] went to see a movie. [Alfred] was disappointed that his father, [Stephen], would n't be at the play to see him perform. [Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Bertha]. [Stephen] and [Jennifer] got married in 2017 [Jerry] went to the bakery with his uncle [Carlos] to pick up some bread for lunch.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Carlos and Alfred, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Carlos is Alfred's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Marguerite] was excited to visit her son, [Jerry], at college. [Peter] asked his aunt, [Marguerite], to read him a story. [Marguerite] unfortunately was n't able to, since she did n't have her glasses, and she was almost blind without them. [Bertha] and her brother [Peter] went to see a movie. [Alfred] was disappointed that his father, [Stephen], would n't be at the play to see him perform. [Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Bertha]. [Stephen] and [Jennifer] got married in 2017 [Jerry] went to the bakery with his uncle [Carlos] to pick up some bread for lunch.",
+            "query": "('Alfred', 'Carlos')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "11985f06-2819-4372-92ef-0d1b974bc928"
+    },
+    {
+        "question": "Story:\n[Jennifer] took her sister, [Gayle], out to dinner for her birthday. [Jennifer] asked her daughter, [Diane], if she would like to go to a movie with her on Saturday night. [James] was so proud of his son, [Daniel]. he received a great scholarship to college. [Paul] likes to visit his sister. Her name is [Susan]. [Susan] and her mother [Carlos] made breakfast together. [James] went to see his daughter [Gayle] for parents day at college. [Diane] decided to give her uncle, [Carlos], a call on his birthday.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Paul and Daniel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Paul is Daniel's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] took her sister, [Gayle], out to dinner for her birthday. [Jennifer] asked her daughter, [Diane], if she would like to go to a movie with her on Saturday night. [James] was so proud of his son, [Daniel]. he received a great scholarship to college. [Paul] likes to visit his sister. Her name is [Susan]. [Susan] and her mother [Carlos] made breakfast together. [James] went to see his daughter [Gayle] for parents day at college. [Diane] decided to give her uncle, [Carlos], a call on his birthday.",
+            "query": "('Daniel', 'Paul')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "9effc7dd-8f29-4a1c-abf6-2d926d2abc9e"
+    },
+    {
+        "question": "Story:\n[Gayle] and her son, [Harry], went to the park to fly a kite. They had fun doing it all day. [Stephen] took his nephew [Kyle] to the football game. [Daniel] has a few children, [James], Bradley and Claire [Michael] has a few children, [Daniel], Bradley and Claire [Stephen] is [Gayle]'s older brother. He has never liked any of her boyfriends. [Jerry] and his brother [Kyle] went shopping at an electronics store. [Jerry] found the perfect pair of headphones for his brother [Michael]'s birthday.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harry and James, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harry is James's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Gayle] and her son, [Harry], went to the park to fly a kite. They had fun doing it all day. [Stephen] took his nephew [Kyle] to the football game. [Daniel] has a few children, [James], Bradley and Claire [Michael] has a few children, [Daniel], Bradley and Claire [Stephen] is [Gayle]'s older brother. He has never liked any of her boyfriends. [Jerry] and his brother [Kyle] went shopping at an electronics store. [Jerry] found the perfect pair of headphones for his brother [Michael]'s birthday.",
+            "query": "('James', 'Harry')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "507a6a4a-9e9c-407e-bf54-bdc594a2875e"
+    },
+    {
+        "question": "Story:\n[Kyle] and his brother [Jerry] went to the park to play basketball. [Gayle] went to the store with her sister [Jennifer] [Daniel] and his sister [Jennifer] have been best friends ever since childhood. [Jerry] and his brother [Kyle] went to the park to play basketball. [Ethel] vowed to never trust her father, [Daniel] with her debit card again. [Michael] is [Ethel]'s older brother. He has never liked any of her boyfriends. [Michael] and his brother [Kyle] always played pranks on each other\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Gayle and Kyle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Gayle is Kyle's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Kyle] and his brother [Jerry] went to the park to play basketball. [Gayle] went to the store with her sister [Jennifer] [Daniel] and his sister [Jennifer] have been best friends ever since childhood. [Jerry] and his brother [Kyle] went to the park to play basketball. [Ethel] vowed to never trust her father, [Daniel] with her debit card again. [Michael] is [Ethel]'s older brother. He has never liked any of her boyfriends. [Michael] and his brother [Kyle] always played pranks on each other",
+            "query": "('Kyle', 'Gayle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "f38dd320-6ae6-48be-874e-ef2be1bd512f"
+    },
+    {
+        "question": "Story:\n[Paul] took his favorite son [Carlos] to a baseball game where he caught a foul ball as a souvenir. [Daniel] and his son [James] went to look at cars. [Daniel] ended up buying the Mustang. [Stephen] would n't let his son [Alfred] go to the park by himself. [Alfred]'s brother [Peter] offered to go with him. [Daniel] 'son, [Kyle], aced his math class and made his father proud. [Kyle] wanted to buy his sister a birthday gift but her son [Stephen] said she did n't want any gifts. [Carlos] took his nephew [Peter] out to get some ice cream to celebrate his baseball victory.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Paul and James, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Paul is James's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Paul] took his favorite son [Carlos] to a baseball game where he caught a foul ball as a souvenir. [Daniel] and his son [James] went to look at cars. [Daniel] ended up buying the Mustang. [Stephen] would n't let his son [Alfred] go to the park by himself. [Alfred]'s brother [Peter] offered to go with him. [Daniel] 'son, [Kyle], aced his math class and made his father proud. [Kyle] wanted to buy his sister a birthday gift but her son [Stephen] said she did n't want any gifts. [Carlos] took his nephew [Peter] out to get some ice cream to celebrate his baseball victory.",
+            "query": "('James', 'Paul')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "1e3afa89-da18-45d7-b817-bba266f16996"
+    },
+    {
+        "question": "Story:\n[Susan] and her brother [Paul] went to see a movie. [Gayle] took her sister, [Mary], out to dinner for her birthday. [Susan] and [Paul] left that evening to go bowling. [Carlos] needed to go pick his son [Harry] up a Christmas present. So he asked his daughter [Susan] to help pick something out for [Harry]. [Gayle] went to her son [Harry]'s House [Maria] and her sister, [Susan], frequently bicker. However, they always make up quickly.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Maria and Mary, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Maria is Mary's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Susan] and her brother [Paul] went to see a movie. [Gayle] took her sister, [Mary], out to dinner for her birthday. [Susan] and [Paul] left that evening to go bowling. [Carlos] needed to go pick his son [Harry] up a Christmas present. So he asked his daughter [Susan] to help pick something out for [Harry]. [Gayle] went to her son [Harry]'s House [Maria] and her sister, [Susan], frequently bicker. However, they always make up quickly.",
+            "query": "('Mary', 'Maria')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "42f4f3f3-3ce7-49a9-b63b-f0797ad3db0f"
+    },
+    {
+        "question": "Story:\n[William] and [Carlos] were both still very upset with their mother, [Madonna]. [Jose] and his sister, [Ruth] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Paul] invited his mother [Gayle] and grandmother [Madonna] over for dinner. [William] took his wife, [Mary] on a picnic. [Mary]'s daughter, [Ruth] stayed home.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jose and Gayle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jose is Gayle's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[William] and [Carlos] were both still very upset with their mother, [Madonna]. [Jose] and his sister, [Ruth] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Paul] invited his mother [Gayle] and grandmother [Madonna] over for dinner. [William] took his wife, [Mary] on a picnic. [Mary]'s daughter, [Ruth] stayed home.",
+            "query": "('Gayle', 'Jose')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "8d74d3c9-7d27-4b12-8fed-dfbeb4b44ba0"
+    },
+    {
+        "question": "Story:\n[Mary] asked her sister [Marguerite] if she wanted to go to the movies with her. [Marguerite] said no, so [Mary] went with her brother [Daniel] instead. [Bertha] and her brother [Peter] enlisted in the army [Peter] and his sister, [Bertha] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Jennifer] went to lunch with her son [Peter] and her sister [Marguerite]. [Peter] bought gifts for his lovely sister, [Diane]\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Diane and Daniel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Diane is Daniel's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Mary] asked her sister [Marguerite] if she wanted to go to the movies with her. [Marguerite] said no, so [Mary] went with her brother [Daniel] instead. [Bertha] and her brother [Peter] enlisted in the army [Peter] and his sister, [Bertha] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Jennifer] went to lunch with her son [Peter] and her sister [Marguerite]. [Peter] bought gifts for his lovely sister, [Diane]",
+            "query": "('Daniel', 'Diane')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "44f5e46b-acde-4d29-95d9-a43a5bf953bc"
+    },
+    {
+        "question": "Story:\n[Diane] invited her brother [Peter] and her sister [Bertha] over for dinner. [James] 'son, [Carlos], aced his math class and made his father proud. [Stephen] and his daughter [Bertha] were dancing. [Stephen]'s mom, [Madonna], asked if she could have the next dance, so [Bertha] stepped aside at the end of the song. [Madonna] took her daughter [Mary] to the ice cream parlor after school for a sweet treat. Since [Mary] gets out of school earlier than her brother [Carlos], he missed out on the trip to get ice cream.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Peter and James, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Peter is James's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Diane] invited her brother [Peter] and her sister [Bertha] over for dinner. [James] 'son, [Carlos], aced his math class and made his father proud. [Stephen] and his daughter [Bertha] were dancing. [Stephen]'s mom, [Madonna], asked if she could have the next dance, so [Bertha] stepped aside at the end of the song. [Madonna] took her daughter [Mary] to the ice cream parlor after school for a sweet treat. Since [Mary] gets out of school earlier than her brother [Carlos], he missed out on the trip to get ice cream.",
+            "query": "('James', 'Peter')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "4887921e-c1b1-4a3f-a501-18fcb6e7e23c"
+    },
+    {
+        "question": "Story:\n[Maria] and her aunt, [Jennifer], went to the deli. They got a half a pound of corned beef, and two pounds of salami. [Gayle] and her son [Paul] went out to lunch together yesterday. [William] likes to visit his sister. Her name is [Jennifer]. [Harry] was disappointed that his father, [Carlos], would n't be at the play to see him perform. [Maria] and her mother [Carlos] made breakfast together. [William] is proud that his daughter is such a good student. Her name is [Ruth]. [Paul]'s brother, [Harry], recently made it into town.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Ruth and Gayle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Ruth is Gayle's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Maria] and her aunt, [Jennifer], went to the deli. They got a half a pound of corned beef, and two pounds of salami. [Gayle] and her son [Paul] went out to lunch together yesterday. [William] likes to visit his sister. Her name is [Jennifer]. [Harry] was disappointed that his father, [Carlos], would n't be at the play to see him perform. [Maria] and her mother [Carlos] made breakfast together. [William] is proud that his daughter is such a good student. Her name is [Ruth]. [Paul]'s brother, [Harry], recently made it into town.",
+            "query": "('Gayle', 'Ruth')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "1e36c721-dc6f-4a9a-b8cf-dfd19fc3a505"
+    },
+    {
+        "question": "Story:\n[Jennifer] and her brother [William] went to see a movie. [Jennifer] took her sister, [Marguerite], out to dinner for her birthday. [Gayle] 'daughter [Maria] visited for Christmas. [Maria]'s brother [Paul] was out of town for the holidays. [Gayle] is proud that her son graduated college. His name is [Harry]. [Paul]'s father [Carlos] has been in prison for 5 years. [Carlos]'s sister, [Marguerite] is the only one who visits him.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between William and Harry, and to describe it through only one kinship word from the posible answers, to correctly answer the question: William is Harry's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] and her brother [William] went to see a movie. [Jennifer] took her sister, [Marguerite], out to dinner for her birthday. [Gayle] 'daughter [Maria] visited for Christmas. [Maria]'s brother [Paul] was out of town for the holidays. [Gayle] is proud that her son graduated college. His name is [Harry]. [Paul]'s father [Carlos] has been in prison for 5 years. [Carlos]'s sister, [Marguerite] is the only one who visits him.",
+            "query": "('Harry', 'William')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "7b1a84d3-470a-4b2e-8405-75d06dd43395"
+    },
+    {
+        "question": "Story:\n[Bertha] decided to give her uncle, [Daniel], a call on his birthday. [Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Bertha]. [Alfred] and his son [Stephen] went to look at cars. [Alfred] ended up buying the Mustang. [Kyle] invited his father [Daniel] and his brother [Michael] to go on a weekend fishing trip. [Jennifer] and her son [Peter] went to pick up his brother [Alfred] from school.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michael and Stephen, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michael is Stephen's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bertha] decided to give her uncle, [Daniel], a call on his birthday. [Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Bertha]. [Alfred] and his son [Stephen] went to look at cars. [Alfred] ended up buying the Mustang. [Kyle] invited his father [Daniel] and his brother [Michael] to go on a weekend fishing trip. [Jennifer] and her son [Peter] went to pick up his brother [Alfred] from school.",
+            "query": "('Stephen', 'Michael')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "959741cf-309b-4b7f-8f4a-87238db4c960"
+    },
+    {
+        "question": "Story:\n[Stephen] went to see his daughter [Bertha] for parents day at college. [Jennifer] and her brother [Carlos] walked to the park. [Jennifer]'s son [Alfred] joined them later on. [Alfred] was disappointed that his father, [Stephen], would n't be at the play to see him perform. [Kyle] went to the Farmer's market with his mother [Marguerite] and his brother [Michael]. [Carlos] asked his uncle, [Michael], to pick him up. [Michael] told him he was too heavy.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Bertha and Marguerite, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Bertha is Marguerite's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Stephen] went to see his daughter [Bertha] for parents day at college. [Jennifer] and her brother [Carlos] walked to the park. [Jennifer]'s son [Alfred] joined them later on. [Alfred] was disappointed that his father, [Stephen], would n't be at the play to see him perform. [Kyle] went to the Farmer's market with his mother [Marguerite] and his brother [Michael]. [Carlos] asked his uncle, [Michael], to pick him up. [Michael] told him he was too heavy.",
+            "query": "('Marguerite', 'Bertha')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "28725e25-4e94-4882-95d5-443835d89828"
+    },
+    {
+        "question": "Story:\n[Daniel] and his wife [Marguerite] went to the beach to watch the fireworks on the 4th of July. [Michael] took his favorite son [Daniel] to a baseball game where he caught a foul ball as a souvenir. [Ruth] went to her aunt [Marguerite]'s house for dinner. [Marguerite] made meatloaf, and it was delicious. [George] invited his siblings [Lisa] and [Jose] to lunch. [Lisa] could n't make it since she was on a trip to see her sister [Ruth]. [Mary] went to her son [Jose]'s House\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michael and Mary, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michael is Mary's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] and his wife [Marguerite] went to the beach to watch the fireworks on the 4th of July. [Michael] took his favorite son [Daniel] to a baseball game where he caught a foul ball as a souvenir. [Ruth] went to her aunt [Marguerite]'s house for dinner. [Marguerite] made meatloaf, and it was delicious. [George] invited his siblings [Lisa] and [Jose] to lunch. [Lisa] could n't make it since she was on a trip to see her sister [Ruth]. [Mary] went to her son [Jose]'s House",
+            "query": "('Mary', 'Michael')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "4bbb59ce-749e-4dd8-be8d-19719a9e917f"
+    },
+    {
+        "question": "Story:\n[William] took his son [Jose] and daughter [Lisa] to the zoo on Saturday and they had a great time. [Ruth]'s mom, [Mary], meet with with her sister, [Jennifer], to discuss their dad. [Jose] went to the game with his sister [Ruth]. [Ruth] asked her sister [Lisa] if she wanted to go to the movies with her. [Lisa] said no, so [Ruth] went with her brother [George] instead.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jennifer and George, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jennifer is George's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[William] took his son [Jose] and daughter [Lisa] to the zoo on Saturday and they had a great time. [Ruth]'s mom, [Mary], meet with with her sister, [Jennifer], to discuss their dad. [Jose] went to the game with his sister [Ruth]. [Ruth] asked her sister [Lisa] if she wanted to go to the movies with her. [Lisa] said no, so [Ruth] went with her brother [George] instead.",
+            "query": "('George', 'Jennifer')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "27193a0c-a715-4fb4-ae74-f597b4140ad3"
+    },
+    {
+        "question": "Story:\n[Madonna] spent a great day shopping with her daughter, [Gayle]. [Mary] and her siblings [Jennifer] and [Daniel] went on a business trip to Asia [Jennifer] went shoe shopping with her sister [Gayle]. [Carlos] took his sister [Mary] out to lunch after learning that she got accepted into her first choice for university. [Carlos] was on the phone with his wife [Gayle]. [Gayle] kept getting interrupted by her daughter [Maria].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Maria and Madonna, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Maria is Madonna's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Madonna] spent a great day shopping with her daughter, [Gayle]. [Mary] and her siblings [Jennifer] and [Daniel] went on a business trip to Asia [Jennifer] went shoe shopping with her sister [Gayle]. [Carlos] took his sister [Mary] out to lunch after learning that she got accepted into her first choice for university. [Carlos] was on the phone with his wife [Gayle]. [Gayle] kept getting interrupted by her daughter [Maria].",
+            "query": "('Madonna', 'Maria')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "8e4f5695-a741-4c92-8907-89b9ee318a4e"
+    },
+    {
+        "question": "Story:\n[Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Diane]. [Gayle] had picked her daughter [Susan] out the cutest new dress to wear on her birthday. [Diane] was excited because today she was going to the zoo with her uncle [Daniel]. [Madonna] went to the mall, because she wanted to look for a present for her daughter, [Gayle]. [Mary] enjoys playing cards with her brother. His name is [Daniel]. [Madonna] asked her husband [James] if he could chop up some vegetables for dinner. [Susan] and her aunt, [Jennifer], went to the bookstore. [Susan] bought some fantasy books, while [Jennifer] picked up some mysteries.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Mary and James, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Mary is James's?",
+        "answer": "daughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] went to the mall, because she wanted to look for a present for her daughter, [Diane]. [Gayle] had picked her daughter [Susan] out the cutest new dress to wear on her birthday. [Diane] was excited because today she was going to the zoo with her uncle [Daniel]. [Madonna] went to the mall, because she wanted to look for a present for her daughter, [Gayle]. [Mary] enjoys playing cards with her brother. His name is [Daniel]. [Madonna] asked her husband [James] if he could chop up some vegetables for dinner. [Susan] and her aunt, [Jennifer], went to the bookstore. [Susan] bought some fantasy books, while [Jennifer] picked up some mysteries.",
+            "query": "('James', 'Mary')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "fd26af28-67fa-410c-9cfb-a4dfb3f3f03d"
+    },
+    {
+        "question": "Story:\n[Carlos]'s mother, [Madonna], told him he was in trouble. Her son [Stephen] had told her that [Carlos] had been stealing from her purse. [Maria] and [Harry] left that evening to go bowling. [William] played chess with his brother [Stephen]. [George] bought to dress for his father [William] [Carlos] was having trouble with his divorce because he only got to see his daughter [Maria] a few times a week [Daniel]'s nephew [George] was happy to hear that he will be arriving at the airport later tonight.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Daniel and Harry, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Daniel is Harry's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Carlos]'s mother, [Madonna], told him he was in trouble. Her son [Stephen] had told her that [Carlos] had been stealing from her purse. [Maria] and [Harry] left that evening to go bowling. [William] played chess with his brother [Stephen]. [George] bought to dress for his father [William] [Carlos] was having trouble with his divorce because he only got to see his daughter [Maria] a few times a week [Daniel]'s nephew [George] was happy to hear that he will be arriving at the airport later tonight.",
+            "query": "('Harry', 'Daniel')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "5ee9593b-9094-4dc0-8647-3952b23ab72a"
+    },
+    {
+        "question": "Story:\n[James] took his grandson [Peter] to the baseball game. [James] is proud that his daughter is such a good student. Her name is [Mary]. [Gayle] was eager to spend time with her son, [Paul]. [Jennifer] and her son [Alfred] made hot dogs. [Alfred]'s brother [Peter] ate one. [Jennifer], who is the sister of [Gayle], is a lovely girl. [Carlos] 'son, [Paul], aced his math class and made his father proud.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Mary and Carlos, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Mary is Carlos's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[James] took his grandson [Peter] to the baseball game. [James] is proud that his daughter is such a good student. Her name is [Mary]. [Gayle] was eager to spend time with her son, [Paul]. [Jennifer] and her son [Alfred] made hot dogs. [Alfred]'s brother [Peter] ate one. [Jennifer], who is the sister of [Gayle], is a lovely girl. [Carlos] 'son, [Paul], aced his math class and made his father proud.",
+            "query": "('Carlos', 'Mary')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "9783106b-2f72-4319-86fb-d6b712a3fa53"
+    },
+    {
+        "question": "Story:\n[Maria] asked her brother, [Harry], to stop by and help babysit, but he was busy with his mom, [Gayle]. [Marguerite] and her brother [Stephen] enlisted in the army [Mary], who is the sister of [Gayle], is a lovely girl. [William] and his brother [Stephen] had a tie score. [Stephen] asked his sister, [Mary], to come up with a tie-breaker. [William] and his brother, [Stephen] run a turtle farm.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marguerite and Maria, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marguerite is Maria's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Maria] asked her brother, [Harry], to stop by and help babysit, but he was busy with his mom, [Gayle]. [Marguerite] and her brother [Stephen] enlisted in the army [Mary], who is the sister of [Gayle], is a lovely girl. [William] and his brother [Stephen] had a tie score. [Stephen] asked his sister, [Mary], to come up with a tie-breaker. [William] and his brother, [Stephen] run a turtle farm.",
+            "query": "('Maria', 'Marguerite')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "84813bc7-a5d2-4f78-a0c3-e4235af6b4e7"
+    },
+    {
+        "question": "Story:\n[James] took his son [Carlos] to the park to feed the squirrels. [Susan] took her sister, [Patricia], out to dinner for her birthday. [Patricia] and her sister, [Susan], frequently bicker. However, they always make up quickly. [Carlos] went fishing with his daughter [Maria]. [Maria]'s sister, [Susan], was n't invited because she hates fishing. [Stephen] 'son, [Peter], was late meeting his grandfather, [James].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Susan and Stephen, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Susan is Stephen's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[James] took his son [Carlos] to the park to feed the squirrels. [Susan] took her sister, [Patricia], out to dinner for her birthday. [Patricia] and her sister, [Susan], frequently bicker. However, they always make up quickly. [Carlos] went fishing with his daughter [Maria]. [Maria]'s sister, [Susan], was n't invited because she hates fishing. [Stephen] 'son, [Peter], was late meeting his grandfather, [James].",
+            "query": "('Stephen', 'Susan')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "4a2661fd-802e-4747-bafa-9f579c4148af"
+    },
+    {
+        "question": "Story:\n[Bertha] vowed to never trust her father, [Stephen] with her debit card again. [Jennifer] and her son, [Peter], went to the park to fly a kite. They had fun doing it all day. [Peter]'s brother, [Alfred], went to get ice cream with his sister, [Bertha]. [Jerry] went with his father [Daniel] and brother [Kyle] on a deep-sea fishing trip. [Daniel]'s brother, [Stephen], came along and brought his rods.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Kyle and Jennifer, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Kyle is Jennifer's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bertha] vowed to never trust her father, [Stephen] with her debit card again. [Jennifer] and her son, [Peter], went to the park to fly a kite. They had fun doing it all day. [Peter]'s brother, [Alfred], went to get ice cream with his sister, [Bertha]. [Jerry] went with his father [Daniel] and brother [Kyle] on a deep-sea fishing trip. [Daniel]'s brother, [Stephen], came along and brought his rods.",
+            "query": "('Jennifer', 'Kyle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "5c68514c-eb80-4a99-a891-313a6e9f3e28"
+    },
+    {
+        "question": "Story:\n[Jennifer] went to her brother [William]'s birthday party [Ethel] and her aunt, [Jennifer], went to the bookstore. [Ethel] bought some fantasy books, while [Jennifer] picked up some mysteries. [Marguerite] was eager to spend time with her son, [Michael]. [Marguerite] spent a great day shopping with her daughter, [Ethel]. [William] walked his daughter [Ruth] down the aisle on her wedding day. [Ruth] and her aunt, [Gayle], went to the bookstore. [Ruth] bought some fantasy books, while [Gayle] picked up some mysteries. [Jerry] and his brother [Michael] went to the park to play basketball.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Gayle and Jerry, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Gayle is Jerry's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] went to her brother [William]'s birthday party [Ethel] and her aunt, [Jennifer], went to the bookstore. [Ethel] bought some fantasy books, while [Jennifer] picked up some mysteries. [Marguerite] was eager to spend time with her son, [Michael]. [Marguerite] spent a great day shopping with her daughter, [Ethel]. [William] walked his daughter [Ruth] down the aisle on her wedding day. [Ruth] and her aunt, [Gayle], went to the bookstore. [Ruth] bought some fantasy books, while [Gayle] picked up some mysteries. [Jerry] and his brother [Michael] went to the park to play basketball.",
+            "query": "('Jerry', 'Gayle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "f8a2073f-f4c2-40b4-a670-ddd695c182e1"
+    },
+    {
+        "question": "Story:\n[Madonna] and her son, [Stephen], went to the park to fly a kite. They had fun doing it all day. [William] was watching the baseball game with his son [George]. He was talking to his son when he got interrupted by a phone call from his brother [Daniel]. [George] and his brother [Jose] had a tie score. [Jose] asked his sister, [Lisa], to come up with a tie-breaker. [William] played scrabble with his mother [Madonna] and his brother [Daniel].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Stephen and Lisa, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Stephen is Lisa's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Madonna] and her son, [Stephen], went to the park to fly a kite. They had fun doing it all day. [William] was watching the baseball game with his son [George]. He was talking to his son when he got interrupted by a phone call from his brother [Daniel]. [George] and his brother [Jose] had a tie score. [Jose] asked his sister, [Lisa], to come up with a tie-breaker. [William] played scrabble with his mother [Madonna] and his brother [Daniel].",
+            "query": "('Lisa', 'Stephen')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "bb41e37a-23c1-4b80-b3d3-b9b70d2a56e4"
+    },
+    {
+        "question": "Story:\n[Jennifer] enjoyed a homemade dinner with her son [Alfred] [Madonna] and her son, [William], went to the park to fly a kite. They had fun doing it all day. [Gayle] asked her mother, [Madonna], what they were going to have for lunch. [William] took his son [Jose] to the park to feed the squirrels. [Alfred] and his brother [Peter] went to the park to play basketball. [Daniel] bought gifts for his lovely sister, [Jennifer] [Daniel] is the uncle of [Jose].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Peter and Gayle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Peter is Gayle's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] enjoyed a homemade dinner with her son [Alfred] [Madonna] and her son, [William], went to the park to fly a kite. They had fun doing it all day. [Gayle] asked her mother, [Madonna], what they were going to have for lunch. [William] took his son [Jose] to the park to feed the squirrels. [Alfred] and his brother [Peter] went to the park to play basketball. [Daniel] bought gifts for his lovely sister, [Jennifer] [Daniel] is the uncle of [Jose].",
+            "query": "('Gayle', 'Peter')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "64aa79ed-d010-4bbb-aebd-6a798640bb73"
+    },
+    {
+        "question": "Story:\n[Patricia] was excited because today she was going to the zoo with her uncle [Daniel]. [Marguerite] took her son [Kyle] to the state fair. [Daniel] gave his wife, [Marguerite] tickets so that they could get in. [Ethel] planned a trip to the zoo for her brother, [Michael]. They had a great time. [Kyle] played basketball with his brother [Michael]. [Paul] went to the game with his sister [Patricia]. [Gayle] and her son, [Paul], went to the park, and had a wonderful time.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Ethel and Gayle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Ethel is Gayle's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Patricia] was excited because today she was going to the zoo with her uncle [Daniel]. [Marguerite] took her son [Kyle] to the state fair. [Daniel] gave his wife, [Marguerite] tickets so that they could get in. [Ethel] planned a trip to the zoo for her brother, [Michael]. They had a great time. [Kyle] played basketball with his brother [Michael]. [Paul] went to the game with his sister [Patricia]. [Gayle] and her son, [Paul], went to the park, and had a wonderful time.",
+            "query": "('Gayle', 'Ethel')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "c2ac55a7-29f2-4b2e-ac9d-dbc6122ec465"
+    },
+    {
+        "question": "Story:\n[Daniel] called up his mother, [Madonna]. He told her all about his son, [Jerry]'s, report card. [Daniel] waited at dinner for his sister, [Jennifer]. She was running late due to a phone call with her brother, [Carlos]. [Madonna] was excited to visit her son, [Daniel], at college. [Ethel] took her brother [Jerry] and other brother [Michael] with her to eat pasta at a pasta buffet.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Carlos and Michael, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Carlos is Michael's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] called up his mother, [Madonna]. He told her all about his son, [Jerry]'s, report card. [Daniel] waited at dinner for his sister, [Jennifer]. She was running late due to a phone call with her brother, [Carlos]. [Madonna] was excited to visit her son, [Daniel], at college. [Ethel] took her brother [Jerry] and other brother [Michael] with her to eat pasta at a pasta buffet.",
+            "query": "('Michael', 'Carlos')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "6392c08b-a2b3-4350-acd3-cedc20fbd58f"
+    },
+    {
+        "question": "Story:\n[Jerry] was disappointed that his father, [Daniel], would n't be at the play to see him perform. [Kyle] likes to watch baseball with his brother. His name is [Jerry]. [Daniel] and his sister, [Gayle], went to a sneak preview of the Avengers movie and loved it. [Marguerite] always goes to the park with her son [Kyle] on Saturdays. [Jennifer], who is the sister of [Gayle], is a lovely girl. [Madonna] asked her daughter, [Mary], if she would like to go to a movie with her on Saturday night. [Madonna] and her daughter [Jennifer] went to see a movie yesterday and then got ice cream afterwards.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Mary and Marguerite, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Mary is Marguerite's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jerry] was disappointed that his father, [Daniel], would n't be at the play to see him perform. [Kyle] likes to watch baseball with his brother. His name is [Jerry]. [Daniel] and his sister, [Gayle], went to a sneak preview of the Avengers movie and loved it. [Marguerite] always goes to the park with her son [Kyle] on Saturdays. [Jennifer], who is the sister of [Gayle], is a lovely girl. [Madonna] asked her daughter, [Mary], if she would like to go to a movie with her on Saturday night. [Madonna] and her daughter [Jennifer] went to see a movie yesterday and then got ice cream afterwards.",
+            "query": "('Marguerite', 'Mary')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "a4db0302-9863-4938-991e-b57b5747f25c"
+    },
+    {
+        "question": "Story:\n[Madonna] was eager to spend time with her son, [William]. [Gayle] had picked her daughter [Susan] out the cutest new dress to wear on her birthday. [Madonna] spent a great day shopping with her daughter, [Gayle]. [Harry] took his son [Carlos] out to play gold later that night. [Susan] was glad to see her father, [Carlos], at her dance recital. [Paul] and his sister, [Susan] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Susan] and [Paul] left that evening to go bowling.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Harry and William, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Harry is William's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Madonna] was eager to spend time with her son, [William]. [Gayle] had picked her daughter [Susan] out the cutest new dress to wear on her birthday. [Madonna] spent a great day shopping with her daughter, [Gayle]. [Harry] took his son [Carlos] out to play gold later that night. [Susan] was glad to see her father, [Carlos], at her dance recital. [Paul] and his sister, [Susan] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Susan] and [Paul] left that evening to go bowling.",
+            "query": "('William', 'Harry')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "97156704-1dfe-4af2-911b-3708b2b321b8"
+    },
+    {
+        "question": "Story:\n[Jose] has a few children, [William], Bradley and Claire [William] drove his daughter [Lisa] to soccer practice. [Marguerite] loved her nephew, [Jose]. [William] and [Mary] have a happy marriage. [Lisa] 'father [William] became enraged when she failed to complete her homework. [Lisa] was grounded for a month and unable to spend time with friends. [Mary] took her daughter [Ruth] to the park. [Ruth] was sad her sister [Lisa] could not join.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Marguerite and Lisa, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Marguerite is Lisa's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jose] has a few children, [William], Bradley and Claire [William] drove his daughter [Lisa] to soccer practice. [Marguerite] loved her nephew, [Jose]. [William] and [Mary] have a happy marriage. [Lisa] 'father [William] became enraged when she failed to complete her homework. [Lisa] was grounded for a month and unable to spend time with friends. [Mary] took her daughter [Ruth] to the park. [Ruth] was sad her sister [Lisa] could not join.",
+            "query": "('Lisa', 'Marguerite')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "5393023f-35b0-4da3-83a7-f492b39fbd28"
+    },
+    {
+        "question": "Story:\n[Ethel] and her aunt, [Gayle], went to the deli. They got a half a pound of corned beef, and two pounds of salami. [Daniel] is [Jennifer]'s older brother. He has never liked any of her boyfriends. [Ethel] went to her brother [Jerry]'s birthday party [Gayle] and her brother [Daniel] went to see a movie. [Marguerite] coached her daughter [Ethel]'s cheer leading squad. When [Marguerite]'s son [Jerry] became interested in joining, she reorganized the team line up to include him. [Ethel] planned a trip to the zoo for her brother, [Michael]. They had a great time.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jennifer and Michael, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jennifer is Michael's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Ethel] and her aunt, [Gayle], went to the deli. They got a half a pound of corned beef, and two pounds of salami. [Daniel] is [Jennifer]'s older brother. He has never liked any of her boyfriends. [Ethel] went to her brother [Jerry]'s birthday party [Gayle] and her brother [Daniel] went to see a movie. [Marguerite] coached her daughter [Ethel]'s cheer leading squad. When [Marguerite]'s son [Jerry] became interested in joining, she reorganized the team line up to include him. [Ethel] planned a trip to the zoo for her brother, [Michael]. They had a great time.",
+            "query": "('Michael', 'Jennifer')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "c34ac243-b7a4-4db6-9628-a15844c75447"
+    },
+    {
+        "question": "Story:\n[Jennifer] took her daughter [Bertha] to school before coming home to make breakfast for her son [Alfred] [Madonna] wanted to go shopping with her daughter, [Jennifer]. [Jennifer] could n't go shopping because she could n't find a babysitter for her son, [Alfred]. [Bertha] went to her father [Stephen] Birthday party [Peter] and his sister [Diane] have been best friends ever since childhood. [Peter] and his son [Stephen] went to look at cars. [Peter] ended up buying the Mustang.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Diane and Madonna, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Diane is Madonna's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] took her daughter [Bertha] to school before coming home to make breakfast for her son [Alfred] [Madonna] wanted to go shopping with her daughter, [Jennifer]. [Jennifer] could n't go shopping because she could n't find a babysitter for her son, [Alfred]. [Bertha] went to her father [Stephen] Birthday party [Peter] and his sister [Diane] have been best friends ever since childhood. [Peter] and his son [Stephen] went to look at cars. [Peter] ended up buying the Mustang.",
+            "query": "('Madonna', 'Diane')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "2b7a9299-b954-4926-991e-4038a280f8c0"
+    },
+    {
+        "question": "Story:\n[Daniel] took his son [Michael] out for ice cream. [Marguerite] was excited to visit her son, [Kyle], at college. [Michael] went to his brother [Kyle]'s Birthday party [Daniel] waited at dinner for his sister, [Gayle]. She was running late due to a phone call with her brother, [William]. [William] took his daughter [Lisa] to the baseball game. [Lisa]'s brother [George] hates baseball and stayed home.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between George and Marguerite, and to describe it through only one kinship word from the posible answers, to correctly answer the question: George is Marguerite's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] took his son [Michael] out for ice cream. [Marguerite] was excited to visit her son, [Kyle], at college. [Michael] went to his brother [Kyle]'s Birthday party [Daniel] waited at dinner for his sister, [Gayle]. She was running late due to a phone call with her brother, [William]. [William] took his daughter [Lisa] to the baseball game. [Lisa]'s brother [George] hates baseball and stayed home.",
+            "query": "('Marguerite', 'George')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "dad6777d-d07f-4dae-8077-261f25ef6b98"
+    },
+    {
+        "question": "Story:\n[Jennifer] took her daughter [Bertha] to school before coming home to make breakfast for her son [Peter] [James] took his son [Daniel] and his daughter [Gayle] out for pizza. [Bertha] went to her aunt [Gayle]'s house for dinner. [Gayle] made meatloaf, and it was delicious. [Diane] planned a trip to the zoo for her brother, [Alfred]. They had a great time. [Peter] took his sister [Diane] out to lunch after learning that she got accepted into her first choice for university.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Daniel and Alfred, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Daniel is Alfred's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] took her daughter [Bertha] to school before coming home to make breakfast for her son [Peter] [James] took his son [Daniel] and his daughter [Gayle] out for pizza. [Bertha] went to her aunt [Gayle]'s house for dinner. [Gayle] made meatloaf, and it was delicious. [Diane] planned a trip to the zoo for her brother, [Alfred]. They had a great time. [Peter] took his sister [Diane] out to lunch after learning that she got accepted into her first choice for university.",
+            "query": "('Alfred', 'Daniel')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "b656a63d-bfc9-40a9-93cb-3362eccd73d4"
+    },
+    {
+        "question": "Story:\n[Mary] asked her daughter, [Lisa], if she would like to go to a movie with her on Saturday night. [Jose] took his favorite son [William] to a baseball game where he caught a foul ball as a souvenir. [Jose] invited his sister [Ruth] to dinner this Friday because it is her birthday. [William] is buying his daughter [Lisa] a brand new car for her birthday. [Jose] likes to visit his sister. Her name is [Ruth]. [James]'s daughter [Mary] was playing on the swings in the park. [Jennifer], his other daughter, was napping in the stroller.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jose and Jennifer, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jose is Jennifer's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Mary] asked her daughter, [Lisa], if she would like to go to a movie with her on Saturday night. [Jose] took his favorite son [William] to a baseball game where he caught a foul ball as a souvenir. [Jose] invited his sister [Ruth] to dinner this Friday because it is her birthday. [William] is buying his daughter [Lisa] a brand new car for her birthday. [Jose] likes to visit his sister. Her name is [Ruth]. [James]'s daughter [Mary] was playing on the swings in the park. [Jennifer], his other daughter, was napping in the stroller.",
+            "query": "('Jennifer', 'Jose')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "23324254-dc1a-47a2-99ad-217efe670709"
+    },
+    {
+        "question": "Story:\n[Mary] wanted to visit an art museum, so she asked her father, [James] to take her. [James] made a pizza for his son [Daniel] and granddaughter [Ethel]. [Ethel]'s brother [Kyle] ate an orange instead. [Carlos] and his brother [Stephen] went hiking with [Carlos]'s mother, [Madonna]. [Madonna]'s daughter, [Mary], brought the supplies.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Stephen and Kyle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Stephen is Kyle's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Mary] wanted to visit an art museum, so she asked her father, [James] to take her. [James] made a pizza for his son [Daniel] and granddaughter [Ethel]. [Ethel]'s brother [Kyle] ate an orange instead. [Carlos] and his brother [Stephen] went hiking with [Carlos]'s mother, [Madonna]. [Madonna]'s daughter, [Mary], brought the supplies.",
+            "query": "('Kyle', 'Stephen')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "39740450-e920-447a-9a44-0ffe9e04882c"
+    },
+    {
+        "question": "Story:\n[Jerry] liked to play catch with his sister [Ethel] and his father [Daniel]. [Michael], [Ethel]'s brother, preferred playing soccer. [Jennifer], who is the sister of [Mary], is a lovely girl. [Jennifer] had picked her daughter [Diane] out the cutest new dress to wear on her birthday. [Madonna] went to the mall, because she wanted to look for a present for her daughter, [Mary]. [Diane] went over to her uncle [Daniel]'s house for dinner.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Michael and Madonna, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Michael is Madonna's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jerry] liked to play catch with his sister [Ethel] and his father [Daniel]. [Michael], [Ethel]'s brother, preferred playing soccer. [Jennifer], who is the sister of [Mary], is a lovely girl. [Jennifer] had picked her daughter [Diane] out the cutest new dress to wear on her birthday. [Madonna] went to the mall, because she wanted to look for a present for her daughter, [Mary]. [Diane] went over to her uncle [Daniel]'s house for dinner.",
+            "query": "('Madonna', 'Michael')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "d8580cf6-8654-4688-81bb-7df64a4cfad1"
+    },
+    {
+        "question": "Story:\n[Bertha] went shoe shopping with her sister [Diane]. [Stephen] sat with his daughter, [Bertha], for ice cream at a local shop. [Bertha] and [Peter] left that evening to go bowling. [James] and his son [Stephen] went to the cinema together. [Peter] likes to visit his sister. Her name is [Bertha]. [Diane] and her sister, [Bertha], went to church. [Bertha]'s mom, [Jennifer], was sick, and could n't make it, and [Bertha] told the pastor so he would pray for a speedy recovery.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between James and Jennifer, and to describe it through only one kinship word from the posible answers, to correctly answer the question: James is Jennifer's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Bertha] went shoe shopping with her sister [Diane]. [Stephen] sat with his daughter, [Bertha], for ice cream at a local shop. [Bertha] and [Peter] left that evening to go bowling. [James] and his son [Stephen] went to the cinema together. [Peter] likes to visit his sister. Her name is [Bertha]. [Diane] and her sister, [Bertha], went to church. [Bertha]'s mom, [Jennifer], was sick, and could n't make it, and [Bertha] told the pastor so he would pray for a speedy recovery.",
+            "query": "('Jennifer', 'James')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "536b80b1-bb60-4389-b585-2d60fb648467"
+    },
+    {
+        "question": "Story:\n[Jerry] likes to sing with his brother [Kyle]. [Kyle]'s sister [Ethel] hates when they sing. [James]'s father, [Daniel], took his daughter [Jennifer] to the park to play on the swings. [Gayle] went to the store with her sister [Jennifer] [Ethel] was running late to meet her brother, [Michael]. [Daniel], [Michael]'s father, called and let him know.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Gayle and Jerry, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Gayle is Jerry's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jerry] likes to sing with his brother [Kyle]. [Kyle]'s sister [Ethel] hates when they sing. [James]'s father, [Daniel], took his daughter [Jennifer] to the park to play on the swings. [Gayle] went to the store with her sister [Jennifer] [Ethel] was running late to meet her brother, [Michael]. [Daniel], [Michael]'s father, called and let him know.",
+            "query": "('Jerry', 'Gayle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "0f2e93a4-cdb5-48a4-bf11-d2962e9ba6b3"
+    },
+    {
+        "question": "Story:\n[James] took his granddaughter [Bertha] and grandson [Alfred] to the baseball game. [Alfred]'s father [Stephen] showed up later in the game. [Stephen] is buying his daughter [Diane] a brand new car for her birthday. [Stephen] and his son, [Peter], were having a big fight. [Stephen]'s daughter, [Bertha], told the two of them to just settle down. [Peter] is [Diane]'s older brother. He has never liked any of her boyfriends.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between James and Bertha, and to describe it through only one kinship word from the posible answers, to correctly answer the question: James is Bertha's?",
+        "answer": "grandfather",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[James] took his granddaughter [Bertha] and grandson [Alfred] to the baseball game. [Alfred]'s father [Stephen] showed up later in the game. [Stephen] is buying his daughter [Diane] a brand new car for her birthday. [Stephen] and his son, [Peter], were having a big fight. [Stephen]'s daughter, [Bertha], told the two of them to just settle down. [Peter] is [Diane]'s older brother. He has never liked any of her boyfriends.",
+            "query": "('Bertha', 'James')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "4f3fa697-ebf9-4c3d-aba1-17c8672b2da1"
+    },
+    {
+        "question": "Story:\n[George] and his sister, [Ruth], went to a sneak preview of the Avengers movie and loved it. [Susan] and her sister, [Maria], went to church. [Maria]'s mom, [Gayle], was sick, and could n't make it, and [Maria] told the pastor so he would pray for a speedy recovery. [Lisa] and her brother [George] went to see a movie. [Ruth] and her aunt, [Gayle], went to the bookstore. [Ruth] bought some fantasy books, while [Gayle] picked up some mysteries. [Madonna] had picked her daughter [Mary] out the cutest new dress to wear on her birthday. [Mary] spent a great day shopping with her daughter, [Lisa].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Susan and Madonna, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Susan is Madonna's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[George] and his sister, [Ruth], went to a sneak preview of the Avengers movie and loved it. [Susan] and her sister, [Maria], went to church. [Maria]'s mom, [Gayle], was sick, and could n't make it, and [Maria] told the pastor so he would pray for a speedy recovery. [Lisa] and her brother [George] went to see a movie. [Ruth] and her aunt, [Gayle], went to the bookstore. [Ruth] bought some fantasy books, while [Gayle] picked up some mysteries. [Madonna] had picked her daughter [Mary] out the cutest new dress to wear on her birthday. [Mary] spent a great day shopping with her daughter, [Lisa].",
+            "query": "('Madonna', 'Susan')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "37689dcc-a2e4-493f-afa7-d425aff40e54"
+    },
+    {
+        "question": "Story:\n[Daniel] and his sister [Jennifer] have been best friends ever since childhood. [Alfred] went to the car show with his sister [Diane] and his mother [Jennifer]. [Stephen] took his daughter [Bertha] to the baseball game. [Bertha]'s brother [Peter] hates baseball and stayed home. [Diane] and her aunt, [Mary], went to the deli. They got a half a pound of corned beef, and two pounds of salami. [Peter] meet his uncle, [Daniel], at the baseball game, excited for their team to win.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Mary and Stephen, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Mary is Stephen's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] and his sister [Jennifer] have been best friends ever since childhood. [Alfred] went to the car show with his sister [Diane] and his mother [Jennifer]. [Stephen] took his daughter [Bertha] to the baseball game. [Bertha]'s brother [Peter] hates baseball and stayed home. [Diane] and her aunt, [Mary], went to the deli. They got a half a pound of corned beef, and two pounds of salami. [Peter] meet his uncle, [Daniel], at the baseball game, excited for their team to win.",
+            "query": "('Stephen', 'Mary')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "60648297-6182-45a8-a3cd-d9f48fbfdca7"
+    },
+    {
+        "question": "Story:\n[Diane] went to her brother [Alfred]'s birthday party [Paul] and his brother [Harry] went to the park to play basketball. [Stephen] bought a new dress for his daughter [Diane]. [Gayle] fixed her husband [Carlos] dinner and then they watched a movie they rented. [Alfred] asked his aunt, [Gayle], to read him a story. [Gayle] unfortunately was n't able to, since she did n't have her glasses, and she was almost blind without them. [Susan] and [Harry] left that evening to go bowling. [Carlos] rushed to the hospital to find out that his wife and already given birth to a boy and had named him [Paul].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Susan and Stephen, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Susan is Stephen's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Diane] went to her brother [Alfred]'s birthday party [Paul] and his brother [Harry] went to the park to play basketball. [Stephen] bought a new dress for his daughter [Diane]. [Gayle] fixed her husband [Carlos] dinner and then they watched a movie they rented. [Alfred] asked his aunt, [Gayle], to read him a story. [Gayle] unfortunately was n't able to, since she did n't have her glasses, and she was almost blind without them. [Susan] and [Harry] left that evening to go bowling. [Carlos] rushed to the hospital to find out that his wife and already given birth to a boy and had named him [Paul].",
+            "query": "('Stephen', 'Susan')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "e12aa34c-4f2a-4a39-8908-b3b496f3b9be"
+    },
+    {
+        "question": "Story:\n[George] took his sister, [Lisa], to a baseball game. [George] and his sister, [Ruth], went to a sneak preview of the Avengers movie and loved it. [Daniel] bought to dress for his father [James] [Jose] was so happy for his brother, [George], getting a promotion. [George] and his sister, [Lisa] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Mary] and her brother [Daniel] walked to the park. [Mary]'s son [Jose] joined them later on.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Ruth and James, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Ruth is James's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[George] took his sister, [Lisa], to a baseball game. [George] and his sister, [Ruth], went to a sneak preview of the Avengers movie and loved it. [Daniel] bought to dress for his father [James] [Jose] was so happy for his brother, [George], getting a promotion. [George] and his sister, [Lisa] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Mary] and her brother [Daniel] walked to the park. [Mary]'s son [Jose] joined them later on.",
+            "query": "('James', 'Ruth')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "ac2eace2-6fcf-4e7e-a339-2b6ade8143c4"
+    },
+    {
+        "question": "Story:\n[Jerry] likes to visit his sister. Her name is [Ethel]. [Marguerite] spent a great day shopping with her daughter, [Ethel]. [Kyle]'s mother [Marguerite] had to help him with his homework because he was having a test soon. [Kyle] is [Ethel]'s older brother. He has never liked any of her boyfriends. [Michael] likes to visit his sister. Her name is [Ethel]. [Michael] was so happy for his brother, [Kyle], getting a promotion. [Kyle] took his son [Daniel] out for pizza.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jerry and Daniel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jerry is Daniel's?",
+        "answer": "son",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jerry] likes to visit his sister. Her name is [Ethel]. [Marguerite] spent a great day shopping with her daughter, [Ethel]. [Kyle]'s mother [Marguerite] had to help him with his homework because he was having a test soon. [Kyle] is [Ethel]'s older brother. He has never liked any of her boyfriends. [Michael] likes to visit his sister. Her name is [Ethel]. [Michael] was so happy for his brother, [Kyle], getting a promotion. [Kyle] took his son [Daniel] out for pizza.",
+            "query": "('Daniel', 'Jerry')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "ab5e5dba-4296-4664-a919-ed473b92566f"
+    },
+    {
+        "question": "Story:\n[Daniel]'s mother, [Madonna], helped him raise his daughter, [Ethel]. [Carlos] bought tickets for him to see the game with his nephew, [Jerry]. [Kyle] was playing checkers with his brother [Jerry]. [Kyle]'s sister [Ethel] was waiting to play. [Carlos] took his daughter [Patricia] to the baseball game. [Patricia]'s brother [Paul] hates baseball and stayed home.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Paul and Madonna, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Paul is Madonna's?",
+        "answer": "grandson",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel]'s mother, [Madonna], helped him raise his daughter, [Ethel]. [Carlos] bought tickets for him to see the game with his nephew, [Jerry]. [Kyle] was playing checkers with his brother [Jerry]. [Kyle]'s sister [Ethel] was waiting to play. [Carlos] took his daughter [Patricia] to the baseball game. [Patricia]'s brother [Paul] hates baseball and stayed home.",
+            "query": "('Madonna', 'Paul')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "5c92f43f-a1ef-43ad-afbb-f14bb02c4253"
+    },
+    {
+        "question": "Story:\n[Daniel] was playing tennis with his sister [Gayle]. Afterwards, he was planning on playing chess with his sister [Jennifer]. [James] sat with his daughter, [Jennifer], for ice cream at a local shop. [Susan] went to the store with her sister [Patricia] [Paul] took his sister [Maria] too the zoo but his sister [Patricia] could n't come because she had to work. [Susan] just had a baby and presented the baby proudly to the new maternal grandmother, [Gayle].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between James and Maria, and to describe it through only one kinship word from the posible answers, to correctly answer the question: James is Maria's?",
+        "answer": "grandfather",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Daniel] was playing tennis with his sister [Gayle]. Afterwards, he was planning on playing chess with his sister [Jennifer]. [James] sat with his daughter, [Jennifer], for ice cream at a local shop. [Susan] went to the store with her sister [Patricia] [Paul] took his sister [Maria] too the zoo but his sister [Patricia] could n't come because she had to work. [Susan] just had a baby and presented the baby proudly to the new maternal grandmother, [Gayle].",
+            "query": "('Maria', 'James')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "9131dd65-8d89-43fd-b392-9decc55042f7"
+    },
+    {
+        "question": "Story:\n[Harry] invited his sister [Maria] to dinner this Friday because it is her birthday. [Stephen] likes to sing with his brother [William]. [William]'s sister [Gayle] hates when they sing. [Paul] was playing checkers with his brother [Harry]. [Paul]'s sister [Susan] was waiting to play. [Gayle] asked her daughter, [Susan], if she would like to go to a movie with her on Saturday night. [Marguerite] went to her brother [Stephen]'s birthday party\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Maria and Marguerite, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Maria is Marguerite's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Harry] invited his sister [Maria] to dinner this Friday because it is her birthday. [Stephen] likes to sing with his brother [William]. [William]'s sister [Gayle] hates when they sing. [Paul] was playing checkers with his brother [Harry]. [Paul]'s sister [Susan] was waiting to play. [Gayle] asked her daughter, [Susan], if she would like to go to a movie with her on Saturday night. [Marguerite] went to her brother [Stephen]'s birthday party",
+            "query": "('Marguerite', 'Maria')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "415fdf22-0a35-4ba7-b03a-fbd2412a383d"
+    },
+    {
+        "question": "Story:\n[Jennifer] loves cooking for her son. His name is [Peter] [Carlos]'s wife is [Gayle]. They went to pick up [Carlos]'s son, [Harry], from school together. [Stephen]'s wife, [Jennifer], surprised him on his birthday. He could n't believe she pulled it off. [Harry] and his uncle [Stephen] went to the movies Sunday after church and got popcorn and candy while they were there. [Peter] went to the game with his sister [Diane]. [Diane] and her brother [Alfred] went to see a movie.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Alfred and Gayle, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Alfred is Gayle's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer] loves cooking for her son. His name is [Peter] [Carlos]'s wife is [Gayle]. They went to pick up [Carlos]'s son, [Harry], from school together. [Stephen]'s wife, [Jennifer], surprised him on his birthday. He could n't believe she pulled it off. [Harry] and his uncle [Stephen] went to the movies Sunday after church and got popcorn and candy while they were there. [Peter] went to the game with his sister [Diane]. [Diane] and her brother [Alfred] went to see a movie.",
+            "query": "('Gayle', 'Alfred')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "2c051fde-902e-45c4-8a55-e8cd30dfd6a9"
+    },
+    {
+        "question": "Story:\n[Jennifer]'s son [Alfred] is turning nine today, so she is throwing him a party. [Diane] bought her mother, [Jennifer], a puppy for her birthday. [Madonna] took her son [Daniel] to school because he missed the bus. [Peter]'s brother, [Alfred], recently made it into town. [Jennifer] had picked her daughter [Diane] out the cutest new dress to wear on her birthday. [Alfred] played basketball with his brother [Peter]. [Jennifer] went to her brother [Daniel]'s birthday party\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Madonna and Alfred, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Madonna is Alfred's?",
+        "answer": "grandmother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Jennifer]'s son [Alfred] is turning nine today, so she is throwing him a party. [Diane] bought her mother, [Jennifer], a puppy for her birthday. [Madonna] took her son [Daniel] to school because he missed the bus. [Peter]'s brother, [Alfred], recently made it into town. [Jennifer] had picked her daughter [Diane] out the cutest new dress to wear on her birthday. [Alfred] played basketball with his brother [Peter]. [Jennifer] went to her brother [Daniel]'s birthday party",
+            "query": "('Alfred', 'Madonna')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "b1a50869-24f5-4578-94cb-abfac51e09c5"
+    },
+    {
+        "question": "Story:\n[Gayle] asked her daughter, [Maria], if she would like to go to a movie with her on Saturday night. [William] has a daughter called [Lisa]. [Maria] and her uncle [Stephen] went to the pet shop. [Maria] saw a puppy that she loved, so [Stephen] bought it for her. [Alfred] went to the game with his sister [Diane]. [Lisa] went to her aunt [Gayle]'s house for dinner. [Gayle] made meatloaf, and it was delicious. [Jennifer] is so happy her husband got a promotion at work. His name is [Stephen]. [Jennifer] enjoyed a homemade dinner with her son [Alfred]\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Diane and William, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Diane is William's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Gayle] asked her daughter, [Maria], if she would like to go to a movie with her on Saturday night. [William] has a daughter called [Lisa]. [Maria] and her uncle [Stephen] went to the pet shop. [Maria] saw a puppy that she loved, so [Stephen] bought it for her. [Alfred] went to the game with his sister [Diane]. [Lisa] went to her aunt [Gayle]'s house for dinner. [Gayle] made meatloaf, and it was delicious. [Jennifer] is so happy her husband got a promotion at work. His name is [Stephen]. [Jennifer] enjoyed a homemade dinner with her son [Alfred]",
+            "query": "('William', 'Diane')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "ebefed69-b4f7-4041-9fa0-9ede3fc9bd6a"
+    },
+    {
+        "question": "Story:\n[Madonna] and her daughter, [Mary], were making dinner. [Mary]'s son, [Jose], helped with the salad. [Kyle] and his mother, [Marguerite], went to a pet store. [Kyle] wanted a parrot, but his mom got him a smaller bird instead. [Daniel] would n't let his son [Jerry] go to the park by himself. [Jerry]'s brother [Kyle] offered to go with him. [Jennifer] had to cut her visit short with her sister, [Marguerite] because her mother, [Madonna] needed help painting.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Jose and Daniel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Jose is Daniel's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Madonna] and her daughter, [Mary], were making dinner. [Mary]'s son, [Jose], helped with the salad. [Kyle] and his mother, [Marguerite], went to a pet store. [Kyle] wanted a parrot, but his mom got him a smaller bird instead. [Daniel] would n't let his son [Jerry] go to the park by himself. [Jerry]'s brother [Kyle] offered to go with him. [Jennifer] had to cut her visit short with her sister, [Marguerite] because her mother, [Madonna] needed help painting.",
+            "query": "('Daniel', 'Jose')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "59d6886e-a0de-44ce-b419-541c9236de20"
+    },
+    {
+        "question": "Story:\n[Patricia] threw a part for her sister, [Maria], after she retired. Their brother, [Paul], catered the event with the help of his father, [Carlos]. [Daniel] likes to visit his sister. Her name is [Gayle]. [Stephen] bought to dress for his father [James] [Gayle] enjoys playing cards with her brother. His name is [Stephen]. [Carlos] and his brother [Daniel] always played pranks on each other\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Patricia and James, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Patricia is James's?",
+        "answer": "granddaughter",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Patricia] threw a part for her sister, [Maria], after she retired. Their brother, [Paul], catered the event with the help of his father, [Carlos]. [Daniel] likes to visit his sister. Her name is [Gayle]. [Stephen] bought to dress for his father [James] [Gayle] enjoys playing cards with her brother. His name is [Stephen]. [Carlos] and his brother [Daniel] always played pranks on each other",
+            "query": "('James', 'Patricia')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "5ef1aa00-4a5a-4f3d-b37b-c9e0558d7ec4"
+    },
+    {
+        "question": "Story:\n[James] loved his granddaughter, [Ruth]. [George] likes to visit his sister. Her name is [Lisa]. [Mary]'s husband, [William], took his daughter, [Ruth], to swimming class. [Lisa] took her sister, [Ruth], out to dinner for her birthday. [George] asked his brother, [Jose], if he wanted to go to the beach. [Jose] said he could n't go because he had to take [Ruth], his sister, to see the dentist.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between James and Mary, and to describe it through only one kinship word from the posible answers, to correctly answer the question: James is Mary's?",
+        "answer": "father",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[James] loved his granddaughter, [Ruth]. [George] likes to visit his sister. Her name is [Lisa]. [Mary]'s husband, [William], took his daughter, [Ruth], to swimming class. [Lisa] took her sister, [Ruth], out to dinner for her birthday. [George] asked his brother, [Jose], if he wanted to go to the beach. [Jose] said he could n't go because he had to take [Ruth], his sister, to see the dentist.",
+            "query": "('Mary', 'James')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "0720cbd8-9c7a-4cdb-a257-e646552958c0"
+    },
+    {
+        "question": "Story:\n[Gayle] was afraid of heights just like her daughters, [Susan] and [Patricia]. However, [Patricia]'s father, [Carlos], loved heights and even went sky diving a few times. [Michael] took his sister, [Ethel], to a baseball game. [Paul] took his sister [Susan] out to lunch after learning that she got accepted into her first choice for university. [Ethel] was excited because today she was going to the zoo with her uncle [Carlos]. [Marguerite] loves cooking for her son. His name is [Michael]\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Paul and Marguerite, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Paul is Marguerite's?",
+        "answer": "nephew",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Gayle] was afraid of heights just like her daughters, [Susan] and [Patricia]. However, [Patricia]'s father, [Carlos], loved heights and even went sky diving a few times. [Michael] took his sister, [Ethel], to a baseball game. [Paul] took his sister [Susan] out to lunch after learning that she got accepted into her first choice for university. [Ethel] was excited because today she was going to the zoo with her uncle [Carlos]. [Marguerite] loves cooking for her son. His name is [Michael]",
+            "query": "('Marguerite', 'Paul')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "c1675f36-89ff-4ea7-9fda-14b6db14d03c"
+    },
+    {
+        "question": "Story:\n[Carlos] enjoys going fishing with his brother. His name is [Daniel]. [Daniel] has a few children, [James], Bradley and Claire [Mary] bought a plant for her dad, [James]. [Gayle] 'father [James] became enraged when she failed to complete her homework. [Gayle] was grounded for a month and unable to spend time with friends. [James] took his daughter, [Mary], to a baseball game. [Madonna] coached her daughter [Gayle]'s cheer leading squad. When [Madonna]'s son [William] became interested in joining, she reorganized the team line up to include him.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Carlos and William, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Carlos is William's?",
+        "answer": "brother",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Carlos] enjoys going fishing with his brother. His name is [Daniel]. [Daniel] has a few children, [James], Bradley and Claire [Mary] bought a plant for her dad, [James]. [Gayle] 'father [James] became enraged when she failed to complete her homework. [Gayle] was grounded for a month and unable to spend time with friends. [James] took his daughter, [Mary], to a baseball game. [Madonna] coached her daughter [Gayle]'s cheer leading squad. When [Madonna]'s son [William] became interested in joining, she reorganized the team line up to include him.",
+            "query": "('William', 'Carlos')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "54e27e5c-f418-4ed6-a359-8b4af6ba0771"
+    },
+    {
+        "question": "Story:\n[James] was n't able to leave work early to go watch his son [Carlos] play in his first high school football game. [James] instead sent his oldest daughter, [Jennifer], to film the game for him so that he could watch it later that night. [Madonna] likes taking her son [William] to baseball practice. She also likes taking her son [Carlos] to soccer practice. [Gayle], who is the sister of [Jennifer], is a lovely girl. [Maria] planned a trip to the zoo for her brother, [Harry]. They had a great time. [Gayle] always goes to the park with her son [Harry] on Saturdays.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Maria and William, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Maria is William's?",
+        "answer": "niece",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[James] was n't able to leave work early to go watch his son [Carlos] play in his first high school football game. [James] instead sent his oldest daughter, [Jennifer], to film the game for him so that he could watch it later that night. [Madonna] likes taking her son [William] to baseball practice. She also likes taking her son [Carlos] to soccer practice. [Gayle], who is the sister of [Jennifer], is a lovely girl. [Maria] planned a trip to the zoo for her brother, [Harry]. They had a great time. [Gayle] always goes to the park with her son [Harry] on Saturdays.",
+            "query": "('William', 'Maria')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "af3eafd9-8643-4624-80c5-066753b9be7d"
+    },
+    {
+        "question": "Story:\n[Peter] and [Alfred] went to help their mother [Jennifer] pick up her husband [Stephen]'s new golf clubs. [Alfred] likes to visit his sister. Her name is [Diane]. [Stephen] was watching the baseball game with his son [Peter]. He was talking to his son when he got interrupted by a phone call from his brother [William]. [Diane] and [Alfred] left that evening to go bowling.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between William and Alfred, and to describe it through only one kinship word from the posible answers, to correctly answer the question: William is Alfred's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Peter] and [Alfred] went to help their mother [Jennifer] pick up her husband [Stephen]'s new golf clubs. [Alfred] likes to visit his sister. Her name is [Diane]. [Stephen] was watching the baseball game with his son [Peter]. He was talking to his son when he got interrupted by a phone call from his brother [William]. [Diane] and [Alfred] left that evening to go bowling.",
+            "query": "('Alfred', 'William')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "03237b77-5a65-4213-b52d-f92d1792f000"
+    },
+    {
+        "question": "Story:\n[George] invited his sister [Lisa] to dinner this Friday because it is her birthday. [Mary] took her daughter [Ruth] to the park. [Ruth] was sad her sister [Lisa] could not join. [Marguerite] went to the store with her sister [Mary] [Stephen]'s sister, [Marguerite], and father, [James], took [James]'s son [Daniel] to the park to run around.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Daniel and George, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Daniel is George's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[George] invited his sister [Lisa] to dinner this Friday because it is her birthday. [Mary] took her daughter [Ruth] to the park. [Ruth] was sad her sister [Lisa] could not join. [Marguerite] went to the store with her sister [Mary] [Stephen]'s sister, [Marguerite], and father, [James], took [James]'s son [Daniel] to the park to run around.",
+            "query": "('George', 'Daniel')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "866c87f9-35d7-441f-b36f-1ed47bda460c"
+    },
+    {
+        "question": "Story:\n[Alfred] meet his uncle, [Carlos], at the baseball game, excited for their team to win. [Stephen] and his son [Alfred] were jumping rope. [Stephen]'s sister, [Gayle], was nearby drawing in a coloring book. [Gayle] and her sister, [Marguerite], frequently bicker. However, they always make up quickly. [Ethel] just had a baby and presented the baby proudly to the new maternal grandmother, [Marguerite]. [Daniel] bought Christmas gifts for his brother [Carlos] and his sister [Mary].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Mary and Ethel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Mary is Ethel's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Alfred] meet his uncle, [Carlos], at the baseball game, excited for their team to win. [Stephen] and his son [Alfred] were jumping rope. [Stephen]'s sister, [Gayle], was nearby drawing in a coloring book. [Gayle] and her sister, [Marguerite], frequently bicker. However, they always make up quickly. [Ethel] just had a baby and presented the baby proudly to the new maternal grandmother, [Marguerite]. [Daniel] bought Christmas gifts for his brother [Carlos] and his sister [Mary].",
+            "query": "('Ethel', 'Mary')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "b2885dde-0f7c-40e9-a4be-176041c89aeb"
+    },
+    {
+        "question": "Story:\n[Michael] wanted to join the theater group his sister [Ethel] was a part of. [Ethel]'s mother, [Marguerite], signed him up for the group. [Michael] likes to visit his sister. Her name is [Ethel]. [Daniel] was so proud of his son, [Kyle]. he received a great scholarship to college. [Daniel] played basketball with his brother [William]. [Kyle] and [Jerry] were both still very upset with their mother, [Marguerite].\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between William and Ethel, and to describe it through only one kinship word from the posible answers, to correctly answer the question: William is Ethel's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Michael] wanted to join the theater group his sister [Ethel] was a part of. [Ethel]'s mother, [Marguerite], signed him up for the group. [Michael] likes to visit his sister. Her name is [Ethel]. [Daniel] was so proud of his son, [Kyle]. he received a great scholarship to college. [Daniel] played basketball with his brother [William]. [Kyle] and [Jerry] were both still very upset with their mother, [Marguerite].",
+            "query": "('Ethel', 'William')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "7e85f421-a94f-42e3-bb60-1031ac1cf348"
+    },
+    {
+        "question": "Story:\n[Ruth] just had a baby and presented the baby proudly to the new maternal grandmother, [Mary]. [Mary] loves her son [George] very much. He loves her, too. [William] took his son [George] out for ice cream. [Jose]'s aunt, [Gayle], took him to the zoo. [Jose] and his sister [Ruth] went out for ice cream. [Mary] loves cooking for her son. His name is [Jose] [Jose] took his son [William] out for pizza.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Gayle and Mary, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Gayle is Mary's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Ruth] just had a baby and presented the baby proudly to the new maternal grandmother, [Mary]. [Mary] loves her son [George] very much. He loves her, too. [William] took his son [George] out for ice cream. [Jose]'s aunt, [Gayle], took him to the zoo. [Jose] and his sister [Ruth] went out for ice cream. [Mary] loves cooking for her son. His name is [Jose] [Jose] took his son [William] out for pizza.",
+            "query": "('Mary', 'Gayle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "b07db664-4f55-44e0-9dad-1b1071926164"
+    },
+    {
+        "question": "Story:\n[Ruth] and [George] are siblings who are enjoying lunch together. [Carlos] and his sister, [Mary] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Mary] and her son [Jose] traveled around the world [George] played basketball with his brother [Jose]. [Jose] bought to dress for his father [William] [William] was so excited to surprise his son, [Jose], with the tickets to the playoffs. [Ruth] and her brother [George] went to see a movie.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Carlos and George, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Carlos is George's?",
+        "answer": "uncle",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Ruth] and [George] are siblings who are enjoying lunch together. [Carlos] and his sister, [Mary] love it when their grandmother visits because she spoils them. She is coming this week to watch them while their parents are out of town. [Mary] and her son [Jose] traveled around the world [George] played basketball with his brother [Jose]. [Jose] bought to dress for his father [William] [William] was so excited to surprise his son, [Jose], with the tickets to the playoffs. [Ruth] and her brother [George] went to see a movie.",
+            "query": "('George', 'Carlos')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "dcc88f6d-ceb7-45a6-becf-ab2a0ad9dcd1"
+    },
+    {
+        "question": "Story:\n[William] went to see his daughter [Ruth] for parents day at college. [Gayle] went to the store with her sister [Mary] [Mary] gave birth to a son named [Jose]. [George] went to the game with his sister [Lisa]. [Mary] and her son [Jose] went out to lunch together yesterday. [Mary] and her daughter [Ruth] went to see a movie yesterday and then got ice cream afterwards. [Lisa]'s father [William] loves his little princess even though she gets into a lot of trouble at school.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Gayle and George, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Gayle is George's?",
+        "answer": "aunt",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[William] went to see his daughter [Ruth] for parents day at college. [Gayle] went to the store with her sister [Mary] [Mary] gave birth to a son named [Jose]. [George] went to the game with his sister [Lisa]. [Mary] and her son [Jose] went out to lunch together yesterday. [Mary] and her daughter [Ruth] went to see a movie yesterday and then got ice cream afterwards. [Lisa]'s father [William] loves his little princess even though she gets into a lot of trouble at school.",
+            "query": "('George', 'Gayle')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "3fe9ee4d-5807-43c1-8bc0-71a1016a0e48"
+    },
+    {
+        "question": "Story:\n[Alfred]'s father, [Stephen], and grandfather, [James], went hiking during the first weekend of spring. [Alfred]'s brother, [Peter], recently made it into town. [Stephen] took his son [Peter] out for ice cream. [Jennifer] invited her daughter [Diane] to lunch. [Diane]'s brother [Alfred] could n't leave work to join them. [Mary] wanted to visit an art museum, so she asked her father, [James] to take her.\n\nPossible answers:\n- aunt\n- son-in-law\n- grandfather\n- brother\n- sister\n- father\n- mother\n- grandmother\n- uncle\n- daughter-in-law\n- grandson\n- granddaughter\n- father-in-law\n- mother-in-law\n- nephew\n- son\n- daughter\n- niece\n\nUnderstand the family relationship between Mary and Jennifer, and to describe it through only one kinship word from the posible answers, to correctly answer the question: Mary is Jennifer's?",
+        "answer": "sister",
+        "task_type": "cluttr",
+        "metadata": {
+            "story": "[Alfred]'s father, [Stephen], and grandfather, [James], went hiking during the first weekend of spring. [Alfred]'s brother, [Peter], recently made it into town. [Stephen] took his son [Peter] out for ice cream. [Jennifer] invited her daughter [Diane] to lunch. [Diane]'s brother [Alfred] could n't leave work to join them. [Mary] wanted to visit an art museum, so she asked her father, [James] to take her.",
+            "query": "('Jennifer', 'Mary')",
+            "task_name": "task_1.7",
+            "reasoning_length": 7,
+            "injected_noise": 1,
+            "split_origin": "test"
+        },
+        "id": "7fe5bf37-1093-4204-b536-b23af6a75c15"
+    }
+]

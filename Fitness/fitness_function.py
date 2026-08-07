@@ -37,7 +37,7 @@ class UnifiedFitnessCalculator:
         upper_bound_filter = q3 + 1.5 * iqr
         
         # Keep only "normal" token usages
-        filtered = arr[(arr >= lower_bound_filter) & (arr <= upper_bound_filter) & (arr <= 1500)]
+        filtered = arr[(arr >= lower_bound_filter) & (arr <= upper_bound_filter) & (arr <= 1300)]
         
         # 2. Update Mean and Std Dev (fallback to raw array if filtering stripped everything)
         if len(filtered) > 0:
@@ -46,6 +46,13 @@ class UnifiedFitnessCalculator:
         else:
             self.target_mean = np.mean(arr)
             self.target_std = max(1.0, np.std(arr))
+
+        if self.target_std < 1.0:
+            self.target_std = 1.0  # Prevents division by zero in penalty calculations
+        elif self.target_std > 100.0:
+            self.target_std = 100.0  # Prevents overly aggressive penalties for high variance
+        if self.target_mean < 1150:
+            self.target_mean = 1150  # Prevents overly aggressive penalties for small token counts
             
         print(f"   📊 Dynamic Token Baseline Shifted -> Mean: {self.target_mean:.1f} | Std: {self.target_std:.1f}")
 
@@ -65,7 +72,7 @@ class UnifiedFitnessCalculator:
             token_penalty = 0.0
         elif token_count >= upper_bound:
             token_penalty = self.max_penalty
-        elif token_count > 1500:
+        elif token_count > 1300:
             token_penalty = 0.8
         else:
             # Scale proportionally between 0.0 and max_penalty
