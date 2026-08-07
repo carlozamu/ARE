@@ -8,6 +8,8 @@ import torch
 import pickle
 import glob
 
+from Genome.agent_genome import Genome
+
 # --- 1. Plotting Utility ---
 class Plotter:
     """
@@ -378,9 +380,7 @@ def log_generation_to_markdown(population: List['Genome'],
     # Log the top 3 distinct configurations to observe sequence diversity
     for i, ind in enumerate(sorted_pop[:3]):
         md_lines.append(f"#### Rank {i + 1}")
-        md_lines.append(f"- **Fitness:** {ind.fitness:.4f}")
-        md_lines.append(f"- **Accuracy:** {ind.accuracy:.2f}%")
-        md_lines.append(f"- **Avg Prompt+Response Tokens:** {ind.avg_tokens:.1f}")
+        md_lines.append(f"- **Fitness/Accuracy:** {ind.fitness:.4f}")
         md_lines.append(f"- **Prompt Length ($k$):** {ind.k} examples")
         
         # Format the macro and micro structures clearly

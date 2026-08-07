@@ -3,14 +3,14 @@ import re
 from typing import Dict, List, Optional
 from Gene.gene import Gene
 from Data.clutrr import CLUTTRManager
-# Assuming CLUTTRManager is imported here
+
 
 class CLUTTRGeneticPool:
     """
     An adapter that wraps the CLUTTRManager to provide O(1) random sampling 
     and protocol compliance for the Variable-Length Hierarchical Sequence Memetic Algorithm.
     """
-    def __init__(self, manager: CLUTTRManager, source_split: str = "train"):
+    def __init__(self, manager: CLUTTRManager, source_split: str = "all"):
         self.manager = manager
         # Structure: { hop_level: { example_id: dict_of_data } }
         self.pool_data: Dict[int, Dict[int, dict]] = {}
@@ -18,56 +18,64 @@ class CLUTTRGeneticPool:
         
         self._build_index(source_split)
 
-    def _build_index(self, split: str) -> None:
+    def _build_index(self, split_request: str) -> None:
         """
-        Pre-computes and indexes the dataset to avoid string parsing during the GA loop.
-        Groups data by hop_level and assigns integer IDs.
+        Pre-computes and indexes the dataset. 
+        If split_request is 'all', it aggregates train, validation, and test splits.
         """
-        if self.manager.dataset is None or split not in self.manager.dataset:
-            raise ValueError(f"Dataset split '{split}' not found or dataset not loaded.")
+        if self.manager.dataset is None:
+            raise ValueError("Dataset not loaded in manager.")
 
-        data_split = self.manager.dataset[split]
-        print(f"Indexing {len(data_split)} examples from '{split}' for genetic pooling...")
+        # Determine which splits to map
+        if split_request == "all":
+            splits_to_index = list(self.manager.dataset.keys())
+        else:
+            if split_request not in self.manager.dataset:
+                raise ValueError(f"Dataset split '{split_request}' not found.")
+            splits_to_index = [split_request]
 
-        # We use a running integer counter because standard CLUTRR IDs are strings, 
-        # but our Gene class expects an integer example_id.
+        print(f"Indexing examples from splits: {splits_to_index} for genetic pooling...")
+
         internal_id_counter = 0
 
-        for item in data_split:
-            story = item.get("story", "")
-            query = item.get("query", "")
-            target = item.get("target_text", "")
-            task_name = item.get("task_name", "")
-            
-            # 1. Extract hop level
-            try:
-                hop_level = int(task_name.split(".")[1])
-            except (IndexError, ValueError):
-                continue  # Skip malformed data
-            
-            # 2. Extract Names (Reusing your CLUTTRManager logic)
-            clean_query = query.replace("(", "").replace(")", "").replace("'", "")
-            try:
-                name1, name2 = [name.strip() for name in clean_query.split(',')]
-            except ValueError:
-                name1, name2 = "Person A", "Person B"
+        for split in splits_to_index:
+            data_split = self.manager.dataset[split]
+            for item in data_split:
+                story = item.get("story", "")
+                query = item.get("query", "")
+                target = item.get("target_text", "")
+                task_name = item.get("task_name", "")
                 
-            # 3. Store in structured format
-            if hop_level not in self.pool_data:
-                self.pool_data[hop_level] = {}
+                # Extract hop level
+                try:
+                    hop_level = int(task_name.split(".")[1])
+                except (IndexError, ValueError):
+                    continue  # Skip malformed data
                 
-            self.pool_data[hop_level][internal_id_counter] = {
-                "example_id": internal_id_counter,
-                "original_id": item.get("id", None), # Keep original ID for reference if needed
-                "problem": story,
-                "answer": target,
-                "names": (name1, name2)
-            }
-            
-            internal_id_counter += 1
+                # Extract Names
+                clean_query = query.replace("(", "").replace(")", "").replace("'", "")
+                try:
+                    name1, name2 = [name.strip() for name in clean_query.split(',')]
+                except ValueError:
+                    name1, name2 = "Person A", "Person B"
+                    
+                # Store in structured format
+                if hop_level not in self.pool_data:
+                    self.pool_data[hop_level] = {}
+                    
+                self.pool_data[hop_level][internal_id_counter] = {
+                    "example_id": internal_id_counter,
+                    "original_id": item.get("id", None), 
+                    "problem": story,
+                    "answer": target,
+                    "names": (name1, name2)
+                }
+                
+                internal_id_counter += 1
 
         self.available_hops = list(self.pool_data.keys())
         print(f"Index built successfully. Available hop levels: {sorted(self.available_hops)}")
+        print(f"Total examples loaded into genetic pool: {internal_id_counter}")
 
     # --- DatasetPoolProtocol Implementation ---
 
@@ -89,7 +97,6 @@ class CLUTTRGeneticPool:
         if hop_level not in self.pool_data:
             raise KeyError(f"Hop level {hop_level} does not exist in the pool.")
             
-        # random.choice doesn't work directly on dict_values, so we pick a random key
         random_id = random.choice(list(self.pool_data[hop_level].keys()))
         return self.pool_data[hop_level][random_id]
 

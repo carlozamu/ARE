@@ -15,7 +15,7 @@ from Crossover.crossover import Crossover
 from Selection.selection import TwoTierMacroDiversitySelection
 from Data.clutrr import CLUTTRManager
 from Data.clutrr_wrapper import CLUTTRGeneticPool
-from Population.initializer import initialize_population
+from EvoFS.init_pop import initialize_population
 from Utils.utilities import log_generation_to_markdown, log_and_print, clear_log_file, Plotter, force_cleanup, HistoryTracker
 from Utils.LLM import LLM
 
@@ -36,7 +36,7 @@ async def run_evolution():
     # 2. Setup Data Pipeline
     dataset_manager = CLUTTRManager(split_config="gen_train234_test2to10")
     dataset = dataset_manager.get_or_create_curated_dataset(6) 
-    genetic_pool = CLUTTRGeneticPool(manager=dataset_manager, source_split="train")
+    genetic_pool = CLUTTRGeneticPool(manager=dataset_manager, source_split="all")
     
     # 3. Setup Genetic Operators
     selector = TwoTierMacroDiversitySelection(selection_pressure=1.5, max_per_niche_ratio=0.3)
@@ -49,8 +49,8 @@ async def run_evolution():
     start_time = time.time()
     
     # --- Dummy Baselines (Replace with actual evaluation if needed) ---
-    zero_shot_stats = {"accuracy": 15.0, "fitness": 15.0, "execution_time": 0.0}
-    few_shots_stats = {"accuracy": 25.0, "fitness": 25.0, "execution_time": 0.0}
+    zero_shot_stats = {"accuracy": 15.0, "fitness": 15.0, "execution_time": 10.0}
+    few_shots_stats = {"accuracy": 25.0, "fitness": 25.0, "execution_time": 50.0}
 
     # ==========================================
     # 3. STATE RECOVERY & POPULATION SETUP
@@ -82,8 +82,8 @@ async def run_evolution():
         log_and_print(f"✅ Generation 0 Initialized in {init_duration:.2f}s.")
         
         # Initial Logging & Plotting
-        best_acc = max((ind.accuracy for ind in population if ind.accuracy is not None), default=0)
-        avg_acc = sum(ind.accuracy for ind in population if ind.accuracy is not None) / max(1, len(population))
+        best_acc = max((ind.fitness for ind in population if ind.fitness is not None), default=0)
+        avg_acc = sum(ind.fitness for ind in population if ind.fitness is not None) / max(1, len(population))
         
         log_generation_to_markdown(population, best_acc, avg_acc, zero_shot_stats, few_shots_stats, generation_idx, init_duration)
         history_manager.record_generation(population, zero_shot_stats, few_shots_stats)
@@ -141,15 +141,15 @@ async def run_evolution():
         # C. LOGGING & ANALYTICS
         population = next_generation
         
-        best_acc = max((ind.accuracy for ind in population if ind.accuracy is not None), default=0)
-        avg_acc = sum(ind.accuracy for ind in population if ind.accuracy is not None) / max(1, len(population))
+        best_acc = max((ind.fitness for ind in population if ind.fitness is not None), default=0)
+        avg_acc = sum(ind.fitness for ind in population if ind.fitness is not None) / max(1, len(population))
         
         best_fit = log_generation_to_markdown(
             population, best_acc, avg_acc, zero_shot_stats, few_shots_stats, generation_idx, eval_duration
         )
         
         log_and_print(f"\n📊 Generation {generation_idx} Summary:")
-        log_and_print(f"ERA run in {eval_duration:.2f}s. Best Accuracy: {best_acc:.2f}%, Best Fitness: {best_fit:.4f}") 
+        log_and_print(f"ERA run in {eval_duration:.2f}s. Best Accuracy: {best_acc:.2f}%") 
         log_and_print("-" * 30)
 
         # D. PLOTTING

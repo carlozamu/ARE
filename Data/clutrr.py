@@ -351,7 +351,7 @@ CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the l
                 match = re.search(r"task_(\d+)\.(\d+)", task_name)
                 if match:
                     injected_noise, reasoning_length = int(match.group(1)), int(match.group(2))
-                    prompt = self.build_prompt_clutrr(item.get("story", ""), item.get("query", ""))
+                    prompt = self.build_prompt_clutrr_baseline(item.get("story", ""), item.get("query", ""))
                     
                     formatted_item = {
                         "question": prompt, "answer": target, "task_type": "cluttr",

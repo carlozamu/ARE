@@ -55,10 +55,8 @@ class Fitness:
     
     async def _evaluate_individual_full(self, individual: Genome, problem_pool: List[Dict]) -> Tuple[List[int], float]:
         """
-        Evaluates an individual using Chunked Concurrency.
-        Maximizes GPU throughput while preserving the Circuit Breaker logic.
+        Evaluates an individual using throttled Chunked Concurrency.
         """
-        # --- OPTIMIZATION 1: Compute few-shot string exactly once per genome ---
         try:
             examples_str = individual.get_samples()
         except Exception as e:
@@ -72,13 +70,12 @@ class Fitness:
         token_usages = []
         failed_count = 0
         
-        # --- OPTIMIZATION 2: Chunked Evaluation ---
-        chunk_size = 10 
+        # DOWN-TUNED: Smaller chunks reduce parallel requests sent to the LLM
+        chunk_size = 3 
         
         for i in range(0, len(problem_pool), chunk_size):
             chunk = problem_pool[i : i + chunk_size]
             
-            # Fire the chunk concurrently to the LLM class
             tasks = [self._evaluate_single_problem(examples_str, p) for p in chunk]
             results = await asyncio.gather(*tasks)
             
@@ -87,23 +84,21 @@ class Fitness:
                 problems_evaluated += 1
                 if tokens > 0:
                     token_usages.append(tokens)
-                
                 if is_correct:
                     total_correct += 1
-                
                 if score < 0.1:
                     failed_count += 1
             
-            # --- CIRCUIT BREAKER ---
             if failed_count > len(problem_pool) * PERCENTAGE_FAILURE_THRESHOLD:
                 break 
+                
+            # THERMAL RELIEF: Give the GPU a brief moment to clear VRAM buffers between chunks
+            await asyncio.sleep(0.2)
         
-        # Calculate final metrics
         avg_score = (total_score / problems_evaluated) * 100 if problems_evaluated > 0 else 0.0
         accuracy = (total_correct / problems_evaluated) * 100 if problems_evaluated > 0 else 0.0
         avg_tokens = sum(token_usages) / len(token_usages) if token_usages else 0.0
         
-        # Map directly to the Genome object attributes
         individual.fitness = float(max(0.01, avg_score))
         individual.accuracy = accuracy
         individual.avg_tokens = avg_tokens
@@ -112,34 +107,34 @@ class Fitness:
 
     async def evaluate_population(self, population: List[Genome], problem_pool: List[Dict]):
         """
-        Dispatches unevaluated individuals. Relies entirely on the LLM class's internal 
-        semaphore to manage hardware backpressure.
+        Dispatches individuals through a strict Semaphore to prevent GPU power spikes.
         """
         if not problem_pool:
             raise ValueError("Problem pool cannot be empty.")
         
-        # Check fitness to see if evaluation is needed
         tbe_individuals = [ind for ind in population if ind.fitness is None]
-        
         if not tbe_individuals:
             return
             
         print(f"Evaluating population: {len(tbe_individuals)} new genomes on {len(problem_pool)} problems...")
 
-        # --- OPTIMIZATION 3: Unrestricted Task Dispatch ---
-        # The LLM class handles the 50-concurrent limit safely.
-        tasks = [self._evaluate_individual_full(individual, problem_pool) for individual in tbe_individuals]
+        # STRICT LIMITER: Only allow 3 genomes to be evaluated concurrently.
+        # Combined with chunk_size=3, the absolute maximum concurrent requests to the GPU is 9.
+        hardware_semaphore = asyncio.Semaphore(30)
+
+        async def _bounded_evaluate(individual):
+            async with hardware_semaphore:
+                return await self._evaluate_individual_full(individual, problem_pool)
+
+        tasks = [_bounded_evaluate(individual) for individual in tbe_individuals]
         results = await asyncio.gather(*tasks)
 
         all_token_usages = []
         all_accuracies = []
         for individual_tokens, accuracy in results:
             all_token_usages.extend(individual_tokens)
-            # Only track accuracy if the genome wasn't completely broken
             if individual_tokens:
                 all_accuracies.append(accuracy)
-
-        # Update global stats
             
         if all_accuracies:
             max_accuracy = max(all_accuracies)
