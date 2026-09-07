@@ -2,7 +2,7 @@ import asyncio
 from typing import List, Dict, Tuple
 from Gene.gene import PromptNode
 from Utils.LLM import LLM
-from Data.clutrr import CLUTTRManager
+from Data.CLUTRR.clutrr import CLUTTRManager
 from Phenotype.phenotype import Phenotype
 from Fitness.fitness_function import UnifiedFitnessCalculator
 
@@ -25,7 +25,7 @@ class Fitness:
             stats = response['stats']
             token_used = stats.get('total_tokens', 0)
         except Exception as e:
-            print(f"Error executing phenotype: {e}")
+            #print(f"Error executing phenotype: {e}")
             generated_ans = ""
             token_used = 0
 
@@ -53,7 +53,7 @@ class Fitness:
             stats = response['stats']
             token_used = stats.get('total_tokens', 0)
         except Exception as e:
-            print(f"Error executing phenotype: {e}")
+            #print(f"Error executing phenotype: {e}")
             generated_ans = ""
             token_used = 0
 
@@ -133,7 +133,7 @@ class Fitness:
             if not individual.genome.evaluated:
                 tbe_individuals.append(individual)
         
-        print(f"Evaluating population of {len(tbe_individuals)} individuals on {len(problem_pool)} problems with circuit breaker threshold at {PERCENTAGE_FAILURE_THRESHOLD*100}% failures.")
+        #print(f"Evaluating population of {len(tbe_individuals)} individuals on {len(problem_pool)} problems with circuit breaker threshold at {PERCENTAGE_FAILURE_THRESHOLD*100}% failures.")
 
         # --- THE HARDWARE LIMITER ---
         MAX_CONCURRENT = 50 

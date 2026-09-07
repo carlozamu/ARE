@@ -1,7 +1,7 @@
 import random
 from collections import defaultdict
 
-from Data.clutrr import CLUTTRManager
+from Data.CLUTRR.clutrr import CLUTTRManager
 
 def extract_names(query: str) -> tuple[str, str]:
     """Helper to extract name1 and name2 from the CLUTRR query string."""
@@ -96,7 +96,7 @@ def generate_prompt_templates(dataset_batch: list[dict], output_filename: str = 
             f.write(f"    '{config_name}': {template_str},\n")
         f.write("}\n")
 
-    print(f"Successfully generated {len(configurations)} prompt templates and saved to {output_filename}.")
+    #print(f"Successfully generated {len(configurations)} prompt templates and saved to {output_filename}.")
 
 # ==========================================
 # Execution Hook

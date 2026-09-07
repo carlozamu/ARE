@@ -29,10 +29,10 @@ class CLUTTRManager:
         Initialize the CLUTTR dataset loader.
         :param split_config: The configuration name for CLUTTR (e.g. "gen_train234_test2to10")
         """
-        print(f"Loading CLUTTR dataset: CLUTRR/v1 - {split_config}...")
+        #print(f"Loading CLUTTR dataset: CLUTRR/v1 - {split_config}...")
         try:
             self.dataset = load_dataset("CLUTRR/v1", split_config, cache_dir=cache_dir)
-            print("CLUTTR dataset loaded successfully.")
+            #print("CLUTTR dataset loaded successfully.")
         except Exception as e:
             print(f"Error loading CLUTTR dataset: {e}")
             self.dataset = None
@@ -98,7 +98,7 @@ class CLUTTRManager:
         
         data_split = self.dataset[split]
         total_len = len(data_split)
-        print(f"Loading all {total_len} problems from the '{split}' split...")
+        #print(f"Loading all {total_len} problems from the '{split}' split...")
         
         batch = []
         for idx in range(total_len):
@@ -174,11 +174,11 @@ class CLUTTRManager:
                     }
                 })
                 
-        print(f"Loaded a total of {len(batch)} problems across all splits.")
+        #print(f"Loaded a total of {len(batch)} problems across all splits.")
         return batch
 
     @staticmethod
-    def build_prompt_clutrr_baseline(story: str, query: str) -> str:
+    def build_prompt_clutrr_baseline(story: str, query: str, subset_number:int = 1) -> str:
         clean_query = query.replace("(", "").replace(")", "").replace("'", "")
         try:
             name1, name2 = [name.strip() for name in clean_query.split(',')]
@@ -260,7 +260,7 @@ CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the l
         return few_shots_prompt
     
     @staticmethod
-    def build_prompt_clutrr_few_shots(story: str, query: str, examples:str = "") -> str:
+    def build_prompt_clutrr_few_shots(story: str, query: str, subset_number:int, examples:str = "" ) -> str:
         clean_query = query.replace("(", "").replace(")", "").replace("'", "")
         try:
             name1, name2 = [name.strip() for name in clean_query.split(',')]
@@ -315,8 +315,13 @@ sister<end_of_turn>
 Story: {story}
 CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. {name2} is {name1}'s?<end_of_turn>
 <start_of_turn>model"""
+
+        if subset_number >1 and subset_number <5:
+            prompt = few_shots_prompt_low_hops
+        else:
+            prompt = few_shots_prompt_6_hops
         
-        return few_shots_prompt_6_hops
+        return prompt
     
     @staticmethod
     def build_prompt_clutrr(story: str, query: str, examples: str = None) -> str:
@@ -408,7 +413,7 @@ Understand the family relationship between {name2} and {name1}, and to describe 
     
 ##---------- FUNCTIONS FOR CURATED DATASET CREATION AND FREEZING ----------##
 
-    def save_dataset_to_json(self, dataset: list[dict], filepath: str = "Data/curated_clutrr_subset.json"):
+    def save_dataset_to_json(self, dataset: list[dict], filepath: str = "Data/CLUTRR/curated_clutrr_subset.json"):
         """
         Serializes the generated dataset to a JSON file to guarantee repeatability.
         Uses indent=4 to keep the file human-readable for debugging.
@@ -419,18 +424,18 @@ Understand the family relationship between {name2} and {name1}, and to describe 
         try:
             with open(filepath, 'w', encoding='utf-8') as f:
                 json.dump(dataset, f, indent=4, ensure_ascii=False)
-            print(f"\n[IO] Dataset successfully permanently saved to: {os.path.abspath(filepath)}")
+            #print(f"\n[IO] Dataset successfully permanently saved to: {os.path.abspath(filepath)}")
         except Exception as e:
             print(f"\n[IO Error] Failed to save dataset: {e}")
 
-    def load_dataset_from_json(self, filepath: str = "Data/curated_clutrr_subset.json") -> list[dict]:
+    def load_dataset_from_json(self, filepath: str = "Data/CLUTRR/curated_clutrr_subset.json") -> list[dict]:
         """
         Loads a strictly frozen dataset from a JSON file.
         """
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 dataset = json.load(f)
-            print(f"\n[IO] Frozen dataset loaded successfully from: {os.path.abspath(filepath)}")
+            #print(f"\n[IO] Frozen dataset loaded successfully from: {os.path.abspath(filepath)}")
             return dataset
         except FileNotFoundError:
             print(f"\n[IO Error] File not found: {filepath}")
@@ -539,14 +544,14 @@ Understand the family relationship between {name2} and {name1}, and to describe 
     
     def get_or_create_curated_dataset(self, n:int) -> list[dict]:
 
-        SAVE_PATH = f"Data/curated_clutrr_subset_{n}.json"
+        SAVE_PATH = f"Data/CLUTRR/curated_clutrr_subset_{n}.json"
         
         # 1. Check if we already have a frozen dataset
         if os.path.exists(SAVE_PATH):
             final_data = self.load_dataset_from_json(SAVE_PATH)
             
             # Quick validation of the loaded data
-            print(f"Loaded {len(final_data)} evaluation elements ready for inference.")
+            #print(f"Loaded {len(final_data)} evaluation elements ready for inference.")
             
         # 2. If no frozen data exists, generate it from scratch and lock it
         else:

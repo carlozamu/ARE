@@ -101,7 +101,7 @@ class Plotter:
     Encapsulates all plotting logic for the ERA framework.
     Includes Accuracy vs Token Usage scatter plots for efficient LLM pipeline analysis.
     """
-    def __init__(self):
+    def __init__(self, subset_number: int, run_number: int):
         self.species_colors_registry = {}
         
         # Extended, highly distinct palette (colorblind-friendly, 30 colors)
@@ -119,6 +119,7 @@ class Plotter:
         self.zero_shot_baseline_color = "#000000" # Pure Black
         self.palette_index = 0
         self.marker_size = 100  # Unified size for all scatter markers
+        self.plots_base_dir = f"Utils/Logs_{subset_number}_hops_{run_number}"
 
     def _get_species_color(self, species_id: str) -> str:
         """Retrieves or assigns a maximally distinct color for a given species ID."""
@@ -151,13 +152,13 @@ class Plotter:
         generation_data: list, 
         zero_shot_stats: dict, 
         few_shots_stats: dict, 
-        generation_idx: int, 
-        output_dir="Utils/Logs/PlotsAT"
+        generation_idx: int
     ) -> str:
         """
         Plots Accuracy (Y-axis) vs Token Usage (X-axis).
         Includes baseline comparisons plotted as prominent shapes.
         """
+        output_dir=f"{self.plots_base_dir}/PlotsAT"
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
@@ -280,13 +281,13 @@ class Plotter:
         generation_data: List, 
         zero_shot_stats: dict, 
         few_shots_stats: dict, 
-        generation_idx: int, 
-        output_dir="Utils/Logs/PlotsFC"
+        generation_idx: int
     ) -> str:
         """
         Plots Fitness (Y-axis) vs Complexity (X-axis).
         Includes baseline comparisons plotted as prominent shapes.
         """
+        output_dir=f"{self.plots_base_dir}/PlotsFC"
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
@@ -411,8 +412,7 @@ class Plotter:
         generation_data: list,
         zero_shot_stats: dict,
         few_shots_stats: dict,
-        generation_idx: int,
-        output_dir="Utils/Logs/PlotsAS"
+        generation_idx: int
     ) -> str:
         """
         Per-species accuracy distribution on an equidistant categorical x-axis.
@@ -420,6 +420,7 @@ class Plotter:
         with whiskers to min/max. Dead species render as a single diamond at
         their representative accuracy. Baselines occupy the first two slots.
         """
+        output_dir=f"{self.plots_base_dir}/PlotsAS"
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
 
@@ -650,7 +651,7 @@ class HistoryTracker:
         # Locate the file with the highest generation integer
         latest_checkpoint = max(checkpoint_files, key=get_gen_number)
         
-        print(f"📂 Found rollback checkpoints. Loading highest available state: {os.path.basename(latest_checkpoint)}")
+        #print(f"📂 Found rollback checkpoints. Loading highest available state: {os.path.basename(latest_checkpoint)}")
         
         with open(latest_checkpoint, 'rb') as f:
             state = pickle.load(f)
@@ -661,174 +662,184 @@ class HistoryTracker:
         self.history = state.get("history", [])[:loaded_gen]
         
         return state
+
+    def clear_history(self):
+        """
+        Clears the in-memory history and optionally deletes all checkpoint files.
+        """
+        self.history.clear()
+        
+        # Optionally, delete all checkpoint files to free up disk space
+        for file in glob.glob(os.path.join(self.checkpoint_dir, "era_checkpoint_gen_*.pkl")):
+            os.remove(file)
     
 # --- 4. Logging Utility ---
-def log_and_print(message: str, log_file: str = "Utils/Logs/generation_logger.md"):
-    print(message)
-    
-    # Ensure the logs directory exists
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
-    
-    # Append the message to the markdown file
-    with open(log_file, "a", encoding="utf-8") as f:
-        # We strip leading newlines to avoid weird markdown formatting gaps, 
-        # but keep the newline at the end for the next log.
-        f.write(message.lstrip('\n') + "\n\n")
-
-def just_log(message: str, log_file: str = "few_shots_results_0.txt"):    
-    # Ensure the logs directory exists
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
-    
-    # Append the message to the markdown file
-    with open(log_file, "a", encoding="utf-8") as f:
-        # We strip leading newlines to avoid weird markdown formatting gaps, 
-        # but keep the newline at the end for the next log.
-        f.write(message.lstrip('\n') + "\n\n")
-
-def clear_log_file(log_file: str = "Utils/Logs/generation_logger.md"):
+class Logger:
     """
-    Clears the contents of the log file before a fresh run.
-    If the file or directory does not exist, it safely initializes them.
+    Handles logging to both console and markdown files.
+    Ensures that logs are structured, readable, and easily traceable.
     """
-    # 1. Ensure the directory exists first, just in case this function 
-    # is called before log_and_print has a chance to create it.
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
-    
-    # 2. Open in 'w' mode. This instantly wipes all existing content.
-    # We use 'pass' because we don't need to write anything; the act 
-    # of opening it in 'w' mode does all the work.
-    with open(log_file, "w", encoding="utf-8") as f:
-        pass
+    def __init__(self, subset_number:int, run_number:int):
+        self.log_file = f"Utils/Logs_{subset_number}_hops_{run_number}/generation_logger.md"
+        # Ensure the logs directory exists
+        os.makedirs(os.path.dirname(self.log_file), exist_ok=True)
 
-def log_generation_to_markdown(species_list: List['Species'], 
-                               best_accuracy: float, 
-                               avg_accuracy: float, 
-                               zero_shot_stats: Dict[str, Any], 
-                               few_shots_stats: Dict[str, Any], 
-                               generation_idx: int,
-                               eval_duration: float,
-                               log_file: str = "Utils/Logs/generation_logger.md") -> float:
-    """
-    Evaluates the generation's ecology, identifies champions, and appends a 
-    beautifully formatted Markdown report to the logging file.
-    Returns the global best fitness.
-    """
-    os.makedirs(os.path.dirname(log_file), exist_ok=True)
-    
-    # 1. Global Computations
-    global_best_fitness = 0.0
-    global_champion = None
-    total_active_species = len(species_list)
-    alive_species = [s for s in species_list if s.alive]
-    
-    # Pre-calculate ecology stats to find the global champion
-    ecology_data = []
-    for species in alive_species:
-        if not species.members:
-            continue
-            
-        # The members should ideally be sorted by fitness, but we use max() to be mathematically safe
-        species_champion = max(species.members, key=lambda x: x.fitness)
-        species_accuracy_champion = max(species.members, key=lambda x: x.accuracy)
-        species_avg_fitness = sum(m.fitness for m in species.members) / len(species.members)
-        species_avg_accuracy = sum(m.accuracy for m in species.members) / len(species.members)
-
-        if species_champion.fitness > global_best_fitness:
-            global_best_fitness = species_champion.fitness
-            
-        ecology_data.append({
-            "id": species.id,
-            "age": species.age,
-            "stagnation": species.generations_without_improvement,
-            "members": len(species.members),
-            "best_fit": species_champion.fitness,
-            "avg_fit": species_avg_fitness,
-            "best_acc": species_accuracy_champion.accuracy,
-            "avg_acc": species_avg_accuracy,
-            "champion": species_champion,
-            "accuracy_champion": species_accuracy_champion
-        })
-
-    # 2. Build the Markdown String
-    md_lines = []
-    
-    # --- Header ---
-    md_lines.append(f"# 🧬 Generation {generation_idx} Report")
-    md_lines.append(f"**Active Species:** {len(alive_species)} | **Global Best Fitness:** {global_best_fitness:.4f}")
-    md_lines.append("\n---\n")
-    
-    # --- Global Performance Table ---
-    md_lines.append("### 📊 Macro Performance")
-    md_lines.append(f"| Engine | Accuracy | Fitness | Exec Time |")
-    md_lines.append(f"| :----- | :------: | :-----: | :-------: |")
-    md_lines.append(f"| **ERA (Population)**   | Best Acc: {best_accuracy:.2f}% / Avg Acc: {avg_accuracy:.2f}% | Best Fit: {global_best_fitness:.4f}   | {eval_duration:.2f}s |")
-    md_lines.append(f"| **Zero-Shot Baseline** | Acc: {zero_shot_stats['accuracy']:.2f}%                       | Fit: {zero_shot_stats['fitness']:.4f} | {zero_shot_stats['execution_time']:.2f}s |")
-    md_lines.append(f"| **Few-Shot Baseline**  | Acc: {few_shots_stats['accuracy']:.2f}%                       | Fit: {few_shots_stats['fitness']:.4f} | {few_shots_stats['execution_time']:.2f}s |")
-    md_lines.append("\n---\n")
-    
-    # --- Ecology Overview Table ---
-    md_lines.append("### 🌍 Ecological Overview")
-    md_lines.append("| Species ID | Age | Stagnation | Members | Best Fitness | Avg Fitness |")
-    md_lines.append("| :--------: | :-: | :--------: | :-----: | :----------: | :---------: |")
-    
-    for data in ecology_data:
-        md_lines.append(f"| `{data['id']}` | {data['age']} | {data['stagnation']} | {data['members']} | {data['best_fit']:.4f} | {data['avg_fit']:.4f} | {data['best_acc']:.4f} | {data['avg_acc']:.4f} |")
-    
-    md_lines.append("\n---\n")
-    
-    # --- Species Champions (Structural Logging) ---
-    md_lines.append("### 🏆 Species Champions")
-    
-    for data in ecology_data:
-        champ = data['accuracy_champion']
-        md_lines.append(f"#### Species `{data['id']}` Champion")
-        md_lines.append(f"- **Genome ID:** `{champ.id}`")
-        md_lines.append(f"- **Fitness:** {data['best_fit']:.4f}")
-        md_lines.append(f"- **Accuracy:** {data['best_acc']:.4f}")
-        md_lines.append(f"- **Topology:** {len(champ.nodes)} Nodes, {len([c for c in champ.connections.values() if c.enabled])} Enabled Connections")
+    def log_and_print(self, message: str):
+        print(message)
         
-        # Log the actual cognitive nodes
-        # Log the actual cognitive nodes in topological order
-        md_lines.append("\n**Cognitive Nodes (Execution Order):**")
+        # Append the message to the markdown file
+        with open(self.log_file, "a", encoding="utf-8") as f:
+            # We strip leading newlines to avoid weird markdown formatting gaps, 
+            # but keep the newline at the end for the next log.
+            f.write(message.lstrip('\n') + "\n\n")
+
+    def just_log(self, message: str):    
         
-        try:
-            execution_path = champ.get_execution_order()
-            for step_idx, (node, dependencies) in enumerate(execution_path):
-                # Safely reverse-lookup the node_id from the dictionary
-                node_id = next((k for k, v in champ.nodes.items() if v == node), "?")
+        # Append the message to the markdown file
+        with open(self.log_file, "a", encoding="utf-8") as f:
+            # We strip leading newlines to avoid weird markdown formatting gaps, 
+            # but keep the newline at the end for the next log.
+            f.write(message.lstrip('\n') + "\n\n")
+
+    def clear_log_file(self):
+        """
+        Clears the contents of the log file before a fresh run.
+        If the file or directory does not exist, it safely initializes them.
+        """
+        
+        # 2. Open in 'w' mode. This instantly wipes all existing content.
+        # We use 'pass' because we don't need to write anything; the act 
+        # of opening it in 'w' mode does all the work.
+        with open(self.log_file, "w", encoding="utf-8") as f:
+            pass
+
+    def log_generation_to_markdown(self, species_list: List['Species'], 
+                                best_accuracy: float, 
+                                avg_accuracy: float, 
+                                zero_shot_stats: Dict[str, Any], 
+                                few_shots_stats: Dict[str, Any], 
+                                generation_idx: int,
+                                eval_duration: float) -> float:
+        """
+        Evaluates the generation's ecology, identifies champions, and appends a 
+        beautifully formatted Markdown report to the logging file.
+        Returns the global best fitness.
+        """
+        
+        # 1. Global Computations
+        global_best_fitness = 0.0
+        global_champion = None
+        total_active_species = len(species_list)
+        alive_species = [s for s in species_list if s.alive]
+        
+        # Pre-calculate ecology stats to find the global champion
+        ecology_data = []
+        for species in alive_species:
+            if not species.members:
+                continue
                 
-                # Flag start and end nodes for visual clarity
-                marker = ""
-                if node_id == champ.start_node_innovation_number:
-                    marker = " **[START]**"
-                elif node_id == champ.end_node_innovation_number:
-                    marker = " **[END]**"
-                    
-                # Format dependencies for easy DAG reading
-                dep_str = f" *(Waits for: {', '.join(map(str, dependencies))})*" if dependencies else ""
-                    
-                md_lines.append(f"> **Step {step_idx + 1}: Node {node_id}**{marker}{dep_str} -> {node.instruction}")
-                
-        except Exception as e:
-            md_lines.append(f"> *Graph execution order could not be resolved: {e}*")
-        
-        md_lines.append("\n<br>\n") # Visual spacing between champions
-        
-    md_lines.append("\n====================================================================\n")
+            # The members should ideally be sorted by fitness, but we use max() to be mathematically safe
+            species_champion = max(species.members, key=lambda x: x.fitness)
+            species_accuracy_champion = max(species.members, key=lambda x: x.accuracy)
+            species_avg_fitness = sum(m.fitness for m in species.members) / len(species.members)
+            species_avg_accuracy = sum(m.accuracy for m in species.members) / len(species.members)
 
-    # 3. Write to File
-    with open(log_file, "a", encoding="utf-8") as f:
-        f.write("\n".join(md_lines))
+            if species_champion.fitness > global_best_fitness:
+                global_best_fitness = species_champion.fitness
+                
+            ecology_data.append({
+                "id": species.id,
+                "age": species.age,
+                "stagnation": species.generations_without_improvement,
+                "members": len(species.members),
+                "best_fit": species_champion.fitness,
+                "avg_fit": species_avg_fitness,
+                "best_acc": species_accuracy_champion.accuracy,
+                "avg_acc": species_avg_accuracy,
+                "champion": species_champion,
+                "accuracy_champion": species_accuracy_champion
+            })
+
+        # 2. Build the Markdown String
+        md_lines = []
         
-    return global_best_fitness
+        # --- Header ---
+        md_lines.append(f"# 🧬 Generation {generation_idx} Report")
+        md_lines.append(f"**Active Species:** {len(alive_species)} | **Global Best Fitness:** {global_best_fitness:.4f}")
+        md_lines.append("\n---\n")
+        
+        # --- Global Performance Table ---
+        md_lines.append("### 📊 Macro Performance")
+        md_lines.append(f"| Engine | Accuracy | Fitness | Exec Time |")
+        md_lines.append(f"| :----- | :------: | :-----: | :-------: |")
+        md_lines.append(f"| **ERA (Population)**   | Best Acc: {best_accuracy:.2f}% / Avg Acc: {avg_accuracy:.2f}% | Best Fit: {global_best_fitness:.4f}   | {eval_duration:.2f}s |")
+        md_lines.append(f"| **Zero-Shot Baseline** | Acc: {zero_shot_stats['accuracy']:.2f}%                       | Fit: {zero_shot_stats['fitness']:.4f} | {zero_shot_stats['execution_time']:.2f}s |")
+        md_lines.append(f"| **Few-Shot Baseline**  | Acc: {few_shots_stats['accuracy']:.2f}%                       | Fit: {few_shots_stats['fitness']:.4f} | {few_shots_stats['execution_time']:.2f}s |")
+        md_lines.append("\n---\n")
+        
+        # --- Ecology Overview Table ---
+        md_lines.append("### 🌍 Ecological Overview")
+        md_lines.append("| Species ID | Age | Stagnation | Members | Best Fitness | Avg Fitness |")
+        md_lines.append("| :--------: | :-: | :--------: | :-----: | :----------: | :---------: |")
+        
+        for data in ecology_data:
+            md_lines.append(f"| `{data['id']}` | {data['age']} | {data['stagnation']} | {data['members']} | {data['best_fit']:.4f} | {data['avg_fit']:.4f} | {data['best_acc']:.4f} | {data['avg_acc']:.4f} |")
+        
+        md_lines.append("\n---\n")
+        
+        # --- Species Champions (Structural Logging) ---
+        md_lines.append("### 🏆 Species Champions")
+        
+        for data in ecology_data:
+            champ = data['accuracy_champion']
+            md_lines.append(f"#### Species `{data['id']}` Champion")
+            md_lines.append(f"- **Genome ID:** `{champ.id}`")
+            md_lines.append(f"- **Fitness:** {data['best_fit']:.4f}")
+            md_lines.append(f"- **Accuracy:** {data['best_acc']:.4f}")
+            md_lines.append(f"- **Topology:** {len(champ.nodes)} Nodes, {len([c for c in champ.connections.values() if c.enabled])} Enabled Connections")
+            
+            # Log the actual cognitive nodes
+            # Log the actual cognitive nodes in topological order
+            md_lines.append("\n**Cognitive Nodes (Execution Order):**")
+            
+            try:
+                execution_path = champ.get_execution_order()
+                for step_idx, (node, dependencies) in enumerate(execution_path):
+                    # Safely reverse-lookup the node_id from the dictionary
+                    node_id = next((k for k, v in champ.nodes.items() if v == node), "?")
+                    
+                    # Flag start and end nodes for visual clarity
+                    marker = ""
+                    if node_id == champ.start_node_innovation_number:
+                        marker = " **[START]**"
+                    elif node_id == champ.end_node_innovation_number:
+                        marker = " **[END]**"
+                        
+                    # Format dependencies for easy DAG reading
+                    dep_str = f" *(Waits for: {', '.join(map(str, dependencies))})*" if dependencies else ""
+                        
+                    md_lines.append(f"> **Step {step_idx + 1}: Node {node_id}**{marker}{dep_str} -> {node.instruction}")
+                    
+            except Exception as e:
+                md_lines.append(f"> *Graph execution order could not be resolved: {e}*")
+            
+            md_lines.append("\n<br>\n") # Visual spacing between champions
+            
+        md_lines.append("\n====================================================================\n")
+
+        # 3. Write to File
+        with open(self.log_file, "a", encoding="utf-8") as f:
+            f.write("\n".join(md_lines))
+            
+        return global_best_fitness
 
 # GPU Utility
 def force_cleanup():
     """Releases GPU memory."""
-    print("\n🧹 Performing Memory Cleanup...")
+    #print("\n🧹 Performing Memory Cleanup...")
     gc.collect()
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
         torch.cuda.ipc_collect()
-    print("✅ GPU Memory Released.")
+    #print("✅ GPU Memory Released.")
 

@@ -34,22 +34,22 @@ class Phenotype:
         formatted_order = "\n\n".join(order_lines)
 
         # 2. Ensure the logs directory exists
-        log_file = "Utils/Logs/server_logs.md"
-        import os # Make sure os is imported
-        os.makedirs(os.path.dirname(log_file), exist_ok=True)
+#         log_file = "Utils/Logs/server_logs.md"
+#         import os # Make sure os is imported
+#         os.makedirs(os.path.dirname(log_file), exist_ok=True)
         
-        # 3. Construct the formatted Markdown entry
-        log_entry = f"""
-### 🧬 Evaluating Genome: `{self.genome.id}` 
-**⚙️ Topological Execution Order:**
+#         # 3. Construct the formatted Markdown entry
+#         log_entry = f"""
+# ### 🧬 Evaluating Genome: `{self.genome.id}` 
+# **⚙️ Topological Execution Order:**
 
-{formatted_order}
+# {formatted_order}
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"""
         
-        # 4. Append the message to the markdown file
-        with open(log_file, "a", encoding="utf-8") as f:
-            f.write(log_entry.lstrip('\n') + "\n\n")
+#         # 4. Append the message to the markdown file
+#         with open(log_file, "a", encoding="utf-8") as f:
+#             f.write(log_entry.lstrip('\n') + "\n\n")
         
         # 2. Lightweight Memory (ID -> Instructions, Answer String)
         trait_answers: Dict[int, tuple[str, str]] = {}

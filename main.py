@@ -11,7 +11,7 @@ from Fitness.fitness import Fitness
 from Genome.agent_genome import AgentGenome
 from Phenotype.phenotype import Phenotype
 from Mutations.mutator import Mutator
-from Data.clutrr import CLUTTRManager
+from Data.CLUTRR.clutrr import CLUTTRManager
 from Utils.utilities import HistoryTracker, log_generation_to_markdown, log_and_print, clear_log_file, Plotter, force_cleanup
 from Utils.LLM import LLM
 from Utils.baseline_exportable import evaluate_baseline_batch

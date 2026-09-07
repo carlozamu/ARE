@@ -1,14 +1,15 @@
 import asyncio
 import time
 from typing import List, Callable, Dict, Any
-from Data.clutrr import CLUTTRManager
+from Data.CLUTRR.clutrr import CLUTTRManager
 
 async def _evaluate_single_baseline_problem(
     problem: dict, 
     llm_client, 
     fitness, 
     semaphore: asyncio.Semaphore,
-    prompt_builder_func: Callable
+    prompt_builder_func: Callable,
+    subset_num: int
 ):
     """Worker function to evaluate a single problem for a baseline."""
     async with semaphore:
@@ -19,7 +20,7 @@ async def _evaluate_single_baseline_problem(
         query = metadata.get('query', '')
         
         if prompt_builder_func:
-            prompt_string = prompt_builder_func(story=story, query=query)
+            prompt_string = prompt_builder_func(story=story, query=query, subset_number = subset_num)
         else:
             prompt_string = query
 
@@ -32,7 +33,7 @@ async def _evaluate_single_baseline_problem(
             )
             token_used = (len(prompt_string) + len(generated_ans)) // 4
         except Exception as e:
-            print(f"Error executing baseline prompt: {e}")
+            #print(f"Error executing baseline prompt: {e}")
             generated_ans = ""
             token_used = len(prompt_string) // 4
 
@@ -64,7 +65,8 @@ async def evaluate_baseline_batch(
     llm_client,
     fitness,
     prompt_builder_func: Callable,
-    max_concurrent: int = 50
+    max_concurrent: int = 50,
+    subset_num: int = 0
 ) -> Dict[str, Any]:
     """
     Evaluates a batch of problems against a specific baseline and prints a formatted report.
@@ -76,7 +78,7 @@ async def evaluate_baseline_batch(
     semaphore = asyncio.Semaphore(max_concurrent)
     
     tasks = [
-        _evaluate_single_baseline_problem(problem, llm_client, fitness, semaphore, prompt_builder_func)
+        _evaluate_single_baseline_problem(problem, llm_client, fitness, semaphore, prompt_builder_func, subset_num=subset_num)
         for problem in problem_batch
     ]
     

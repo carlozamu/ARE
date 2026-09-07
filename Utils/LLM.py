@@ -26,13 +26,21 @@ class LLM:
         self.model_name = model_name
         self.semaphore = asyncio.Semaphore(50)
 
-        # Load Embedding Model ONCE (Global Singleton Pattern)
         global _EMBEDDER_INSTANCE
         embedding_model_name = 'BAAI/bge-base-en-v1.5'
+        local_model_path = os.path.join("Models", "bge-base-en-v1.5")
+
         if _EMBEDDER_INSTANCE is None:
-            print("Loading Embedding Model from SentenceTransformer...")
-            _EMBEDDER_INSTANCE = SentenceTransformer(embedding_model_name, device='cpu')
-            print(f"{embedding_model_name} Embedding Model Loaded.")
+            if os.path.exists(local_model_path):
+                #print(f"Loading Embedding Model from local path: {local_model_path}")
+                _EMBEDDER_INSTANCE = SentenceTransformer(local_model_path, device='cpu')
+            else:
+                #print("Downloading Embedding Model from SentenceTransformer hub...")
+                _EMBEDDER_INSTANCE = SentenceTransformer(embedding_model_name, device='cpu')
+                #print(f"Saving model locally to {local_model_path} for future runs...")
+                _EMBEDDER_INSTANCE.save(local_model_path)
+            #print(f"{embedding_model_name} Embedding Model Loaded.")
+
         self.embedder = _EMBEDDER_INSTANCE
 
     def get_embedding(self, text: str) -> list[float]:
@@ -92,39 +100,39 @@ class LLM:
                             answer = data['choices'][0]['text'].strip()
 
                         # Ensure the logs directory exists
-                        log_file = "Utils/Logs/server_logs.md"
-                        os.makedirs(os.path.dirname(log_file), exist_ok=True)
+                        #log_file = "Utils/Logs/server_logs.md"
+                        #os.makedirs(os.path.dirname(log_file), exist_ok=True)
 
-                        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                        #timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                         
                         # Construct the formatted Markdown entry
-                        log_entry = f"""
-**⚙️ Parameters:**
-- `Model`: {self.model_name}
-- `Temperature`: {temperature}
-- `Max Tokens`: {max_tokens}
-- `Timestamp`: {timestamp}
----------------------------------------------
-**📥 Query:**
-```text
-{user_prompt.strip()}
-```
----------------------------------------------
-**📤 Response:**
-```text
-{answer.strip()}
-```
----------------------------------------------"""
+                        #log_entry = f"""
+#**⚙️ Parameters:**
+# - `Model`: {self.model_name}
+# - `Temperature`: {temperature}
+# - `Max Tokens`: {max_tokens}
+# - `Timestamp`: {timestamp}
+# ---------------------------------------------
+# **📥 Query:**
+# ```text
+# {user_prompt.strip()}
+# ```
+# ---------------------------------------------
+# **📤 Response:**
+# ```text
+# {answer.strip()}
+# ```
+# ---------------------------------------------"""
                         
                         # Append the message to the markdown file
-                        with open(log_file, "a", encoding="utf-8") as f:
+                        #with open(log_file, "a", encoding="utf-8") as f:
                             # We strip leading newlines to avoid weird markdown formatting gaps, 
                             # but keep the newline at the end for the next log.
-                            f.write(log_entry + "\n\n")
+                            #f.write(log_entry + "\n\n")
                         
                         return answer
                     
             except Exception as e:
-                print(f"LLM Error: {e}")
+                #print(f"LLM Error: {e}")
                 return ""
         

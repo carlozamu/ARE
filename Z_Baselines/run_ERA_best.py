@@ -8,14 +8,14 @@ import time
 
 # --- Internal Modules ---
 from Fitness.fitness import Fitness
-from Data.clutrr import CLUTTRManager
-from Utils.utilities import log_and_print
+from Data.CLUTRR.clutrr import CLUTTRManager
+from Utils.utilities import Logger
 from Phenotype.phenotype import Phenotype
 
 # --- Configuration ---
 MAX_CONCURRENT_REQUESTS = 45
-async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness, era_best: Phenotype):
-    print("\n--- Initializing ERA Best ---")
+async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness, era_best: Phenotype, logger: Logger):
+    logger.just_log("\n--- Initializing ERA Best ---")
     start_time = time.time()
     
     # llm_client = LLM(model_name=MODEL_NAME, base_url=BASE_URL)
@@ -92,12 +92,13 @@ async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness
     #     llm_client=llm_client
     # )
 
+    logger = logger()
     # 2. Fetch the ENTIRE dataset
-    print("Fetching the COMPLETE dataset for stratified baseline...")
+    logger.just_log("Fetching the COMPLETE dataset for stratified baseline...")
     initial_problems_pool = dataset_manager.get_entire_dataset_stratified(dataset_manager.build_prompt_clutrr)
     #initial_problems_pool = dataset_manager.get_full_split()
 
-    print(f"Starting Baseline evaluation with {MAX_CONCURRENT_REQUESTS} concurrent workers...\n")
+    logger.just_log(f"Starting Baseline evaluation with {MAX_CONCURRENT_REQUESTS} concurrent workers...\n")
     
     semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
 
@@ -156,27 +157,27 @@ async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness
     # 5. Output the Stratified Report
     total_problems = len(initial_problems_pool)
     
-    log_and_print("\n" + "="*50)
-    log_and_print("🎯 STRATIFIED BASELINE REPORT")
-    log_and_print("="*50)
-    log_and_print(f"Execution Time: {execution_time:.2f} seconds")
-    log_and_print(f"Total Problems Evaluated: {total_problems}\n")
+    logger.just_log("\n" + "="*50)
+    logger.just_log("🎯 STRATIFIED BASELINE REPORT")
+    logger.just_log("="*50)
+    logger.just_log(f"Execution Time: {execution_time:.2f} seconds")
+    logger.just_log(f"Total Problems Evaluated: {total_problems}\n")
 
-    # Sort the dictionary by reasoning length to print in order
+    # Sort the dictionary by reasoning length to logger.just_log in order
     for length in sorted(stratified_stats.keys()):
         stats = stratified_stats[length]
         acc = (stats["correct"] / stats["total"]) * 100 if stats["total"] > 0 else 0
-        log_and_print(f"Level {length:02d} Hops: Accuracy {acc:05.2f}% ({stats['correct']}/{stats['total']})")
+        logger.just_log(f"Level {length:02d} Hops: Accuracy {acc:05.2f}% ({stats['correct']}/{stats['total']})")
 
-    log_and_print("-" * 50)
+    logger.just_log("-" * 50)
     overall_accuracy = (total_correct / total_problems) * 100
     overall_fitness = total_score / total_problems
     average_length = total_words_generated / total_problems
     
-    log_and_print(f"Overall Dataset Accuracy: {overall_accuracy:.2f}%")
-    log_and_print(f"Overall Average Fitness:  {overall_fitness:.4f}")
-    log_and_print("-" * 50)
-    log_and_print(f"Average Answer Length:    {average_length:.2f} words")
-    log_and_print(f"Exactly 1-Word Answers:   {total_1_word} ({(total_1_word/total_problems)*100:.1f}%)")
-    log_and_print(f"Exactly 2-Word Answers:   {total_2_word} ({(total_2_word/total_problems)*100:.1f}%)")
-    log_and_print("=" * 50)
+    logger.just_log(f"Overall Dataset Accuracy: {overall_accuracy:.2f}%")
+    logger.just_log(f"Overall Average Fitness:  {overall_fitness:.4f}")
+    logger.just_log("-" * 50)
+    logger.just_log(f"Average Answer Length:    {average_length:.2f} words")
+    logger.just_log(f"Exactly 1-Word Answers:   {total_1_word} ({(total_1_word/total_problems)*100:.1f}%)")
+    logger.just_log(f"Exactly 2-Word Answers:   {total_2_word} ({(total_2_word/total_problems)*100:.1f}%)")
+    logger.just_log("=" * 50)

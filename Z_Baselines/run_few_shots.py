@@ -20,9 +20,9 @@ if parent_dir not in sys.path:
 
 # --- Internal Modules ---
 from Fitness.fitness import Fitness
-from Data.clutrr import CLUTTRManager
+from Data.CLUTRR.clutrr import CLUTTRManager
 from Utils.LLM import LLM
-from Utils.utilities import just_log, log_and_print
+from Utils.utilities import Logger
 
 # AUTO-GENERATED PROMPT TEMPLATES
 
@@ -1041,12 +1041,12 @@ BASE_URL = "http://localhost:8000"
 MAX_CONCURRENT_REQUESTS = 45
 
 def force_cleanup():
-    print("\n🧹 Performing Memory Cleanup...")
+    #print("\n🧹 Performing Memory Cleanup...")
     gc.collect()
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
         torch.cuda.ipc_collect()
-    print("✅ GPU Memory Released.")
+    #print("✅ GPU Memory Released.")
 
 async def _evaluate_single_problem(idx, problem, llm_client, fitness, semaphore):
     """Worker function with index tracking for debug printing."""
@@ -1087,7 +1087,7 @@ async def _evaluate_single_problem(idx, problem, llm_client, fitness, semaphore)
         return is_correct, score, answer_length
 
 async def run_few_shots():
-    print("\n--- Initializing ERA Few-Shot ---")
+    #print("\n--- Initializing ERA Few-Shot ---")
     
     llm_client = LLM(model_name=MODEL_NAME, base_url=BASE_URL)
     dataset_manager = CLUTTRManager(split_config="gen_train234_test2to10")
@@ -1102,10 +1102,11 @@ async def run_few_shots():
     for name, examples in PROMPT_TEMPLATES_5.items():
         start_time = time.time()
         # 2. Fetch the ENTIRE dataset
-        log_and_print(f"Fetching the COMPLETE dataset for stratified few-shot with examples {name}", log_file)
+        logger = Logger(99, 99)
+        logger.log_and_print(f"Fetching the COMPLETE dataset for stratified few-shot with examples {name}", log_file)
         initial_problems_pool = dataset_manager.get_entire_dataset_stratified(dataset_manager.build_prompt_clutrr_few_shots, examples)
 
-        print(f"Starting Few-Shot evaluation with {MAX_CONCURRENT_REQUESTS} concurrent workers...\n")
+        #print(f"Starting Few-Shot evaluation with {MAX_CONCURRENT_REQUESTS} concurrent workers...\n")
         
         semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
         
@@ -1153,31 +1154,31 @@ async def run_few_shots():
         # 5. Output the Stratified Report
         total_problems = len(initial_problems_pool)
         
-        just_log("\n" + "="*50, log_file)
-        just_log("🎯 STRATIFIED FEW SHOTS REPORT", log_file)
-        just_log("="*50, log_file)
-        just_log(f"Execution Time: {execution_time:.2f} seconds", log_file)
-        just_log(f"Total Problems Evaluated: {total_problems}\n",log_file)
+        logger.just_log("\n" + "="*50, log_file)
+        logger.just_log("🎯 STRATIFIED FEW SHOTS REPORT", log_file)
+        logger.just_log("="*50, log_file)
+        logger.just_log(f"Execution Time: {execution_time:.2f} seconds", log_file)
+        logger.just_log(f"Total Problems Evaluated: {total_problems}\n",log_file)
 
         # Sort the dictionary by reasoning length to print in order
         for length in sorted(stratified_stats.keys()):
             stats = stratified_stats[length]
             acc = (stats["correct"] / stats["total"]) * 100 if stats["total"] > 0 else 0
-            just_log(f"Level {length:02d} Hops: Accuracy {acc:05.2f}% ({stats['correct']}/{stats['total']})",log_file)
+            logger.just_log(f"Level {length:02d} Hops: Accuracy {acc:05.2f}% ({stats['correct']}/{stats['total']})",log_file)
 
-        just_log("-" * 50, log_file)
+        logger.just_log("-" * 50, log_file)
         overall_accuracy = (total_correct / total_problems) * 100
         overall_fitness = total_score / total_problems
         average_length = total_words_generated / total_problems
         
-        just_log(f"Overall Dataset Accuracy: {overall_accuracy:.2f}%", log_file)
-        just_log(f"Overall Average Fitness:  {overall_fitness:.4f}", log_file)
-        just_log("-" * 50, log_file)
-        just_log(f"Average Answer Length:    {average_length:.2f} words", log_file)
-        just_log(f"Exactly 1-Word Answers:   {total_1_word} ({(total_1_word/total_problems)*100:.1f}%)", log_file)
-        just_log(f"Exactly 2-Word Answers:   {total_2_word} ({(total_2_word/total_problems)*100:.1f}%)", log_file)
-        just_log("=" * 50, log_file)
-        just_log("\n" * 3, log_file)
+        logger.just_log(f"Overall Dataset Accuracy: {overall_accuracy:.2f}%", log_file)
+        logger.just_log(f"Overall Average Fitness:  {overall_fitness:.4f}", log_file)
+        logger.just_log("-" * 50, log_file)
+        logger.just_log(f"Average Answer Length:    {average_length:.2f} words", log_file)
+        logger.just_log(f"Exactly 1-Word Answers:   {total_1_word} ({(total_1_word/total_problems)*100:.1f}%)", log_file)
+        logger.just_log(f"Exactly 2-Word Answers:   {total_2_word} ({(total_2_word/total_problems)*100:.1f}%)", log_file)
+        logger.just_log("=" * 50, log_file)
+        logger.just_log("\n" * 3, log_file)
 
 if __name__ == "__main__":
     try:

@@ -6,7 +6,7 @@ from datasets import load_dataset
 import os
 from collections import defaultdict
 
-from Data.clutrr import CLUTTRManager
+from Data.CLUTRR.clutrr import CLUTTRManager
 
 class StepGameManager(CLUTTRManager):
     RELATIONS = [

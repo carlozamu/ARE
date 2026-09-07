@@ -749,8 +749,8 @@ Instruction: {node.instruction}<end_of_turn>
             counter += 1
             
             if not response:
-                print(f"Attempt {counter}: Empty response from LLM API.")
-                continue
+                #print(f"Attempt {counter}: Empty response from LLM API.")
+                pass
 
             try:
                 start_idx = response.find('{')
@@ -803,18 +803,20 @@ Instruction: {node.instruction}<end_of_turn>
                             genome.start_node_innovation_number = backup_genome.start_node_innovation_number
                             genome.end_node_innovation_number = backup_genome.end_node_innovation_number
 
-                    else:
-                        print(f"Attempt {counter}: Parsed instruction too short.")
-                else:
-                    print(f"Attempt {counter}: Failed to locate JSON brackets.")
+            #         else:
+            #             print(f"Attempt {counter}: Parsed instruction too short.")
+            #     else:
+            #         print(f"Attempt {counter}: Failed to locate JSON brackets.")
                     
             except json.JSONDecodeError as e:
-                print(f"Attempt {counter}: JSON Decode Error: {e}")
+                #     print(f"Attempt {counter}: JSON Decode Error: {e}")
+                pass
             except Exception as e:
-                print(f"Attempt {counter}: Unexpected error during mutation mapping: {e}")
+                pass
+            #     print(f"Attempt {counter}: Unexpected error during mutation mapping: {e}")
 
-        if not success:
-            print(f"Failed to generate valid JSON instruction for {node.name} with style {style} after 7 attempts.\nLast response: {response}")
+        # if not success:
+        #     print(f"Failed to generate valid JSON instruction for {node.name} with style {style} after 7 attempts.\nLast response: {response}")
     
     async def _generate_new_node(self, name1: str, inst1: str, name2: str, inst2: str) -> PromptNode:
         bridge_prompt = f"""<start_of_turn>system
@@ -879,11 +881,11 @@ Use this exact schema:
                     embedding = self.llm.get_embedding(instruction)
                     return PromptNode(name, instruction, embedding=embedding, innovation_number=-1)
                     
-            print(f"Bridge JSON Parsing Failed. Raw response: {response}")
+            #print(f"Bridge JSON Parsing Failed. Raw response: {response}")
             return None
             
         except Exception as e:
-            print(f"Bridge Exception: {e}")
+            #print(f"Bridge Exception: {e}")
             return None
     
     async def _split_instructions(self, original_instruction: str, original_name: str) -> tuple[str, str, str, str]:
@@ -961,7 +963,8 @@ Original Instr: {original_instruction}<end_of_turn>
         except json.JSONDecodeError as e:
             pass # Fails silently to route to the fallback
         except Exception as e:
-            print(f"Split Error: {e}")
+            #print(f"Split Error: {e}")
+            pass
 
         # Unified Safe Fallback
         # Executes if the LLM output is entirely invalid or an unexpected error occurs

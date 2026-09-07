@@ -109,7 +109,7 @@ class SpeciationEngine:
             for s in spared_species:
                 s.alive = True 
                 s.generations_without_improvement = 0  
-                print(f"⚠️ Failsafe Triggered: Spared Species {s.id} from mass extinction.")
+                #print(f"⚠️ Failsafe Triggered: Spared Species {s.id} from mass extinction.")
 
 
         # --- 4. EXPLICIT FITNESS SHARING ---

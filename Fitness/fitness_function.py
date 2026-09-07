@@ -54,7 +54,7 @@ class UnifiedFitnessCalculator:
         if self.target_mean < 1150:
             self.target_mean = 1150  # Prevents overly aggressive penalties for small token counts
             
-        print(f"   📊 Dynamic Token Baseline Shifted -> Mean: {self.target_mean:.1f} | Std: {self.target_std:.1f}")
+        #print(f"   📊 Dynamic Token Baseline Shifted -> Mean: {self.target_mean:.1f} | Std: {self.target_std:.1f}")
 
     def compute_score(self, is_correct: bool, token_count: int, answer_length: int) -> float:
         """
