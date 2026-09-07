@@ -6276,7 +6276,7 @@ Level 04 Hops: Accuracy 13.55% (691/5101)
 
 Level 05 Hops: Accuracy 10.27% (19/185)
 
-Level 06 Hops: Accuracy 10.48% (11/105)
+Level 06 Hops: Accuracy 18.10% (19/105)
 
 Level 07 Hops: Accuracy 05.16% (8/155)
 

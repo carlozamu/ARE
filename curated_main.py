@@ -38,7 +38,7 @@ async def run_evolution():
     fitness_evaluator = Fitness(llm=llm_client, use_reasoning=False)
     mutator = Mutator(breeder_llm_client=llm_client)
     dataset_manager = CLUTTRManager(split_config="gen_train234_test2to10")
-    dataset = dataset_manager.get_or_create_curated_dataset(7) 
+    dataset = dataset_manager.get_or_create_curated_dataset(10) 
     
     # 2. Setup the Micro Layer (Instantiates fresh LLM sockets)
     selector = RankBasedSelection()

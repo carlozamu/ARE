@@ -57,6 +57,7 @@ class Phenotype:
         total_in_tokens = 0
         total_out_tokens = 0
         total_time = 0.0
+        broke = False  # Flag to indicate if execution was interrupted due to token limit
 
         # 3. Execution Loop
         for node, parent_ids in execution_order:
@@ -91,8 +92,12 @@ class Phenotype:
             total_out_tokens += out_t
             total_time += duration
 
+            if total_in_tokens + total_out_tokens > 1800:
+                broke = True
+                break  # Stop execution if token limit exceeded
+
         # 4. Final Result
-        final_answer = trait_answers[execution_order[-1][0].innovation_number][1]
+        final_answer = trait_answers[execution_order[-1][0].innovation_number][1] if not broke else "answer too long"
         
         final_object = {
             "answer": final_answer,
