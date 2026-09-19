@@ -5,6 +5,7 @@ from typing import List, Dict, Any, Set, Tuple
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+import asyncio
 import colorsys
 import pickle
 import glob
@@ -834,12 +835,27 @@ class Logger:
         return global_best_fitness
 
 # GPU Utility
+
 def force_cleanup():
-    """Releases GPU memory."""
-    #print("\n🧹 Performing Memory Cleanup...")
+    """Forces aggressive memory and VRAM reclamation."""
+    # 1. Close any running or pending asyncio event loop tasks
+    try:
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            for task in asyncio.all_tasks(loop):
+                task.cancel()
+    except Exception:
+        pass
+
+    # 2. Run Python garbage collection across all generations
     gc.collect()
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
-        torch.cuda.ipc_collect()
-    #print("✅ GPU Memory Released.")
+
+    # 3. Clear GPU cache if PyTorch / ROCm is in memory
+    try:
+        import torch
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            torch.cuda.ipc_collect()
+    except ImportError:
+        pass
 
