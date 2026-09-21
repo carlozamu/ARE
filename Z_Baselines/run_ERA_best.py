@@ -92,7 +92,6 @@ async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness
     #     llm_client=llm_client
     # )
 
-    logger = logger()
     # 2. Fetch the ENTIRE dataset
     logger.just_log("Fetching the COMPLETE dataset for stratified baseline...")
     initial_problems_pool = dataset_manager.get_entire_dataset_stratified(dataset_manager.build_prompt_clutrr)
@@ -155,7 +154,7 @@ async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness
     execution_time = time.time() - start_time
 
     # 5. Output the Stratified Report
-    total_problems = len(initial_problems_pool)
+    total_problems = max(1, len(initial_problems_pool))
     
     logger.just_log("\n" + "="*50)
     logger.just_log("🎯 STRATIFIED BASELINE REPORT")

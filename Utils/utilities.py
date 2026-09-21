@@ -1,6 +1,7 @@
 import gc
 import os
 import re
+import shutil
 from typing import List, Dict, Any, Set, Tuple
 import matplotlib.pyplot as plt
 import numpy as np
@@ -670,10 +671,15 @@ class HistoryTracker:
         """
         self.history.clear()
         
-        # Optionally, delete all checkpoint files to free up disk space
-        for file in glob.glob(os.path.join(self.checkpoint_dir, "era_checkpoint_gen_*.pkl")):
-            os.remove(file)
-    
+    # delete all checkpoint files 
+    def clear_history(self):
+        """Completely purges the checkpoint folder and recreates an empty one."""
+        self.history.clear()
+        ckpt_dir = os.path.abspath(self.checkpoint_dir)
+        if os.path.exists(ckpt_dir):
+            shutil.rmtree(ckpt_dir)  # Deletes folder and everything inside
+
+
 # --- 4. Logging Utility ---
 class Logger:
     """
