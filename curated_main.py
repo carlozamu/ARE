@@ -217,7 +217,6 @@ async def run_evolution():
             break
 
     logger.just_log("--- Evolution Finished ---")
-    force_cleanup()
 
     # find individual with the highest accuracy
     best_accuracy_individual = max(evaluated_population, key=lambda x: x.accuracy)

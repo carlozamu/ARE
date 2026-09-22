@@ -96,6 +96,7 @@ async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness
     logger.just_log("Fetching the COMPLETE dataset for stratified baseline...")
     initial_problems_pool = dataset_manager.get_entire_dataset_stratified(dataset_manager.build_prompt_clutrr)
     #initial_problems_pool = dataset_manager.get_full_split()
+    print(f"📊 Total Problems Fetched: {len(initial_problems_pool)}")
 
     logger.just_log(f"Starting Baseline evaluation with {MAX_CONCURRENT_REQUESTS} concurrent workers...\n")
     
@@ -105,20 +106,30 @@ async def run_ERA_best_individual(dataset_manager:CLUTTRManager, fitness:Fitness
     
     async def sem_task(semaphore, fitness, individual, problem, execution_order):
         async with semaphore:
-            return await fitness._evaluate_single_problem_final(
-                individual=individual, 
-                problem=problem, 
-                execution_order=execution_order
-            )
+            try:
+                return await fitness._evaluate_single_problem_final(
+                    individual=individual, 
+                    problem=problem, 
+                    execution_order=execution_order
+                )
+            except Exception as e:
+                # Catch and return the error or a fallback tuple to prevent cancelling all 16k tasks
+                logger.just_log(f"\n[Task Error] Problem evaluation failed: {type(e).__name__}: {e}")
+                return (False, 0.0, 0)
 
-    # Then update your tasks list construction:
     tasks = [
         sem_task(semaphore, fitness, era_best, problem, order)
         for problem in initial_problems_pool
     ]
     
-    # 3. Fire tasks
+    # Remove return_exceptions=True from here
     results = await tqdm.gather(*tasks, desc="Evaluating Problems")
+
+    # Check if any errors occurred
+    for i, res in enumerate(results):
+        if isinstance(res, Exception):
+            logger.just_log(f"Problem {i} failed with: {type(res).__name__}: {res}")
+            raise res  # Re-raise the first real exception to see the exact traceback
 
     # 4. Stratified Aggregation & Word Count Tracking
     stratified_stats = {}

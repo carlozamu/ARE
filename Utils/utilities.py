@@ -651,8 +651,7 @@ class HistoryTracker:
             return int(match.group(1)) if match else -1
 
         # Locate the file with the highest generation integer
-        latest_checkpoint = max(checkpoint_files, key=get_gen_number)
-        
+        latest_checkpoint = max(checkpoint_files, key=get_gen_number)        
         #print(f"📂 Found rollback checkpoints. Loading highest available state: {os.path.basename(latest_checkpoint)}")
         
         with open(latest_checkpoint, 'rb') as f:
