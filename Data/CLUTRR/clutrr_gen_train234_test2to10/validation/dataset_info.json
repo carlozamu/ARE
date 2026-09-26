@@ -1,0 +1,110 @@
+{
+  "builder_name": "parquet",
+  "citation": "@article{sinha2019clutrr,\n  Author = {Koustuv Sinha and Shagun Sodhani and Jin Dong and Joelle Pineau and William L. Hamilton},\n  Title = {CLUTRR: A Diagnostic Benchmark for Inductive Reasoning from Text},\n  Year = {2019},\n  journal = {Empirical Methods of Natural Language Processing (EMNLP)},\n  arxiv = {1908.06177}\n}\n",
+  "config_name": "gen_train234_test2to10",
+  "dataset_name": "v1",
+  "dataset_size": 14964739,
+  "description": "CLUTRR (Compositional Language Understanding and Text-based Relational Reasoning),\n a diagnostic benchmark suite, is first introduced in (https://arxiv.org/abs/1908.06177) \n to test the systematic generalization and inductive reasoning capabilities of NLU systems.\n",
+  "download_checksums": {
+    "hf://datasets/CLUTRR/v1@6e5a7ac1425b8009b81ebc78c4f2b4d8ccd77722/gen_train234_test2to10/train/0000.parquet": {
+      "num_bytes": 3694199,
+      "checksum": null
+    },
+    "hf://datasets/CLUTRR/v1@6e5a7ac1425b8009b81ebc78c4f2b4d8ccd77722/gen_train234_test2to10/validation/0000.parquet": {
+      "num_bytes": 938230,
+      "checksum": null
+    },
+    "hf://datasets/CLUTRR/v1@6e5a7ac1425b8009b81ebc78c4f2b4d8ccd77722/gen_train234_test2to10/test/0000.parquet": {
+      "num_bytes": 598204,
+      "checksum": null
+    }
+  },
+  "download_size": 5230633,
+  "features": {
+    "id": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "story": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "query": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "target": {
+      "dtype": "int32",
+      "_type": "Value"
+    },
+    "target_text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "clean_story": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "proof_state": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "f_comb": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "task_name": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "story_edges": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "edge_types": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "query_edge": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "genders": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "task_split": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://www.cs.mcgill.ca/~ksinha4/clutrr/",
+  "license": "",
+  "size_in_bytes": 20195372,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 10480987,
+      "num_examples": 12064,
+      "dataset_name": "v1"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 2624112,
+      "num_examples": 3019,
+      "dataset_name": "v1"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 1859640,
+      "num_examples": 1048,
+      "dataset_name": "v1"
+    }
+  },
+  "version": {
+    "version_str": "1.0.0",
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  }
+}

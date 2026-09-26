@@ -3,3 +3,5 @@ venv
 era_env
 .env
 .venv
+era_checkpoints/
+Models/

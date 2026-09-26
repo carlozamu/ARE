@@ -1,8 +1,9 @@
 import json
 import re
+from pathlib import Path
 import random
 from typing import List, Dict, Tuple, Any, Optional
-from datasets import load_dataset
+from datasets import load_dataset, load_from_disk
 import os
 from collections import defaultdict
 
@@ -24,17 +25,44 @@ class CLUTTRManager:
         "daughterinlaw": "daughter-in-law",
     }
 
-    def __init__(self, split_config: str = "gen_train234_test2to10", cache_dir: Optional[str] = None):
+    def __init__(
+        self,
+        split_config: str = "gen_train234_test2to10",
+        cache_dir: Optional[str] = None,
+    ):
         """
-        Initialize the CLUTTR dataset loader.
-        :param split_config: The configuration name for CLUTTR (e.g. "gen_train234_test2to10")
+        Load CLUTRR from a local copy next to this script if available.
+        Otherwise download it once and save it there.
         """
-        #print(f"Loading CLUTTR dataset: CLUTRR/v1 - {split_config}...")
+
+        # Directory containing this file:
+        # .../RAE/Data/CLUTRR/
+        script_dir = Path(__file__).resolve().parent
+
+        # e.g.
+        # .../RAE/Data/CLUTRR/clutrr_gen_train234_test2to10/
+        local_path = script_dir / f"clutrr_{split_config}"
+
         try:
-            self.dataset = load_dataset("CLUTRR/v1", split_config, cache_dir=cache_dir)
-            #print("CLUTTR dataset loaded successfully.")
+            try:
+                self.dataset = load_from_disk(str(local_path))
+                #print(f"Loaded CLUTRR from local dataset: {local_path}")
+
+            except (FileNotFoundError, ValueError):
+                #print("Valid local CLUTRR dataset not found. Downloading...")
+
+                self.dataset = load_dataset(
+                    "CLUTRR/v1",
+                    split_config,
+                    cache_dir=cache_dir,
+                    trust_remote_code=True,
+                )
+
+                self.dataset.save_to_disk(str(local_path))
+                #print(f"CLUTRR saved locally to: {local_path}")
+
         except Exception as e:
-            print(f"Error loading CLUTTR dataset: {e}")
+            #print(f"Error loading CLUTRR dataset: {e}")
             self.dataset = None
 
     def get_batch(self, split: str = "train", batch_size: int = 20, random_seed: int = None) -> List[Dict[str, str]]:
@@ -43,7 +71,7 @@ class CLUTTRManager:
         Each problem is a dict: {'question': str, 'answer': str, 'metadata': dict}
         """
         if self.dataset is None or split not in self.dataset:
-            print(f"Dataset not valid or split '{split}' not found.")
+            #print(f"Dataset not valid or split '{split}' not found.")
             return []
         
         data_split = self.dataset[split]
