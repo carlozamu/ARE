@@ -79,12 +79,12 @@ class StepGameManager(CLUTTRManager):
             except (IndexError, ValueError):
                 reasoning_length = 0 # Fallback if data is malformed
             
-            prompt = self.build_prompt_clutrr(story, query)
+            prompt = self.build_prompt_stepgame(story, query)
             
             batch.append({
                 "question": prompt,
                 "answer": target,
-                "task_type": "cluttr",
+                "task_type": "stepgame",
                 "metadata": {
                     "story": story,
                     "query": query,
@@ -213,7 +213,7 @@ Task: State only the one kinship word (from the posible answers) that describes 
         return baseline_prompt
     
     @staticmethod
-    def build_prompt_clutrr_few_shots_try_examples(story: str, query: str, examples: str) -> str:
+    def build_prompt_stepgame_few_shots_try_examples(story: str, query: str, examples: str) -> str:
         name1, name2 = StepGameManager.extract_query_names(query)
 
         # 1. Compress options to save context window and improve attention gravity
@@ -253,7 +253,7 @@ CRITICAL TASK: State the spatial relationship. Output EXACTLY ONE WORD from the 
         return few_shots_prompt
     
     @staticmethod
-    def build_prompt_clutrr_few_shots(story: str, query: str) -> str:
+    def build_prompt_stepgame_few_shots(story: str, query: str) -> str:
         name1, name2 = StepGameManager.extract_query_names(query)
 
         # 1. Compress options to save context window and improve attention gravity
@@ -285,7 +285,7 @@ CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the l
         return few_shots_prompt
     
     @staticmethod
-    def build_prompt_clutrr(story: str, query: str) -> str:
+    def build_prompt_stepgame(story: str, query: str) -> str:
         name1, name2 = StepGameManager.extract_query_names(query)
 
         # OPTIMIZATION: Naming the entities directly in the task line
@@ -361,7 +361,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
     
 ##---------- FUNCTIONS FOR CURATED DATASET CREATION AND FREEZING ----------##
 
-    def save_dataset_to_json(self, dataset: list[dict], filepath: str = "Data/curated_clutrr_subset.json"):
+    def save_dataset_to_json(self, dataset: list[dict], filepath: str = "Data/StepGame/curated_stepgame_subset.json"):
         """
         Serializes the generated dataset to a JSON file to guarantee repeatability.
         Uses indent=4 to keep the file human-readable for debugging.
@@ -376,7 +376,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
         except Exception as e:
             print(f"\n[IO Error] Failed to save dataset: {e}")
 
-    def load_dataset_from_json(self, filepath: str = "Data/curated_clutrr_subset.json") -> list[dict]:
+    def load_dataset_from_json(self, filepath: str = "Data/StepGame/curated_stepgame_subset.json") -> list[dict]:
         """
         Loads a strictly frozen dataset from a JSON file.
         """
@@ -392,44 +392,43 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
             print(f"\n[IO Error] File {filepath} is corrupted or not valid JSON.")
             return []
     
-    def get_curated_dataset(self) -> list[dict]:
+    def get_curated_dataset(self, n: int) -> list[dict]:
         # 1. Group actual data by Relation -> Complexity -> List of Items
         data_store = defaultdict(lambda: defaultdict(list))
         by_complexity = defaultdict(list)
+        split_name = "train"  # We are only using the training split for curated dataset creation
+        for item in self.dataset[split_name]:
+            target = item.get("label", "")
+            task_name = item.get("k_hop", "")
+            
+            if not target:
+                continue
+            reasoning_length = int(task_name)
 
-        for split_name in self.dataset.keys():
-            for item in self.dataset[split_name]:
-                target = item.get("label", "")
-                task_name = item.get("k_hop", "")
-                
-                if not target:
-                    continue
-                reasoning_length = int(task_name)
+            story = item.get("story", "")
+            query = item.get("question", "")
 
-                story = item.get("story", "")
-                query = item.get("query", "")
+            prompt = self.build_prompt_stepgame(story, query)
+            
+            # Store the formatted item
+            formatted_item = {
+                "question": prompt,
+                "answer": target,
+                "task_type": "stepgame",
+                "metadata": {
+                    "story": story,
+                    "query": query,
+                    "task_name": task_name,
+                    "reasoning_length": reasoning_length,
+                    "injected_noise": "",
+                    "split_origin": split_name
+                },
+                "id": item.get("id", None)
+            }     
 
-                prompt = self.build_prompt_clutrr(story, query)
-                
-                # Store the formatted item
-                formatted_item = {
-                    "question": prompt,
-                    "answer": target,
-                    "task_type": "stepgame",
-                    "metadata": {
-                        "story": story,
-                        "query": query,
-                        "task_name": task_name,
-                        "reasoning_length": reasoning_length,
-                        "injected_noise": "",
-                        "split_origin": split_name
-                    },
-                    "id": item.get("id", None)
-                }     
-
-                data_store[target][reasoning_length].append(formatted_item)
-                by_complexity[reasoning_length].append(formatted_item)
-                # --- n=0: Original Behavior ---
+            data_store[target][reasoning_length].append(formatted_item)
+            by_complexity[reasoning_length].append(formatted_item)
+            # --- n=0: Original Behavior ---
         if n == 0:
             curated_dataset = []
             for relation, complexities_dict in data_store.items():
@@ -464,9 +463,9 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
         
         return []
 
-    def get_or_create_curated_dataset(self):
+    def get_or_create_curated_dataset(self, n: int):
 
-        SAVE_PATH = "Data/curated_clutrr_subset.json"
+        SAVE_PATH = f"Data/StepGame/curated_stepgame_subset_{n}.json"
         
         # 1. Check if we already have a frozen dataset
         if os.path.exists(SAVE_PATH):
@@ -477,7 +476,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
             
         # 2. If no frozen data exists, generate it from scratch and lock it
         else:
-            final_data = self.get_curated_dataset()
+            final_data = self.get_curated_dataset(n)
             
             if final_data:
                 self.save_dataset_to_json(final_data, SAVE_PATH)
