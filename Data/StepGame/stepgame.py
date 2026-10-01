@@ -396,7 +396,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
         # 1. Group actual data by Relation -> Complexity -> List of Items
         data_store = defaultdict(lambda: defaultdict(list))
         by_complexity = defaultdict(list)
-        split_name = "train"  # We are only using the training split for curated dataset creation
+        split_name = "validation"  # We are only using the training split for curated dataset creation
         for item in self.dataset[split_name]:
             target = item.get("label", "")
             task_name = item.get("k_hop", "")
