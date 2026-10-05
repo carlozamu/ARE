@@ -222,32 +222,32 @@ Task: State only the one kinship word (from the posible answers) that describes 
         names1 = []
         names2 = []
         if subset_number < 6:
-            stories.append(["S is over there and H is on the left of it.",
+            stories.append(" ".join(["S is over there and H is on the left of it.",
                             "X and H are parallel, and X is over H."
-                            ])
+                            ]))
             questions.append("What is the relation of the agent H to the agent S?")
             n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent H to the agent S?")
             names1.append(n1)
             names2.append(n2)
             answers.append("left")
-            stories.append(["O is over there with N above.",
+            stories.append(" ".join(["O is over there with N above.",
                             "O is on the same horizontal plane directly left to X."
-                            ])
+                            ]))
             questions.append("What is the relation of the agent N to the agent X?")
             n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent N to the agent X?")
             names1.append(n1)
             names2.append(n2)
             answers.append("upper-left")
-            stories.append([ "U is above K with a small gap between them.",
+            stories.append(" ".join(["U is above K with a small gap between them.",
                             "F is diagonally right and above U."
-                            ])
+                            ]))
             questions.append("What is the relation of the agent F to the agent K?")
             n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent F to the agent K?")
             names1.append(n1)
             names2.append(n2)
             answers.append("upper-right")
         else:
-            stories.append(["R and D are side by side with R to the right and D to the left.",
+            stories.append(" ".join(["R and D are side by side with R to the right and D to the left.",
                             "E is to the right and above F at an angle of about 45 degrees.",
                             "R is directly below Y.",
                             "P is positioned right to F.",
@@ -258,13 +258,13 @@ Task: State only the one kinship word (from the posible answers) that describes 
                             "W presents lower left to V.",
                             "O is on the same horizontal plane directly left to V.",
                             "A is below F with a small gap between them."
-                            ])
+                            ]))
             questions.append("What is the relation of the agent V to the agent A?")
             n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent V to the agent A?")
             names1.append(n1)
             names2.append(n2)
             answers.append("above")
-            stories.append(["R is sitting in the left direction of C.",
+            stories.append(" ".join(["R is sitting in the left direction of C.",
                             "O is on the lower left of P.",
                             "The object X is upper and slightly to the right of the object K.",
                             "U is over there and K is on the right of it.",
@@ -279,13 +279,13 @@ Task: State only the one kinship word (from the posible answers) that describes 
                             "X presents below C.",
                             "N and U are next to each other with N on the left and U on the right.",
                             "M presents left to N."
-                            ])
+                            ]))
             questions.append("What is the relation of the agent V to the agent X?")
             n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent V to the agent X?")
             names1.append(n1)
             names2.append(n2)
             answers.append("left")
-            stories.append(["N is above P.",
+            stories.append(" ".join(["N is above P.",
                             "Q and G are parallel, and Q on the left of G.",
                             "E is diagonally to the bottom left of Y.",
                             "E is at K's 12 o'clock.",
@@ -296,7 +296,7 @@ Task: State only the one kinship word (from the posible answers) that describes 
                             "G is at W's 6 o'clock.",
                             "K and I are parallel, and K is over I.",
                             "Z is over there and R is on the right of it."
-                            ])
+                            ]))
             questions.append("What is the relation of the agent P to the agent K?")
             n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent P to the agent K?")
             names1.append(n1)
@@ -438,7 +438,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
                 continue
             reasoning_length = int(task_name)
 
-            story = item.get("story", "")
+            story = " ".join(item.get("story", ""))
             query = item.get("question", "")
 
             prompt = self.build_prompt_stepgame(story, query)
