@@ -206,88 +206,120 @@ Possible answers:
 - upper-left
 - upper-right
 
-Task: State only the one kinship word (from the posible answers) that describes the spatial relationship between {name2} and {name1}. {query}"""
+Task: State only the one kinship word (from the posible answers) that describes the spatial relationship between {name1} and {name2}. {query}"""
 
         baseline_prompt = f"<start_of_turn>user\n{prompt}\n<end_of_turn>\n<start_of_turn>model\n"
         
         return baseline_prompt
     
     @staticmethod
-    def build_prompt_stepgame_few_shots_try_examples(story: str, query: str, examples: str) -> str:
+    def build_prompt_stepgame_few_shots(story: str, query: str, subset_number: int) -> str:
         name1, name2 = StepGameManager.extract_query_names(query)
-
-        # 1. Compress options to save context window and improve attention gravity
-        options = "above, below, left, lower-left, lower-right, overlap, right, upper-left, upper-right"
-
-        # 2. Construct true multi-turn few-shot history        
-        few_shots_prompt_0 = f"""<start_of_turn>system
-Possible relationships: [{options}]<end_of_turn>
-<start_of_turn>user
-Story: [Ashley]'s daughter, [Lillian], asked her mom to read her a story. [Nicholas]'s sister [Lillian] asked him for some help planting her garden.
-CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Nicholas is Ashley's?<end_of_turn>
+        options = "above", "below", "left", "lower-left", "lower-right", "overlap", "right", "upper-left", "upper-right"
+        stories = []
+        questions = []
+        answers = []
+        names1 = []
+        names2 = []
+        if subset_number < 6:
+            stories.append(["S is over there and H is on the left of it.",
+                            "X and H are parallel, and X is over H."
+                            ])
+            questions.append("What is the relation of the agent H to the agent S?")
+            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent H to the agent S?")
+            names1.append(n1)
+            names2.append(n2)
+            answers.append("left")
+            stories.append(["O is over there with N above.",
+                            "O is on the same horizontal plane directly left to X."
+                            ])
+            questions.append("What is the relation of the agent N to the agent X?")
+            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent N to the agent X?")
+            names1.append(n1)
+            names2.append(n2)
+            answers.append("upper-left")
+            stories.append([ "U is above K with a small gap between them.",
+                            "F is diagonally right and above U."
+                            ])
+            questions.append("What is the relation of the agent F to the agent K?")
+            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent F to the agent K?")
+            names1.append(n1)
+            names2.append(n2)
+            answers.append("upper-right")
+        else:
+            stories.append(["R and D are side by side with R to the right and D to the left.",
+                            "E is to the right and above F at an angle of about 45 degrees.",
+                            "R is directly below Y.",
+                            "P is positioned right to F.",
+                            "F and H are next to each other with F on the top and H at the bottom.",
+                            "A is sitting at the 3:00 position to W.",
+                            "H is over there and E is on the right of it.",
+                            "G presents lower left to O.",
+                            "W presents lower left to V.",
+                            "O is on the same horizontal plane directly left to V.",
+                            "A is below F with a small gap between them."
+                            ])
+            questions.append("What is the relation of the agent V to the agent A?")
+            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent V to the agent A?")
+            names1.append(n1)
+            names2.append(n2)
+            answers.append("above")
+            stories.append(["R is sitting in the left direction of C.",
+                            "O is on the lower left of P.",
+                            "The object X is upper and slightly to the right of the object K.",
+                            "U is over there and K is on the right of it.",
+                            "C is lower left to A.",
+                            "B is at Z's 12 o'clock.",
+                            "W is to the right of O with a small gap between them.",
+                            "N is at Z’s 9 o'clock.",
+                            "L is diagonally to the upper right of V.",
+                            "R and F are next to each other with R on the top and F at the bottom.",
+                            "F is to the right of B.",
+                            "The object N is lower and slightly to the right of the object V.",
+                            "X presents below C.",
+                            "N and U are next to each other with N on the left and U on the right.",
+                            "M presents left to N."
+                            ])
+            questions.append("What is the relation of the agent V to the agent X?")
+            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent V to the agent X?")
+            names1.append(n1)
+            names2.append(n2)
+            answers.append("left")
+            stories.append(["N is above P.",
+                            "Q and G are parallel, and Q on the left of G.",
+                            "E is diagonally to the bottom left of Y.",
+                            "E is at K's 12 o'clock.",
+                            "Q is positioned above Y and to the left.",
+                            "Z is sitting in the left direction of T.",
+                            "Q is placed at the lower left of W.",
+                            "W is there and P is at the 2 position of a clock face.",
+                            "G is at W's 6 o'clock.",
+                            "K and I are parallel, and K is over I.",
+                            "Z is over there and R is on the right of it."
+                            ])
+            questions.append("What is the relation of the agent P to the agent K?")
+            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent P to the agent K?")
+            names1.append(n1)
+            names2.append(n2)
+            answers.append("upper-right")
+        few_shots_prompt_hops = f"""<start_of_turn>system
+Possible relationships: [{options}]<end_of_turn>"""
+        for i in range(len(stories)):
+            few_shots_prompt_hops += f"""<start_of_turn>user
+Story: {stories[i]}
+Question: State only the one kinship word (from the posible answers) that describes the spatial relationship between {names1[i]} and {names2[i]}.{questions[i]}<end_of_turn>
 <start_of_turn>model
-son<end_of_turn>
-<start_of_turn>user
-Story: [June] went with her husband [James] to get a nice dinner for their anniversary. [Dale] is taking his son [James] out for coffee.
-CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. June is Dale's?<end_of_turn>
-<start_of_turn>model
-daughter-in-law<end_of_turn>
-<start_of_turn>user
-Story: [Wayne] was looking forward to his wife [Nancy] coming back home. She was away for the weekend with her daughter [Lorraine].
-CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Lorraine is Wayne's?<end_of_turn>
-<start_of_turn>model
-daughter<end_of_turn>
-<start_of_turn>user
+Answer: {answers[i]}<end_of_turn>"""
+        few_shots_prompt = few_shots_prompt_hops + f"""<start_of_turn>user
 Story: {story}
-CRITICAL TASK: State the spatial relationship. Output EXACTLY ONE WORD from the list above. {query}<end_of_turn>
-<start_of_turn>model
-"""        
-        
-        final_part = f"""<start_of_turn>user
-Story: {story}
-CRITICAL TASK: State the spatial relationship. Output EXACTLY ONE WORD from the list above. {query}<end_of_turn>
-<start_of_turn>model
-"""        
-        few_shots_prompt = examples + final_part
-        
-        return few_shots_prompt
-    
-    @staticmethod
-    def build_prompt_stepgame_few_shots(story: str, query: str) -> str:
-        name1, name2 = StepGameManager.extract_query_names(query)
-
-        # 1. Compress options to save context window and improve attention gravity
-        options = "above, below, left, lower-left, lower-right, overlap, right, upper-left, upper-right"
-        # 2. Construct true multi-turn few-shot history        
-        few_shots_prompt = f"""<start_of_turn>system
-Possible relationships: [{options}]<end_of_turn>
-<start_of_turn>user
-Story: [Seth] and his grandmother [Mary] went to the science museum. They both had fun, and learned some things, too. [Arthur] enjoys going fishing with his brother. His name is [Warren]. [Seth] and his brother [Warren] always played pranks on each other [Warren] was disappointed that his father, [Alvin], would n't be at the play to see him perform. [Warren] took his son [Alvin] out to play gold later that night. [Warren] played chess with his brother [Arthur].
-CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Mary is Warren's?<end_of_turn>
-<start_of_turn>model
-grandmother<end_of_turn>
-<start_of_turn>user
-Story: [Ross] went to his brother [Michael]'s Birthday party [Ronald]'s aunt [Erica] likes to drink a little bit too much wine at family gatherings. [Patrick] asked his brother [Ross] if he would come help him fix his car next weekend. [Erica] was mad at her son, [Michael]. She found he'd been stealing from her purse. [Robert] would n't let his son [James] go to the park by himself. [James]'s brother [Ronald] offered to go with him.
-CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Patrick is Robert's?<end_of_turn>
-<start_of_turn>model
-nephew<end_of_turn>
-<start_of_turn>user
-Story: [Patrick]'s father, [Joseph], went bowling with his sister, [Katherine]. [Katherine] and her son [Ronald] went out to lunch together yesterday. [Alfredo] went to the Farmer's market with his mother [Erica] and his brother [Patrick]. [Ronald] went to the game with his sister [Charlsie].
-CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. Charlsie is Erica's?<end_of_turn>
-<start_of_turn>model
-niece<end_of_turn>
-<start_of_turn>user
-Story: {story}
-CRITICAL TASK: State the family relationship. Output EXACTLY ONE WORD from the list above. {name2} is {name1}'s?<end_of_turn>
+State only the one kinship word (from the posible answers) that describes the spatial relationship between {name1} and {name2}. {query}<end_of_turn>
 <start_of_turn>model
 """
-        
         return few_shots_prompt
     
     @staticmethod
     def build_prompt_stepgame(story: str, query: str) -> str:
         name1, name2 = StepGameManager.extract_query_names(query)
-
         # OPTIMIZATION: Naming the entities directly in the task line
         # to maximize attention gravity right before generation.
         prompt = f"""Story:
@@ -396,8 +428,9 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
         # 1. Group actual data by Relation -> Complexity -> List of Items
         data_store = defaultdict(lambda: defaultdict(list))
         by_complexity = defaultdict(list)
-        split_name = "validation"  # We are only using the training split for curated dataset creation
-        for item in self.dataset[split_name]:
+        split_name = "test"
+        test_split = self.dataset[split_name].shuffle(seed=42)
+        for item in test_split:
             target = item.get("label", "")
             task_name = item.get("k_hop", "")
             
@@ -425,7 +458,19 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
                 },
                 "id": item.get("id", None)
             }     
-
+            if len(by_complexity[reasoning_length]) > 500:
+                all_full = True
+                if by_complexity.__len__() < 10:
+                    all_full = False
+                else:
+                    for complexity_level, items in by_complexity.items():
+                        if len(items) < 500:
+                            all_full = False
+                            break
+                if not all_full:
+                    continue
+                else:
+                    break
             data_store[target][reasoning_length].append(formatted_item)
             by_complexity[reasoning_length].append(formatted_item)
             # --- n=0: Original Behavior ---
@@ -482,4 +527,3 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
                 self.save_dataset_to_json(final_data, SAVE_PATH)
         
         return final_data
-
