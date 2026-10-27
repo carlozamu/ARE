@@ -206,7 +206,7 @@ Possible answers:
 - upper-left
 - upper-right
 
-Task: State only the one kinship word (from the posible answers) that describes the spatial relationship between {name1} and {name2}. {query}"""
+Task: State only the one spatial relation label word (from the posible answers) that describes the spatial relationship between {name1} and {name2}. {query}"""
 
         baseline_prompt = f"<start_of_turn>user\n{prompt}\n<end_of_turn>\n<start_of_turn>model\n"
         
@@ -307,12 +307,12 @@ Possible relationships: [{options}]<end_of_turn>"""
         for i in range(len(stories)):
             few_shots_prompt_hops += f"""<start_of_turn>user
 Story: {stories[i]}
-Question: State only the one kinship word (from the posible answers) that describes the spatial relationship between {names1[i]} and {names2[i]}.{questions[i]}<end_of_turn>
+Question: State only the one spatial relation label word (from the posible answers) that describes the spatial relationship between {names1[i]} and {names2[i]}.{questions[i]}<end_of_turn>
 <start_of_turn>model
 Answer: {answers[i]}<end_of_turn>"""
         few_shots_prompt = few_shots_prompt_hops + f"""<start_of_turn>user
 Story: {story}
-State only the one kinship word (from the posible answers) that describes the spatial relationship between {name1} and {name2}. {query}<end_of_turn>
+State only the one spatial relation label word (from the posible answers) that describes the spatial relationship between {name1} and {name2}. {query}<end_of_turn>
 <start_of_turn>model
 """
         return few_shots_prompt
@@ -336,7 +336,7 @@ Possible answers:
 - upper-left
 - upper-right
 
-Understand the spatial relationship between {name2} and {name1}, and to describe it through only one kinship word from the posible answers, to correctly answer the question: {query}"""
+Understand the spatial relationship between {name2} and {name1}, and to describe it through only one spatial relation label word from the posible answers, to correctly answer the question: {query}"""
         
         return prompt
 
@@ -353,7 +353,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
     def map_to_relation(cls, text: str) -> str:
         """
         Extracts the relationship from the model's output using strict mapping and synonyms.
-        Penalizes 'shotgunning': if multiple distinct kinship terms are found, it returns "".
+        Penalizes 'shotgunning': if multiple distinct spatial relation label terms are found, it returns "".
         """
         if not text:
             return ""

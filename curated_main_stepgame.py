@@ -20,7 +20,7 @@ from Fitness.fitness import Fitness
 from Genome.agent_genome import AgentGenome
 from Phenotype.phenotype import Phenotype
 from Mutations.mutator import Mutator
-from Data.CLUTRR.clutrr import CLUTTRManager
+from Data.StepGame.stepgame import StepGameManager
 from Utils.utilities import Logger, Plotter, force_cleanup, HistoryTracker
 from Utils.LLM import LLM
 from Utils.baseline_exportable import evaluate_baseline_batch
@@ -36,7 +36,7 @@ BASE_URL = "http://localhost:8000"
 MAX_GENERATIONS = 50
 MAX_TIME_SECONDS = 3600 * 15 # 15 Hours
 TARGET_FITNESS = 50.0        # Higher is better (Max is 100.0)
-STARTING_PROMPT = "Task: State only the one kinship word (from the posible answers) that describes the family relationship."
+STARTING_PROMPT = "Task: State only the one spatial relation label (from the possible answers) that answers the spatial question."
 NUM_INDIVIDUALS = 50
 TARGET_SPECIES = 5
 
@@ -46,7 +46,7 @@ async def run_evolution():
     llm_client = LLM(model_name=MODEL_NAME, base_url=BASE_URL) 
     fitness_evaluator = Fitness(llm=llm_client, use_reasoning=False)
     mutator = Mutator(breeder_llm_client=llm_client)
-    dataset_manager = CLUTTRManager(split_config="gen_train234_test2to10")
+    dataset_manager = StepGameManager()
     dataset = dataset_manager.get_or_create_curated_dataset(SUBSET_NUMBER) 
     
     # 2. Setup the Micro Layer (Instantiates fresh LLM sockets)
@@ -116,7 +116,7 @@ async def run_evolution():
                 problem_batch=dataset,
                 llm_client=llm_client,
                 fitness=fitness_evaluator,
-                prompt_builder_func=CLUTTRManager.build_prompt_clutrr_baseline,
+                prompt_builder_func=StepGameManager.build_prompt_stepgame_baseline,
                 subset_num = 0
         )
         few_shots_stats = await evaluate_baseline_batch(
@@ -124,7 +124,7 @@ async def run_evolution():
             problem_batch=dataset,
             llm_client=llm_client,
             fitness=fitness_evaluator,
-            prompt_builder_func=CLUTTRManager.build_prompt_clutrr_few_shots,
+            prompt_builder_func=StepGameManager.build_prompt_stepgame_few_shots,
             subset_num = SUBSET_NUMBER
         )
 
@@ -244,3 +244,4 @@ if __name__ == "__main__":
     
     finally:
         force_cleanup()
+        
