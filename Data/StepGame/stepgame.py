@@ -40,12 +40,12 @@ class StepGameManager(CLUTTRManager):
         """
         Initialize the StepGame dataset loader.
         """
-        print("Loading StepGame dataset...")
+        # print("Loading StepGame dataset...")
         try:
             self.dataset = load_dataset("ZhengyanShi/StepGame", cache_dir=cache_dir)
-            print("StepGame dataset loaded successfully.")
+            # print("StepGame dataset loaded successfully.")
         except Exception as e:
-            print(f"Error loading StepGame dataset: {e}")
+            # print(f"Error loading StepGame dataset: {e}")
             self.dataset = None
 
     def get_batch(self, split: str = "train", batch_size: int = 20, random_seed: int = None) -> List[Dict[str, str]]:
@@ -54,7 +54,7 @@ class StepGameManager(CLUTTRManager):
         Each problem is a dict: {'question': str, 'answer': str, 'metadata': dict}
         """
         if self.dataset is None or split not in self.dataset:
-            print(f"Dataset not valid or split '{split}' not found.")
+            # print(f"Dataset not valid or split '{split}' not found.")
             return []
         
         data_split = self.dataset[split]
@@ -103,12 +103,12 @@ class StepGameManager(CLUTTRManager):
         Used for infallible baselines and final evolutionary evaluation.
         """
         if self.dataset is None or split not in self.dataset:
-            print(f"Dataset not valid or split '{split}' not found.")
+            # print(f"Dataset not valid or split '{split}' not found.")
             return []
         
         data_split = self.dataset[split]
         total_len = len(data_split)
-        print(f"Loading all {total_len} problems from the '{split}' split...")
+        # print(f"Loading all {total_len} problems from the '{split}' split...")
         
         batch = []
         for idx in range(total_len):
@@ -149,7 +149,7 @@ class StepGameManager(CLUTTRManager):
         Extracts the reasoning hop length from 'task_name' for stratified analysis.
         """
         if self.dataset is None:
-            print("Dataset not loaded.")
+            # print("Dataset not loaded.")
             return []
         
         batch = []
@@ -184,11 +184,11 @@ class StepGameManager(CLUTTRManager):
                     }
                 })
                 
-        print(f"Loaded a total of {len(batch)} problems across all splits.")
+        # print(f"Loaded a total of {len(batch)} problems across all splits.")
         return batch
 
     @staticmethod
-    def build_prompt_stepgame_baseline(story: str, query: str) -> str:
+    def build_prompt_stepgame_baseline(story: str, query: str, subset_number:int = 1) -> str:
         name1, name2 = StepGameManager.extract_query_names(query)
 
         # 1. Place the strict constraint at the absolute bottom (Recency Bias)
@@ -404,7 +404,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
         try:
             with open(filepath, 'w', encoding='utf-8') as f:
                 json.dump(dataset, f, indent=4, ensure_ascii=False)
-            print(f"\n[IO] Dataset successfully permanently saved to: {os.path.abspath(filepath)}")
+            # print(f"\n[IO] Dataset successfully permanently saved to: {os.path.abspath(filepath)}")
         except Exception as e:
             print(f"\n[IO Error] Failed to save dataset: {e}")
 
@@ -415,13 +415,13 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
         try:
             with open(filepath, 'r', encoding='utf-8') as f:
                 dataset = json.load(f)
-            print(f"\n[IO] Frozen dataset loaded successfully from: {os.path.abspath(filepath)}")
+            # print(f"\n[IO] Frozen dataset loaded successfully from: {os.path.abspath(filepath)}")
             return dataset
         except FileNotFoundError:
-            print(f"\n[IO Error] File not found: {filepath}")
+            # print(f"\n[IO Error] File not found: {filepath}")
             return []
         except json.JSONDecodeError:
-            print(f"\n[IO Error] File {filepath} is corrupted or not valid JSON.")
+            # print(f"\n[IO Error] File {filepath} is corrupted or not valid JSON.")
             return []
     
     def get_curated_dataset(self, n: int) -> list[dict]:
@@ -457,7 +457,8 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
                     "split_origin": split_name
                 },
                 "id": item.get("id", None)
-            }     
+            }
+            # Limit the number of samples per complexity level to 500 to ensure diversity, while cutting the origal size of 100k
             if len(by_complexity[reasoning_length]) > 500:
                 all_full = True
                 if by_complexity.__len__() < 10:
@@ -517,7 +518,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
             final_data = self.load_dataset_from_json(SAVE_PATH)
             
             # Quick validation of the loaded data
-            print(f"Loaded {len(final_data)} evaluation elements ready for inference.")
+            # print(f"Loaded {len(final_data)} evaluation elements ready for inference.")
             
         # 2. If no frozen data exists, generate it from scratch and lock it
         else:
