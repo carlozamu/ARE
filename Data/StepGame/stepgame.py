@@ -497,7 +497,7 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
             for relation, complexities_dict in data_store.items():
                 complexities = list(complexities_dict.keys())
                 random.shuffle(complexities)
-                for i in range(5):
+                for i in range(10):
                     for attempts in range(len(complexities)):
                         target_k = complexities[(i + attempts) % len(complexities)]
                         bucket = complexities_dict[target_k]
