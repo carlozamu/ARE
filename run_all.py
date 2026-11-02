@@ -15,7 +15,7 @@ from pathlib import Path
 # --- Experiment Grid Configuration ---
 SUBSET_RANGE = range(0, 11)   # 0 to 10 inclusive (11 subsets)
 RUN_RANGE = range(0, 3)        # 0 to 2 inclusive (3 runs each -> 33 total runs)
-WORKER_SCRIPT = "curated_main.py"      # Your original execution script
+WORKER_SCRIPT = "curated_main_stepgame.py"      # Your original execution script
 COOLDOWN_SECONDS = 5           # Safety buffer for OS / ROCm driver to flush handles
 SUPERVISOR_LOG = Path("benchmark_supervisor.log")
 
