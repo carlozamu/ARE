@@ -50,7 +50,7 @@ class LLM:
         """
         return self.embedder.encode(text).tolist()
 
-    async def generate_text(self, user_prompt:str, temperature:float, max_tokens=512, stop=None) -> str:
+    async def generate_text(self, user_prompt:str, temperature:float, max_tokens=2048, stop=None) -> str:
         async with self.semaphore:
             # 1. Format the prompt (Gemma specific)        
             stop_tokens = ["<end_of_turn>"]

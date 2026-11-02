@@ -2,7 +2,7 @@ import json
 import re
 import random
 from typing import List, Dict, Tuple, Any, Optional
-from datasets import load_dataset
+from datasets import Dataset, DatasetDict, load_dataset
 import os
 from collections import defaultdict
 
@@ -42,7 +42,24 @@ class StepGameManager(CLUTTRManager):
         """
         # print("Loading StepGame dataset...")
         try:
-            self.dataset = load_dataset("ZhengyanShi/StepGame", cache_dir=cache_dir)
+            dataset = load_dataset("ZhengyanShi/StepGame", cache_dir=cache_dir)
+            split_name = "test"
+            test_split = dataset[split_name].shuffle(seed=42)
+            selected_items = []
+            items_per_k_hop = defaultdict(int)
+
+            for item in test_split:
+                task_name = item.get("k_hop", "")
+                if items_per_k_hop[task_name] >= 500:
+                    continue
+
+                selected_items.append(item)
+                items_per_k_hop[task_name] += 1
+
+            subset = DatasetDict()
+            subset[split_name] = Dataset.from_list(selected_items)
+            self.dataset = subset
+
             # print("StepGame dataset loaded successfully.")
         except Exception as e:
             # print(f"Error loading StepGame dataset: {e}")
