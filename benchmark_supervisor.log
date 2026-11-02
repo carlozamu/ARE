@@ -137,3 +137,12 @@
 [2026-11-02 13:52:35] ▶️ Task [2/33]: Launching Subset=0, Run=1
 [2026-11-02 13:53:35] ⚠️ Supervisor received KeyboardInterrupt. Propagating SIGTERM to worker process group...
 [2026-11-02 13:53:35] 🛑 Campaign aborted by operator.
+[2026-11-02 16:25:48] ======================================================================
+[2026-11-02 16:25:48] STARTING SEQUENTIAL BENCHMARK CAMPAIGN: 33 TOTAL RUNS
+[2026-11-02 16:25:48] Subsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[2026-11-02 16:25:48] Runs per subset: [0, 1, 2]
+[2026-11-02 16:25:48] ======================================================================
+[2026-11-02 16:25:48] ------------------------------------------------------------
+[2026-11-02 16:25:48] ▶️ Task [1/33]: Launching Subset=0, Run=0
+[2026-11-02 16:26:50] ⚠️ Supervisor received KeyboardInterrupt. Propagating SIGTERM to worker process group...
+[2026-11-02 16:26:50] 🛑 Campaign aborted by operator.
