@@ -333,6 +333,63 @@ State only the one spatial relation label word (from the posible answers) that d
 <start_of_turn>model
 """
         return few_shots_prompt
+
+    @staticmethod
+    def build_prompt_stepgame_few_shots_refined(story: str, query: str, subset_number: int) -> str:
+        options = "above, below, left, lower-left, lower-right, overlap, right, upper-left, upper-right"
+        task = "CRITICAL TASK: Answer using exactly ONE spatial relation label from the list above. Use the label spelling exactly; do not add a prefix or explanation."
+
+        few_shots_prompt_6_hops = f"""<start_of_turn>system
+Possible spatial relations: [{options}]<end_of_turn>
+<start_of_turn>user
+Story: A is to the left of B. B is above C.
+{task}
+Question: What is the relation of agent A to agent C?<end_of_turn>
+<start_of_turn>model
+upper-left<end_of_turn>
+<start_of_turn>user
+Story: D is to the right of E. E is above F.
+{task}
+Question: What is the relation of agent D to agent F?<end_of_turn>
+<start_of_turn>model
+upper-right<end_of_turn>
+<start_of_turn>user
+Story: G is to the left of H. H is below J.
+{task}
+Question: What is the relation of agent G to agent J?<end_of_turn>
+<start_of_turn>model
+lower-left<end_of_turn>"""
+
+        few_shots_prompt_low_hops = f"""<start_of_turn>system
+Possible spatial relations: [{options}]<end_of_turn>
+<start_of_turn>user
+Story: S is directly to the right of H.
+{task}
+Question: What is the relation of agent H to agent S?<end_of_turn>
+<start_of_turn>model
+left<end_of_turn>
+<start_of_turn>user
+Story: N is directly above X.
+{task}
+Question: What is the relation of agent N to agent X?<end_of_turn>
+<start_of_turn>model
+above<end_of_turn>
+<start_of_turn>user
+Story: F is directly below K.
+{task}
+Question: What is the relation of agent F to agent K?<end_of_turn>
+<start_of_turn>model
+below<end_of_turn>"""
+
+        final_part = f"""<start_of_turn>user
+Story: {story}
+{task}
+Question: {query}<end_of_turn>
+<start_of_turn>model
+"""
+
+        examples = few_shots_prompt_low_hops if subset_number < 6 else few_shots_prompt_6_hops
+        return examples + final_part
     
     @staticmethod
     def build_prompt_stepgame(story: str, query: str) -> str:
