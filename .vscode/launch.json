@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["0", "0"], 
+            "args": ["9", "0"], 
             "justMyCode": true
         }
     ]

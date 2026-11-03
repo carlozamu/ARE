@@ -230,38 +230,27 @@ Task: State only the one spatial relation label word (from the posible answers) 
         return baseline_prompt
     
     @staticmethod
-    def build_prompt_stepgame_few_shots(story: str, query: str, subset_number: int) -> str:
+    def build_prompt_stepgame_few_shots_original(story: str, query: str, subset_number: int) -> str:
         name1, name2 = StepGameManager.extract_query_names(query)
         options = "above", "below", "left", "lower-left", "lower-right", "overlap", "right", "upper-left", "upper-right"
         stories = []
         questions = []
         answers = []
-        names1 = []
-        names2 = []
         if subset_number < 6:
             stories.append(" ".join(["S is over there and H is on the left of it.",
                             "X and H are parallel, and X is over H."
                             ]))
-            questions.append("What is the relation of the agent H to the agent S?")
-            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent H to the agent S?")
-            names1.append(n1)
-            names2.append(n2)
+            questions.append("CRITICAL TASK: State the spatial relation between H and S. Output EXACTLY ONE WORD from the list above. Position of H relative to S:")
             answers.append("left")
             stories.append(" ".join(["O is over there with N above.",
                             "O is on the same horizontal plane directly left to X."
                             ]))
-            questions.append("What is the relation of the agent N to the agent X?")
-            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent N to the agent X?")
-            names1.append(n1)
-            names2.append(n2)
+            questions.append("CRITICAL TASK: State the spatial relation between N and X. Output EXACTLY ONE WORD from the list above. Position of N relative to X:")
             answers.append("upper-left")
             stories.append(" ".join(["U is above K with a small gap between them.",
                             "F is diagonally right and above U."
                             ]))
-            questions.append("What is the relation of the agent F to the agent K?")
-            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent F to the agent K?")
-            names1.append(n1)
-            names2.append(n2)
+            questions.append("CRITICAL TASK: State the spatial relation between F and K. Output EXACTLY ONE WORD from the list above. Position of F relative to K:")
             answers.append("upper-right")
         else:
             stories.append(" ".join(["R and D are side by side with R to the right and D to the left.",
@@ -276,10 +265,7 @@ Task: State only the one spatial relation label word (from the posible answers) 
                             "O is on the same horizontal plane directly left to V.",
                             "A is below F with a small gap between them."
                             ]))
-            questions.append("What is the relation of the agent V to the agent A?")
-            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent V to the agent A?")
-            names1.append(n1)
-            names2.append(n2)
+            questions.append("CRITICAL TASK: State the spatial relation between V and A. Output EXACTLY ONE WORD from the list above. Position of V relative to A:")
             answers.append("above")
             stories.append(" ".join(["R is sitting in the left direction of C.",
                             "O is on the lower left of P.",
@@ -288,7 +274,7 @@ Task: State only the one spatial relation label word (from the posible answers) 
                             "C is lower left to A.",
                             "B is at Z's 12 o'clock.",
                             "W is to the right of O with a small gap between them.",
-                            "N is at Z’s 9 o'clock.",
+                            "N is at Z's 9 o'clock.",
                             "L is diagonally to the upper right of V.",
                             "R and F are next to each other with R on the top and F at the bottom.",
                             "F is to the right of B.",
@@ -297,10 +283,7 @@ Task: State only the one spatial relation label word (from the posible answers) 
                             "N and U are next to each other with N on the left and U on the right.",
                             "M presents left to N."
                             ]))
-            questions.append("What is the relation of the agent V to the agent X?")
-            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent V to the agent X?")
-            names1.append(n1)
-            names2.append(n2)
+            questions.append("CRITICAL TASK: State the spatial relation between V and X. Output EXACTLY ONE WORD from the list above. Position of V relative to X:")
             answers.append("left")
             stories.append(" ".join(["N is above P.",
                             "Q and G are parallel, and Q on the left of G.",
@@ -314,29 +297,97 @@ Task: State only the one spatial relation label word (from the posible answers) 
                             "K and I are parallel, and K is over I.",
                             "Z is over there and R is on the right of it."
                             ]))
-            questions.append("What is the relation of the agent P to the agent K?")
-            n1, n2 = StepGameManager.extract_query_names("What is the relation of the agent P to the agent K?")
-            names1.append(n1)
-            names2.append(n2)
+            questions.append("CRITICAL TASK: State the spatial relation between P and K. Output EXACTLY ONE WORD from the list above. Position of P relative to K:")
             answers.append("upper-right")
         few_shots_prompt_hops = f"""<start_of_turn>system
-Possible relationships: [{", ".join(options)}]<end_of_turn>
+Possible spatial relations: [{", ".join(options)}]<end_of_turn>
 """
         for i in range(len(stories)):
             few_shots_prompt_hops += f"""<start_of_turn>user
 Story: {stories[i]}
-CRITICAL TASK: Answer using exactly ONE spatial relation label from the list above. Use the label spelling exactly; do not add a prefix or explanation.
-Question: {questions[i]}<end_of_turn>
+{questions[i]}<end_of_turn>
 <start_of_turn>model
 {answers[i]}<end_of_turn>
 """
+        n1, n2 = StepGameManager.extract_query_names(query)
         few_shots_prompt = few_shots_prompt_hops + f"""<start_of_turn>user
 Story: {story}
-CRITICAL TASK: Answer using exactly ONE spatial relation label from the list above. Use the label spelling exactly; do not add a prefix or explanation.
-Question: {query}<end_of_turn>
+CRITICAL TASK: State the spatial relation between {n1} and {n2}. Output EXACTLY ONE WORD from the list above. Position of {n1} relative to {n2}?<end_of_turn>
 <start_of_turn>model
 """
         return few_shots_prompt
+
+    @staticmethod
+    def build_prompt_stepgame_few_shots(story: str, query: str, subset_number: int) -> str:
+        name1, name2 = StepGameManager.extract_query_names(query)
+        options = "above", "below", "left", "lower-left", "lower-right", "overlap", "right", "upper-left", "upper-right"
+        stories = []
+        questions = []
+        answers = []
+        if subset_number < 6:
+            stories.append(" ".join(["S is over there and H is on the left of it."
+                            ]))
+            questions.append("CRITICAL TASK: State the spatial relation between H and S. Output EXACTLY ONE WORD from the list above. Position of H relative to S:")
+            answers.append("left")
+            stories.append(" ".join(["O is over there with N above.",
+                            "O is directly left to X."
+                            ]))
+            questions.append("CRITICAL TASK: State the spatial relation between N and X. Output EXACTLY ONE WORD from the list above. Position of N relative to X:")
+            answers.append("upper-left")
+            stories.append(" ".join(["U is above K.",
+                            "F is to the right and above U."
+                            ]))
+            questions.append("CRITICAL TASK: State the spatial relation between F and K. Output EXACTLY ONE WORD from the list above. Position of F relative to K:")
+            answers.append("upper-right")
+        else:
+            stories.append(" ".join([
+                "B is directly above A.",
+                "C is directly above B.",
+                "D is directly to the right of C.",
+                "E is directly above D.",
+                "F is directly to the left of E.",
+                "G is directly above F."
+            ]))
+            questions.append("CRITICAL TASK: State the spatial relation between G and A. Output EXACTLY ONE WORD from the list above. Position of G relative to A:")
+            answers.append("above")
+            stories.append(" ".join([
+                "M is directly to the left of N.",
+                "L is directly below M.",
+                "K is directly to the left of L.",
+                "J is directly above K.",
+                "I is directly below J.",
+                "H is directly to the left of I."
+            ]))
+            questions.append("CRITICAL TASK: State the spatial relation between H and N. Output EXACTLY ONE WORD from the list above. Position of H relative to N:")
+            answers.append("lower-left")
+            stories.append(" ".join([
+                "P is directly above Q.",
+                "R is directly to the right of P.",
+                "S is directly above R.",
+                "T is directly to the left of S.",
+                "U is directly to the right of T.",
+                "V is directly above U."
+            ]))
+            questions.append("CRITICAL TASK: State the spatial relation between V and Q. Output EXACTLY ONE WORD from the list above. Position of V relative to Q:")
+            answers.append("upper-right")
+        few_shots_prompt_hops = f"""<start_of_turn>system
+Possible spatial relations: [{", ".join(options)}]<end_of_turn>
+"""
+        for i in range(len(stories)):
+            few_shots_prompt_hops += f"""<start_of_turn>user
+Story: {stories[i]}
+{questions[i]}<end_of_turn>
+<start_of_turn>model
+{answers[i]}<end_of_turn>
+"""
+        n1, n2 = StepGameManager.extract_query_names(query)
+        few_shots_prompt = few_shots_prompt_hops + f"""<start_of_turn>user
+Story: {story}
+CRITICAL TASK: State the spatial relation between {n1} and {n2}. Output EXACTLY ONE WORD from the list above. Position of {n1} relative to {n2}?<end_of_turn>
+<start_of_turn>model
+"""
+        return few_shots_prompt
+        
     
     @staticmethod
     def build_prompt_stepgame(story: str, query: str) -> str:
@@ -527,6 +578,46 @@ Understand the spatial relationship between {name2} and {name1}, and to describe
         elif n == 2:
             # Take 90 from level 6
             return random.sample(by_complexity[6], 90)
+
+        # --- n=3: Specific Level Sampling ---
+        elif n == 3:
+            # Take 90 from level 3
+            return random.sample(by_complexity[3], 90)
+
+        # --- n=4: Specific Level Sampling ---
+        elif n == 4:
+            # Take 90 from level 4
+            return random.sample(by_complexity[4], 90)
+
+        # --- n=5: Specific Level Sampling ---
+        elif n == 5:
+            # Take 90 from level 5
+            return random.sample(by_complexity[5], 90)
+
+        # --- n=6: Specific Level Sampling ---
+        elif n == 6:
+            # Take 90 from level 6
+            return random.sample(by_complexity[6], 90)
+
+        # --- n=7: Specific Level Sampling ---
+        elif n == 7:
+            # Take 90 from level 7
+            return random.sample(by_complexity[7], 90)
+
+        # --- n=8: Specific Level Sampling ---
+        elif n == 8:
+            # Take 90 from level 8
+            return random.sample(by_complexity[8], 90)
+
+        # --- n=9: Specific Level Sampling ---
+        elif n == 9:
+            # Take 90 from level 9
+            return random.sample(by_complexity[9], 90)
+
+        # --- n=10: Specific Level Sampling ---
+        elif n == 10:
+            # Take 90 from level 10
+            return random.sample(by_complexity[10], 90)
         
         return []
 
